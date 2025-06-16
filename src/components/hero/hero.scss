@@ -1,0 +1,121 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 11ch;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #b97cf1;
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes scrollVertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.heroTitle {
+  width: 10ch;
+  font-size: 70px;
+  overflow: hidden;
+  text-align: left;
+  border-right: 0.15em solid #b97cf1;
+  white-space: nowrap;
+  margin: 0;
+
+  font-family: "Montserrat";
+  letter-spacing: large;
+  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+.heroDescription {
+  width: 60%;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.heroContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10rem 20%;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+}
+.heroSkills {
+  width: 250px;
+  height: 250px;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skillSlider {
+  display: flex;
+  flex-direction: column;
+  animation: scrollVertical 12s steps(6) infinite;
+  gap: 1rem;
+}
+.skillSlider img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+}
+
+.divBtnProjets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.btnProjets {
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  width: 150px;
+  height: 45px;
+  font-family: "Montserrat";
+  font-size: 15px;
+}
+.divFlecheBas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  font-size: 50px;
+  animation: bounce 1.5s infinite;
+  a{
+    text-decoration: none;
+    color: #b97cf1;
+  }
+}

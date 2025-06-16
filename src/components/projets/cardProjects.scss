@@ -1,0 +1,84 @@
+.containerProjects {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.cardProjects {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; // important pour l'effet 3D
+  margin: 20px;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cardProjects:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  background-color: #272727;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cardFront {
+  z-index: 2;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  a{
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 18px;
+    margin-top: 25px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #b97cf1;
+    }
+  }
+}
+
+.imgProjects {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+
+  li {
+    background-color: #444;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #f2f2f2;
+  }
+}

@@ -1,0 +1,10 @@
+body {
+  background-color: #171a1f;
+  color: white;
+  font-family: Montserrat;
+  margin: 0;
+  padding: 20px;
+}
+html {
+  scroll-behavior: smooth;
+}
