@@ -1,7 +1,7 @@
 import CardProjects from "./cardprojects.jsx";
 import "./projects.scss";
 import imgBooki from "/src/assets/imgprojects/booki.png";
-import imgSophieBluel from "/src/assets/imgprojects/sophieBluel.png";*
+import imgSophieBluel from "/src/assets/imgprojects/sophieBluel.png";
 import imgNinaCarducci from "/src/assets/imgprojects/ninaCarducci.png";
 import imgKasa from "/src/assets/imgprojects/kasa.png";
 import imgMVG from "/src/assets/imgprojects/MVG.png";
