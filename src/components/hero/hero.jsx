@@ -10,14 +10,21 @@ function Hero() {
             <h2 className="heroTitle">Hello World !</h2>
           </div>
           <p className="heroDescription">
-            Je suis un développeur passionné par la création d'applications web
-            modernes et réactives. Découvrez mes projets et compétences en
-            développement front-end et back-end.
+            Je suis un développeur web passionné, spécialisé dans la conception d’applications modernes, performantes et réactives. 
+            Curieux et rigoureux, j’aime transformer des idées en interfaces fonctionnelles et intuitives. 
+            Explorez mes projets pour découvrir mes compétences en développement front-end (HTML, CSS, JavaScript, React) ainsi qu’en back-end (Node.js, MongoDB), 
+            et mon approche centrée sur l’expérience utilisateur.
           </p>
         </div>
         <div className="heroSkills">
           <div className="skillSlider">
             <img src="/src/assets/icons/html.png" alt="image HTML5" />
+            <img src="/src/assets/icons/css.png" alt="CSS" />
+            <img src="/src/assets/icons/javascript.png" alt="JavaScript" />
+            <img src="/src/assets/icons/react.png" alt="React" />
+            <img src="/src/assets/icons/nodejs.png" alt="Node.js" />
+            <img src="/src/assets/icons/mongodb.png" alt="MongoDB" />
+             <img src="/src/assets/icons/html.png" alt="image HTML5" />
             <img src="/src/assets/icons/css.png" alt="CSS" />
             <img src="/src/assets/icons/javascript.png" alt="JavaScript" />
             <img src="/src/assets/icons/react.png" alt="React" />

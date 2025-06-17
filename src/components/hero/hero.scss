@@ -35,7 +35,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
 }
 .heroTitle {
@@ -72,8 +72,8 @@
   max-width: 60%;
 }
 .heroSkills {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   background-color: #ffffff;
   overflow: hidden;
   border-radius: 25px;
@@ -83,13 +83,14 @@
 }
 .skillSlider {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  animation: scrollVertical 12s steps(6) infinite;
+ animation: scrollVertical 12s linear infinite;
   gap: 1rem;
 }
 .skillSlider img {
-  width: 240px;
-  height: 240px;
+  width: 340px;
+  height: 340px;
   object-fit: contain;
 }
 
