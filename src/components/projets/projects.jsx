@@ -13,14 +13,14 @@ function Projects() {
     <div className="containerProjects">
       <CardProjects
       imgProjects={imgBooki}
-        linkProjects="http://jevinfc.github.io/P2-Booki-KM/#"
+        linkProjects="https://booki.kevinmachado.dev"
         titleProjects="Booki"
         competences={["HTML", "CSS"]}
         descriptionProjects="Ce projet est un site de réservation d'hébergements. Il m'a permis de mettre en pratique mes compétences en HTML et CSS."
       />
       <CardProjects
       imgProjects={imgSophieBluel}
-        linkProjects="https://jevinfc.github.io/projet-3-KM/"
+        linkProjects="https://sophiebluel.kevinmachado.dev"
         titleProjects="Sophie Bluel"
         competences={["JavaScript"]}
         descriptionProjects="Ce projet est un site vitrine pour une artiste. Il m'a permis d'apprendre à utiliser JavaScript pour ajouter des interactions dynamiques."
@@ -34,14 +34,14 @@ function Projects() {
       />
       <CardProjects
         imgProjects={imgKasa}
-        linkProjects="http://kasa-75g.pages.dev"
+        linkProjects="https://kasa.kevinmachado.dev"
         titleProjects="Kasa"
         competences={["React", "SCSS"]}
         descriptionProjects="Ce projet est une application de location d'appartements. Il m'a permis de mettre en pratique mes compétences en React et de travailler sur la gestion des états."
       />
       <CardProjects
       imgProjects={imgMVG}
-        linkProjects="http://mon-vieux-grimoire-8d0.pages.dev"
+        linkProjects="https://mvg.kevinmachado.dev"
         titleProjects="Mon Vieux Grimoire"
         competences={["Node.js", "MongoDB"]}
         descriptionProjects="Ce projet est un site de gestion de livres Il m'a permis d'apprendre à utiliser Node.js pour créer une API et de travailler avec une base de données MongoDB."
