@@ -1,9 +1,23 @@
+import { useState } from "react";
 import "./cardProjects.scss";
 
-function CardProjects({ linkProjects, imgProjects, titleProjects, descriptionProjects, competences, githubProjects }) {
+function CardProjects({
+  linkProjects,
+  imgProjects,
+  titleProjects,
+  descriptionProjects,
+  competences,
+  githubProjects,
+}) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const toggleFlip = () => {
+    setIsFlipped((prev) => !prev);
+  };
+
   return (
     <div className="containerProjects">
-      <div className="cardProjects">
+      <div className={`cardProjects ${isFlipped ? "flipped" : ""}`} onClick={toggleFlip}>
         <div className="cardInner">
           <div className="cardFront">
             <img src={imgProjects} alt={titleProjects} className="imgProjects" />
@@ -13,21 +27,21 @@ function CardProjects({ linkProjects, imgProjects, titleProjects, descriptionPro
                 <li key={index}>{skill}</li>
               ))}
             </ul>
+            <button className="flipButton">Voir plus</button>
           </div>
           <div className="cardBack">
             <h1>{titleProjects}</h1>
             <p>{descriptionProjects}</p>
-             {linkProjects && (
-    <a href={linkProjects} target="_blank" rel="noreferrer">
-      Voir le site du projet
-    </a>
-  )}
-
-  {/* Affiche toujours le lien GitHub */}
-  <a href={githubProjects} target="_blank" rel="noreferrer">
-    Voir le GitHub
-  </a>
-</div>
+            {linkProjects && (
+              <a href={linkProjects} target="_blank" rel="noreferrer">
+                Voir le site du projet
+              </a>
+            )}
+            <a href={githubProjects} target="_blank" rel="noreferrer">
+              Voir le GitHub
+            </a>
+            <button className="flipButton">Retour</button>
+          </div>
         </div>
       </div>
     </div>

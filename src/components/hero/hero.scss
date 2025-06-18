@@ -35,7 +35,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-2040px);
+    transform: translateY(-50%);
   }
 }
 .heroTitle {
@@ -85,8 +85,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
- animation: scrollVertical 15s linear infinite;
-  gap: 1rem;
+ animation: scrollVertical 12s linear infinite;
+  gap: 0;
 }
 .skillSlider img {
   width: 340px;
@@ -117,5 +117,48 @@
   a{
     text-decoration: none;
     color: #b97cf1;
+  }
+}
+@media (max-width: 1024px) {
+  .heroContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 10%;
+  }
+
+  .heroText {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .heroDescription {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .heroSkills {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .skillSlider {
+    animation: scrollVertical 15s linear infinite;
+    gap: 0.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 150px;
+    }
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .divFlecheBas {
+    font-size: 2.5rem;
+    margin-top: 2rem;
   }
 }

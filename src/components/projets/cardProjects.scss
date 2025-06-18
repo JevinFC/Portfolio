@@ -82,3 +82,76 @@
     color: #f2f2f2;
   }
 }
+.cardProjects {
+  cursor: pointer;
+}
+
+.cardProjects.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.flipButton {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: #b97cf1;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #a05cd8;
+  }
+}
+
+@media (hover: hover) {
+  .flipButton {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .containerProjects {
+    justify-content: center;
+  }
+
+  .cardProjects {
+    width: 90vw;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .cardFront, .cardBack {
+    position: relative;
+    backface-visibility: visible;
+    transform: none;
+    border-radius: 20px;
+  }
+
+  .cardBack {
+    margin-top: 1rem;
+  }
+
+  .imgProjects {
+    height: auto;
+    max-height: 200px;
+  }
+
+  .skillsList {
+    justify-content: center;
+
+    li {
+      font-size: 12px;
+    }
+  }
+}
