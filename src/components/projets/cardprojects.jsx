@@ -17,7 +17,7 @@ function CardProjects({
 
   return (
     <div className="containerProjects">
-      <div className={`cardProjects ${isFlipped ? "flipped" : ""}`} onClick={toggleFlip}>
+      <div className={`cardProjects ${isFlipped ? "flipped" : ""}`}>
         <div className="cardInner">
           <div className="cardFront">
             <img src={imgProjects} alt={titleProjects} className="imgProjects" />
@@ -42,9 +42,7 @@ function CardProjects({
             <a href={githubProjects} target="_blank" rel="noreferrer">
               Voir le GitHub
             </a>
-            <button className="flipButton" onClick={(e) => { e.stopPropagation(); toggleFlip(); }}>
-            Retour
-            </button>
+            
           </div>
         </div>
       </div>

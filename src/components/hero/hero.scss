@@ -63,7 +63,7 @@
   padding: 10rem 20%;
   gap: 3rem;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .heroText {
@@ -82,7 +82,6 @@
   justify-content: flex-start;
 }
 .skillSlider {
-  display: flex;
   justify-content: center;
   flex-direction: column;
  animation: scrollVertical 12s linear infinite;

@@ -38,6 +38,7 @@
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
+   pointer-events: auto; // ✅ Important pour que le clic fonctionne sur la face arrière
 }
 
 .cardFront {
@@ -46,10 +47,13 @@
 
 .cardBack {
   transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 2;
+  pointer-events: auto; // ✅ Important
+}
   a{
     text-decoration: none;
     color: #f2f2f2;
-    font-size: 18px;
     margin-top: 15px;
     transition: color 0.3s ease;
 
@@ -57,7 +61,7 @@
       color: #b97cf1;
     }
   }
-}
+
 
 .imgProjects {
   width: 100%;
@@ -86,9 +90,9 @@
   cursor: pointer;
 }
 
-.cardProjects.flipped .cardInner {
-  transform: rotateY(180deg);
-}
+// .cardProjects.flipped .cardInner {
+//   transform: rotateY(180deg);
+// }
 
 .cardFront,
 .cardBack {
@@ -133,14 +137,14 @@
     width: 90vw;
     height: 400px; // Hauteur fixe pour maintenir la 3D
     margin: 10px 0;
+    cursor: auto;
   }
 
-  .cardFront, .cardBack {
-    position: absolute; // Garde la superposition !
-    backface-visibility: hidden;
-    transform: none;
-    border-radius: 20px;
-  }
+ .cardFront, .cardBack {
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
 
   .cardBack {
     transform: rotateY(180deg);
@@ -159,3 +163,4 @@
     }
   }
 }
+
