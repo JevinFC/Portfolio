@@ -27,7 +27,9 @@ function CardProjects({
                 <li key={index}>{skill}</li>
               ))}
             </ul>
-            <button className="flipButton">Voir plus</button>
+            <button className="flipButton" onClick={(e) => { e.stopPropagation(); toggleFlip(); }}>
+  Voir plus
+</button>
           </div>
           <div className="cardBack">
             <h1>{titleProjects}</h1>
@@ -40,7 +42,9 @@ function CardProjects({
             <a href={githubProjects} target="_blank" rel="noreferrer">
               Voir le GitHub
             </a>
-            <button className="flipButton">Retour</button>
+            <button className="flipButton" onClick={(e) => { e.stopPropagation(); toggleFlip(); }}>
+            Retour
+            </button>
           </div>
         </div>
       </div>
