@@ -1,5 +1,11 @@
 import "./hero.scss";
 import { FaArrowDown } from "react-icons/fa6";
+import html5 from "/src/assets/icons/html.png";
+import css from "/src/assets/icons/css.png";
+import javascript from "/src/assets/icons/javascript.png";
+import reactjs from "/src/assets/icons/react.png";
+import nodejs from "/src/assets/icons/nodejs.png";
+import mongodb from "/src/assets/icons/mongodb.png";
 
 function Hero() {
   return (
@@ -18,18 +24,18 @@ function Hero() {
         </div>
         <div className="heroSkills">
           <div className="skillSlider">
-            <img src="/src/assets/icons/html.png" alt="image HTML5" />
-            <img src="/src/assets/icons/css.png" alt="CSS" />
-            <img src="/src/assets/icons/javascript.png" alt="JavaScript" />
-            <img src="/src/assets/icons/react.png" alt="React" />
-            <img src="/src/assets/icons/nodejs.png" alt="Node.js" />
-            <img src="/src/assets/icons/mongodb.png" alt="MongoDB" />
-             <img src="/src/assets/icons/html.png" alt="image HTML5" />
-            <img src="/src/assets/icons/css.png" alt="CSS" />
-            <img src="/src/assets/icons/javascript.png" alt="JavaScript" />
-            <img src="/src/assets/icons/react.png" alt="React" />
-            <img src="/src/assets/icons/nodejs.png" alt="Node.js" />
-            <img src="/src/assets/icons/mongodb.png" alt="MongoDB" />
+            <img src={html5} alt="image HTML5" />
+            <img src={css} alt="CSS" />
+            <img src={javascript} alt="JavaScript" />
+            <img src={reactjs} alt="React" />
+            <img src={nodejs} alt="Node.js" />
+            <img src={mongodb} alt="MongoDB" />
+            <img src={html5} alt="image HTML5" />
+            <img src={css} alt="CSS" />
+            <img src={javascript} alt="JavaScript" />
+            <img src={reactjs} alt="React" />
+            <img src={nodejs} alt="Node.js" />
+            <img src={mongodb} alt="MongoDB" />
           </div>
         </div>
       </div>
