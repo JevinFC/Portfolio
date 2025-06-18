@@ -56,7 +56,7 @@ function Projects() {
         titleProjects="Qwenta"
         githubProjects="https://github.com/JevinFC/Projet7"
         competences={["Gestion de projet"]}
-        descriptionProjects="Ce projet est un site de gestion de menus pour un restaurant. Il m'a permis de travailler sur la gestion d'un projet."
+        descriptionProjects="Ce projet est un site de gestion de menus pour un restaurant. Il m'a permis de travailler sur la gestion d'un projet. Et de découvrir la méthodologie Agile."
       />
     </div>
      </section>

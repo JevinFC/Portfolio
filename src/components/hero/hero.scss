@@ -77,7 +77,6 @@
   background-color: #ffffff;
   overflow: hidden;
   border-radius: 25px;
-  display: flex;
   align-items: center;
   justify-content: flex-start;
 }
@@ -141,7 +140,6 @@
   }
 
   .skillSlider {
-    animation: scrollVertical 15s linear infinite;
     gap: 0.5rem;
 
     img {
@@ -154,6 +152,9 @@
   .heroTitle {
     font-size: clamp(2rem, 6vw, 3.5rem);
     margin-bottom: 1rem;
+    text-align: center;         // ✅ centre le texte
+    margin-left: auto; 
+    margin-right: auto;
   }
 
   .divFlecheBas {
