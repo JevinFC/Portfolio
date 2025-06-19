@@ -39,10 +39,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      {/* <div className="divBtnProjets">
-        <button className="btnProjets">Aller voir les projets</button>
-      </div> */}
-      {/* AJOUTER ONCLICK POUR ALLER VERS LA SECTION PROJETS */}
+
       <div className="divFlecheBas">
         <a href="#projects">
         <FaArrowDown />
