@@ -58,27 +58,21 @@
 }
 .heroContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  padding: 10rem 20%;
+  padding: 10rem 14%;
   gap: 3rem;
-  flex-wrap: wrap;
-  margin-top: 75px;
+  flex-wrap: nowrap;
 }
-
 .heroText {
-  display: flex;
-  flex-direction: column;
-  max-width: 60%;
+  max-width: 70%;
 }
 .heroSkills {
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   background-color: #ffffff;
   overflow: hidden;
   border-radius: 25px;
-  align-items: center;
-  justify-content: flex-start;
 }
 .skillSlider {
   justify-content: center;
@@ -87,8 +81,8 @@
   gap: 0;
 }
 .skillSlider img {
-  width: 340px;
-  height: 340px;
+  width: 290px;
+  height: 290px;
   object-fit: contain;
 }
 
@@ -117,7 +111,7 @@
     color: #b97cf1;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .heroContent {
     flex-direction: column;
     align-items: center;
@@ -140,6 +134,7 @@
   }
 
   .skillSlider {
+
     gap: 0.5rem;
 
     img {
@@ -152,7 +147,7 @@
   .heroTitle {
     font-size: clamp(2rem, 6vw, 3.5rem);
     margin-bottom: 1rem;
-    text-align: center;         // ✅ centre le texte
+    text-align: center; 
     margin-left: auto; 
     margin-right: auto;
   }
