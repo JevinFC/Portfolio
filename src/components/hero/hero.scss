@@ -3,7 +3,7 @@
     width: 0;
   }
   to {
-    width: 11ch;
+    width: 100%;
   }
 }
 @keyframes blink-caret {
@@ -38,8 +38,12 @@
     transform: translateY(-50%);
   }
 }
+.containerTitle{
+display: inline-block;
+}
 .heroTitle {
-  width: 10ch;
+  display: inline-block;
+  width: 100%;
   font-size: 70px;
   overflow: hidden;
   text-align: left;
@@ -49,7 +53,7 @@
 
   font-family: "Montserrat";
   letter-spacing: large;
-  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 2.5s steps(50, end), blink-caret 0.75s step-end infinite;
 }
 .heroDescription {
   width: 60%;
