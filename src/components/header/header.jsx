@@ -7,7 +7,7 @@ function Header() {
         <nav className="navHeader">
           <a href="#projects">Mes projets</a>
           <a href="#contact">Me Contacter</a>
-          <a href="/public/CV_Kevin_Machado.pdf" download="CV_Kevin_Machado.pdf">Téléchargez mon CV</a>
+          <a href="/CV_Kevin_Machado.pdf" download="CV_Kevin_Machado.pdf">Téléchargez mon CV</a>
         </nav>
       </div>
     </header>
