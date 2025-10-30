@@ -16,7 +16,7 @@ function APropos() {
                 <div className="stats-section">
                     <div className="profile-image-container">
                         <img 
-                            src="./public/photoProfil.png"  //Changer photo de profil ici à celle sans fond
+                            src="/photoProfil.png"  //Changer photo de profil ici à celle sans fond
                             alt="Photo de profil"
                             className="profile-image"
                             title='Photo de profil'
