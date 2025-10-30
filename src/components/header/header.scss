@@ -1,44 +1,105 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+/* --- état normal (transparent) --- */
+header:not(.scrolled) {
+  background-color: transparent;
+}
+
+/* --- état scrolled --- */
+header.scrolled {
+  background-color: rgba(17, 17, 17, 0.95); /* fond légèrement opaque */
+  backdrop-filter: blur(12px); /* effet de flou */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Conteneur principal --- */
 .headerPortfolio {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
   flex-wrap: wrap;
-
-  .h1header {
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    color: #f2f2f2;
-    margin: 0;
-  }
-
-  .navHeader {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-
-    a {
-      text-decoration: none;
-      color: #f2f2f2;
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: #b97cf1;
-      }
-    }
-  }
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  padding-top: 30px;
+  margin: 0 auto;
 }
+
+/* --- Titre --- */
+.h1header {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  margin: 0;
+}
+
+/* --- Navigation --- */
+.navHeader {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navHeader a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.navHeader a:not(.contact):hover {
+  color: #b97cf1;
+}
+
+/* --- Bouton "Me contacter" --- */
+.contact {
+  border: 2px solid #b97cf1;
+  background-color: transparent;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact:hover {
+  background-color: #b97cf1;
+  color: #fff;
+}
+.languageButton {
+  border: 2px solid #b97cf1;
+  background-color: transparent;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* --- Responsive --- */
 @media (max-width: 600px) {
   .headerPortfolio {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
 
-    .navHeader {
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-    }
+  .navHeader {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
   }
 }

@@ -1,0 +1,54 @@
+.aproposContainer {
+  display: flex;
+  max-width: 1200px;
+  height: 50vh;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+.aproposh2{
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  display: inline-block; /* ✅ limite la largeur à celle du texte */
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -197px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 3px;
+    background-color: #b97cf1;
+    border-radius: 2px;
+  }
+}
+.p-propos{
+  font-family: "Cabinet Grotesk", sans-serif;
+  width: 50%;
+font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.container-info{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+
+
+.profile-image{
+  position: relative;
+  bottom: 100px;
+  width: 350px;
+}
+.importantHover:hover{
+  background-color: #b97cf1;
+  color: #000000;
+  transition: background-color 0.3s ease;
+}

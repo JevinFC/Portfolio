@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./cardProjects.scss";
+import { useLanguage } from "../languageContext.jsx";
 
 function CardProjects({
   linkProjects,
@@ -9,6 +10,7 @@ function CardProjects({
   competences,
   githubProjects,
 }) {
+  const { t } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
 
   const toggleFlip = () => {
@@ -36,11 +38,11 @@ function CardProjects({
             <p>{descriptionProjects}</p>
             {linkProjects && (
               <a href={linkProjects} target="_blank" rel="noreferrer">
-                Voir le site du projet
+                {t("linkProject")}
               </a>
             )}
             <a href={githubProjects} target="_blank" rel="noreferrer">
-              Voir le GitHub
+              {t("githubProject")}
             </a>
             
           </div>

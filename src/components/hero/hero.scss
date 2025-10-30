@@ -1,11 +1,4 @@
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+
 @keyframes blink-caret {
   from,
   to {
@@ -15,6 +8,20 @@
     border-color: #b97cf1;
   }
 }
+// @keyframes appear {
+//   from {
+//     opacity: 0;
+//   } to {
+//     opacity: 1;
+//   }
+// }
+// @keyframes dissapear {
+//   from {
+//     border-color: #b97cf1;
+//   } to {
+//     border-color: transparent;
+//   }
+// }
 @keyframes bounce {
   0%,
   20%,
@@ -30,64 +37,78 @@
     transform: translateY(-15px);
   }
 }
-@keyframes scrollVertical {
-  0% {
-    transform: translateY(0);
+// @keyframes scrollVertical {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   100% {
+//     transform: translateY(-50%);
+//   }
+// }
+.hero{
+  background-color: #520079;
+  width: 100vw;
+  height: 100vh;
   }
-  100% {
-    transform: translateY(-50%);
-  }
-}
 .containerTitle{
 display: inline-block;
 }
-.heroTitle {
+.h2hello{
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
   display: inline-block;
-  width: 100%;
-  font-size: 70px;
+  margin: 0 auto;
   overflow: hidden;
-  text-align: left;
-  border-right: 0.15em solid #b97cf1;
-  white-space: nowrap;
-  margin: 0;
-
-  font-family: "Montserrat";
-  letter-spacing: large;
-  animation: typing 2.5s steps(50, end), blink-caret 0.75s step-end infinite;
+  margin-bottom: 20px;
 }
+.heroTitle {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+  .typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 5px solid #b97cf1;
+  animation: blink-caret 1s step-end infinite;
+  font-size: 2.5rem;
+  font-weight: 700;
+
+}
+
+// .heroTitle .line1 {
+//   animation: typing1 1.5s steps(70, end), blink-caret 0.75s step-end;
+// }
+// .heroTitle .line2 {
+//   opacity: 0;
+//   animation: typing2 1.5s steps(30, end) 1.5s forwards, blink-caret 0.75s step-end infinite 2.5s;
+// }
 .heroDescription {
-  width: 60%;
+  width: 100%;
   font-size: 20px;
   margin-top: 20px;
 }
 .heroContent {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10rem 14%;
-  gap: 3rem;
-  flex-wrap: nowrap;
+  flex-direction: column; /* ✅ empile les éléments verticalement */
+  justify-content: center; /* ✅ centre verticalement */
+  align-items: center; /* ✅ centre horizontalement */
+  text-align: center; /* ✅ centre le texte */
+  height: 90vh; /* ✅ occupe toute la hauteur de la fenêtre */
+  padding: 0 2rem;
 }
 .heroText {
   max-width: 70%;
-}
-.heroSkills {
-  width: 300px;
-  height: 300px;
-  background-color: #ffffff;
-  overflow: hidden;
-  border-radius: 25px;
-}
-.skillSlider {
-  justify-content: center;
-  flex-direction: column;
- animation: scrollVertical 12s linear infinite;
-  gap: 0;
-}
-.skillSlider img {
-  width: 290px;
-  height: 290px;
-  object-fit: contain;
 }
 
 // .divBtnProjets {
@@ -110,11 +131,74 @@ display: inline-block;
   align-items: center;
   font-size: 50px;
   animation: bounce 1.5s infinite;
-  a{
+  
     text-decoration: none;
     color: #b97cf1;
+}
+.linkHero {
+  margin-top: 20px;
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  a{
+      border: 2px solid #b97cf1;
+  background-color: transparent;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.5s ease;
+    &:hover {
+      background-color: #b97cf1;
+      color: #fff;
   }
 }
+}
+.socialHero{
+  margin-top: 5vh;
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+}
+.social-link { 
+  margin: 0 30px;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #b97cf1; /* ou ta couleur d’effet hover */
+  }
+
+  .icon {
+    vertical-align: middle;
+  }
+}
+// a.socialHero {
+//   margin-top: 20px;
+//   display: flex;
+//   gap: 5vw;
+//   justify-content: center;
+//   a{
+//       border: 2px solid #b97cf1;
+//   background-color: transparent;
+//   color: #fff;
+//   padding: 0.5rem 1rem;
+//   border-radius: 8px;
+//   font-family: 'Inter', sans-serif;
+//   font-weight: 500;
+//   text-decoration: none;
+//   transition: all 0.5s ease;
+//     &:hover {
+//       background-color: #b97cf1;
+//       color: #fff;
+//   }
+// }
+// }
 @media (max-width: 1200px) {
   .heroContent {
     flex-direction: column;
