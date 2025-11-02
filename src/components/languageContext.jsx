@@ -19,7 +19,7 @@ const translations = {
     // About
     aboutTitle: "À Propos de moi",
     aboutText1:
-      "Je m'appelle Kévin Machado, je suis développeur Frontend Freelance passionné par la création d'interfaces web modernes et intuitives. Spécialisé dans React, je transforme vos idées en expériences digitales mémorables.",
+      "Je m'appelle <span class='importantHover'>Kévin Machado</span>, je suis <span class='importantHover'>développeur Frontend Freelance</span> passionné par la création d'interfaces web <span class='importantHover'>modernes</span> et <span class='importantHover'>intuitives</span>. Spécialisé dans <span class='importantHover'>React</span>, je transforme vos idées en expériences <span class='importantHover'>digitales mémorables</span>.",
 
     // Projects
     projectsTitle: "Mes Projets",
@@ -72,7 +72,7 @@ const translations = {
 
     aboutTitle: "About Me",
     aboutText1:
-      "My name is Kevin Machado, a freelance frontend developer passionate about creating modern and intuitive web interfaces. I am specialized in React and I turn your ideas into memorable digital experiences.",
+      "My name is <span class='importantHover'>Kevin Machado</span>, a freelance <span class='importantHover'>frontend developer</span> passionate about creating <span class='importantHover'>modern</span> and <span class='importantHover'>intuitive</span> web interfaces. I am specialized in <span class='importantHover'>React</span> and I turn your ideas into <span class='importantHover'>memorable digital experiences</span>.",
 
     projectsTitle: "My Projects",
     project1Title: "Booki",

@@ -63,7 +63,6 @@
   width: clamp(200px,35vw, 350px);
   object-fit: cover;
   border-radius: 12px;
-  /* ✅ Supprime le bottom: 100px */
   position: relative;
   bottom: 0;
 }
@@ -75,7 +74,6 @@
   transition: background-color 0.3s ease;
 }
 
-/* ✅ Tablette */
 @media (max-width: 900px) {
   .aproposContainer {
     flex-direction: column;
@@ -95,7 +93,6 @@
   }
 }
 
-/* ✅ Mobile */
 @media (max-width: 600px) {
   .p-propos {
     width: 100%;

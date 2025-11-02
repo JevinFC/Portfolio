@@ -11,14 +11,13 @@ function APropos() {
                  <div className="container-info">
           {/* Texte animé */}
           <motion.p
-            className="p-propos"
-            initial={{ opacity: 0, y: 50 }}          // position de départ
-            whileInView={{ opacity: 1, y: 0 }}       // position finale
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.3 }}  // déclenche l'animation quand 30% de l'élément est visible
-          >
-                        {t("aboutText1")}
-            </motion.p>
+  className="p-propos"
+  initial={{ opacity: 0, y: 50 }}          // position de départ
+  whileInView={{ opacity: 1, y: 0 }}       // position finale
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: false, amount: 0.3 }}  // déclenche l'animation quand 30% de l'élément est visible
+  dangerouslySetInnerHTML={{ __html: t("aboutText1") }}
+/>
             
 
                 <div className="stats-section">
