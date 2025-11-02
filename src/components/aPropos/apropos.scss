@@ -60,7 +60,7 @@
 
 /* Image */
 .profile-image {
-  width: clamp(200px, 40vw, 350px);
+  width: clamp(200px,35vw, 350px);
   object-fit: cover;
   border-radius: 12px;
   /* ✅ Supprime le bottom: 100px */
