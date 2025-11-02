@@ -25,6 +25,7 @@ function APropos() {
                         <motion.img
             src='/photoProfil.png'
             alt="Photo de profil"
+            title='Photo de profil'
             className="profile-image"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}

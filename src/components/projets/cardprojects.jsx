@@ -22,7 +22,7 @@ function CardProjects({
       <div className={`cardProjects ${isFlipped ? "flipped" : ""}`}>
         <div className="cardInner">
           <div className="cardFront">
-            <img src={imgProjects} alt={titleProjects} className="imgProjects" />
+            <img src={imgProjects} alt={titleProjects} title ={titleProjects}className="imgProjects" />
             <h1>{titleProjects}</h1>
             <ul className="skillsList">
               {competences?.map((skill, index) => (
