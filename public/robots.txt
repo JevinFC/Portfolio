@@ -1,0 +1,10 @@
+# robots.txt — Portfolio de Kévin Machado
+
+User-agent: *
+Allow: /
+
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /assets/
+
+Sitemap: https://portfolio.kevinmachado.dev/sitemap.xml
