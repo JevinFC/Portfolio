@@ -53,31 +53,10 @@
 .containerTitle{
 display: inline-block;
 }
-// .h2hello{
-//   font-family: "Cabinet Grotesk", sans-serif;
-//   font-size: clamp(5rem, 6vw, 3.5rem);
-//   font-weight: 700;
-//   color: #fff;
-//   text-align: center;
-//   display: inline-block;
-//   margin: 0 auto;
-//   overflow: hidden;
-//   margin-bottom: 20px;
-// }
-.heroTitle {
-//   font-family: "Cabinet Grotesk", sans-serif;
-//   font-size: clamp(2rem, 6vw, 3.5rem);
-//   font-weight: 700;
-//   color: #fff;
-//   text-align: center;
-//   display: inline-block;
-//   margin: 0 auto;
-//   overflow: hidden;
-  margin-top: 5rem;
-}
+
 .h2hello{
   font-family: "Cabinet Grotesk", sans-serif;
-  font-size: clamp(3rem, 6vw, 3.5rem);
+  font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 700;
   color: #fff;
   text-align: center;
@@ -90,16 +69,9 @@ display: inline-block;
   animation: blink-caret 1s step-end infinite;
   font-size: clamp(1.3rem, 5vw, 3rem);
   font-weight: 700;
-
+  margin-top: 50px;
 }
 
-// .heroTitle .line1 {
-//   animation: typing1 1.5s steps(70, end), blink-caret 0.75s step-end;
-// }
-// .heroTitle .line2 {
-//   opacity: 0;
-//   animation: typing2 1.5s steps(30, end) 1.5s forwards, blink-caret 0.75s step-end infinite 2.5s;
-// }
 .heroDescription {
   width: 100%;
   font-size: 20px;
@@ -107,41 +79,17 @@ display: inline-block;
 }
 .heroContent {
   display: flex;
-  flex-direction: column; /* ✅ empile les éléments verticalement */
-  justify-content: center; /* ✅ centre verticalement */
-  align-items: center; /* ✅ centre horizontalement */
-  text-align: center; /* ✅ centre le texte */
-  height: 90vh; /* ✅ occupe toute la hauteur de la fenêtre */
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  height: 90vh; 
   padding: 0 2rem;
 }
 .heroText {
   max-width: 70%;
 }
 
-// .divBtnProjets {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin-top: 50px;
-// }
-// .btnProjets {
-//   background-color: #f2f2f2;
-//   border-radius: 20px;
-//   width: 150px;
-//   height: 45px;
-//   font-family: "Montserrat";
-//   font-size: 15px;
-// }
-.divFlecheBas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  animation: bounce 1.5s infinite;
-  
-    text-decoration: none;
-    color: #b97cf1;
-}
 .linkHero {
   margin-top: 20px;
   display: flex;
@@ -178,34 +126,14 @@ display: inline-block;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #b97cf1; /* ou ta couleur d’effet hover */
+    color: #b97cf1; 
   }
 
   .icon {
     vertical-align: middle;
   }
 }
-// a.socialHero {
-//   margin-top: 20px;
-//   display: flex;
-//   gap: 5vw;
-//   justify-content: center;
-//   a{
-//       border: 2px solid #b97cf1;
-//   background-color: transparent;
-//   color: #fff;
-//   padding: 0.5rem 1rem;
-//   border-radius: 8px;
-//   font-family: 'Inter', sans-serif;
-//   font-weight: 500;
-//   text-decoration: none;
-//   transition: all 0.5s ease;
-//     &:hover {
-//       background-color: #b97cf1;
-//       color: #fff;
-//   }
-// }
-// }
+
 @media (max-width: 1200px) {
   .heroContent {
     flex-direction: column;
@@ -245,10 +173,5 @@ display: inline-block;
     text-align: center; 
     margin-left: auto; 
     margin-right: auto;
-  }
-
-  .divFlecheBas {
-    font-size: 2.5rem;
-    margin-top: 2rem;
   }
 }
