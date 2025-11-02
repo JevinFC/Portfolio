@@ -22,21 +22,21 @@
 //     border-color: transparent;
 //   }
 // }
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
+// @keyframes bounce {
+//   0%,
+//   20%,
+//   50%,
+//   80%,
+//   100% {
+//     transform: translateY(0);
+//   }
+//   40% {
+//     transform: translateY(-30px);
+//   }
+//   60% {
+//     transform: translateY(-15px);
+//   }
+// }
 // @keyframes scrollVertical {
 //   0% {
 //     transform: translateY(0);
@@ -53,35 +53,42 @@
 .containerTitle{
 display: inline-block;
 }
-.h2hello{
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: clamp(5rem, 6vw, 3.5rem);
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+// .h2hello{
+//   font-family: "Cabinet Grotesk", sans-serif;
+//   font-size: clamp(5rem, 6vw, 3.5rem);
+//   font-weight: 700;
+//   color: #fff;
+//   text-align: center;
+//   display: inline-block;
+//   margin: 0 auto;
+//   overflow: hidden;
+//   margin-bottom: 20px;
+// }
 .heroTitle {
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto;
-  overflow: hidden;
+//   font-family: "Cabinet Grotesk", sans-serif;
+//   font-size: clamp(2rem, 6vw, 3.5rem);
+//   font-weight: 700;
+//   color: #fff;
+//   text-align: center;
+//   display: inline-block;
+//   margin: 0 auto;
+//   overflow: hidden;
   margin-top: 5rem;
 }
+.h2hello{
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(3rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
   .typing-text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
+  display: inline-block; 
   border-right: 5px solid #b97cf1;
   animation: blink-caret 1s step-end infinite;
-  font-size: 2.5rem;
+  font-size: clamp(1.3rem, 5vw, 3rem);
   font-weight: 700;
 
 }

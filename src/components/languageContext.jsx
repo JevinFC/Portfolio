@@ -42,6 +42,7 @@ const translations = {
     project6Desc:"Ce projet est un site de gestion de menus pour un restaurant. Il m'a permis de travailler sur la gestion d'un projet. Et de découvrir la méthodologie Agile.",
     githubProject:"Voir le GitHub du projet",
     linkProject:"Voir le site du projet",
+    gestionDeProjet:"Gestion de projet",
 
     // Contact
     contactTitle: "Contact",
@@ -91,6 +92,7 @@ const translations = {
     project6Desc:"This project is a menu management site for a restaurant. It allowed me to work on project management and discover Agile methodology.",
     githubProject:"See the project's GitHub",
     linkProject:"See the project's website",
+    gestionDeProjet:"Project management",
 
     contactTitle: "Contact",
     yourName: "Your name",

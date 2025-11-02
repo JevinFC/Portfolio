@@ -58,7 +58,7 @@ function Projects() {
       imgProjects={imgMenuMaker}
         titleProjects={t("project6Title")}
         githubProjects="https://github.com/JevinFC/Projet7"
-        competences={["Gestion de projet"]}
+        competences={[t("gestionDeProjet")]}
         descriptionProjects={t("project6Desc")}
       />
     </div>
