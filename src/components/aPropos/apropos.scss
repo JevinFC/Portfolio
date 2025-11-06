@@ -43,7 +43,7 @@
   font-size: 1.5rem;
   font-weight: 400;
   color: #ffffff;
-  margin-top: 20px;
+  margin: 0;
   text-align: left;
 }
 
@@ -65,6 +65,7 @@
   border-radius: 12px;
   position: relative;
   bottom: 0;
+  top: 30px;
 }
 
 /* Hover */
@@ -90,6 +91,7 @@
   .profile-image {
     width: 60%;
     margin-top: 2rem;
+    top: 0;
   }
 }
 
