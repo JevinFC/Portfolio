@@ -33,10 +33,10 @@ function Hero() {
       <div className="heroContent">
         <div className="heroText">
           <div className="containerTitle">
-            <h2 className="heroTitle">
-              <span className="h2hello">{t("hello")}</span><br />
+            <h1 className="heroTitle">
+              <span className="h1hello">{t("hello")}</span><br />
               <span className="typing-text">{displayText}</span>
-            </h2>
+            </h1>
           </div>
           <p className="heroDescription">
             {t("heroSubtitle")}

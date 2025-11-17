@@ -12,14 +12,14 @@ const translations = {
 
     // Hero
     hello: "Bonjour",
-    frontendDev: "Développeur Frontend",
+    frontendDev: "Développeur Web Frontend à Tours",
     heroSubtitle: "Créateur d'expériences web dynamiques et intuitives",
     discoverProjects: "Découvrez mes projets",
 
     // About
     aboutTitle: "À Propos de moi",
     aboutText1:
-      "Je m'appelle <span class='importantHover'>Kévin Machado</span>, je suis <span class='importantHover'>développeur Frontend Freelance</span> passionné par la création d'interfaces web <span class='importantHover'>modernes</span> et <span class='importantHover'>intuitives</span>. Spécialisé dans <span class='importantHover'>React</span>, je transforme vos idées en expériences <span class='importantHover'>digitales mémorables</span>.",
+      "Je m'appelle <span class='importantHover'>Kévin Machado</span>, je suis <span class='importantHover'>développeur Frontend Freelance basé à Tours</span> et passionné par la création d'interfaces web <span class='importantHover'>modernes</span> et <span class='importantHover'>intuitives</span>. Spécialisé dans <span class='importantHover'>React</span>, je conçois et développe des sites web performants qui transforment vos idées en expériences <span class='importantHover'>digitales mémorables</span>.",
 
     // Projects
     projectsTitle: "Mes Projets",
@@ -66,13 +66,13 @@ const translations = {
     contact: "Contact me",
 
     hello: "Hello",
-    frontendDev: "Frontend Developer",
+    frontendDev: "Frontend Web Developer in Tours",
     heroSubtitle: "Creating dynamic and intuitive web experiences",
     discoverProjects: "Discover my projects",
 
     aboutTitle: "About Me",
     aboutText1:
-      "My name is <span class='importantHover'>Kevin Machado</span>, a freelance <span class='importantHover'>frontend developer</span> passionate about creating <span class='importantHover'>modern</span> and <span class='importantHover'>intuitive</span> web interfaces. I am specialized in <span class='importantHover'>React</span> and I turn your ideas into <span class='importantHover'>memorable digital experiences</span>.",
+      "My name is <span class='importantHover'>Kevin Machado</span>, and I am a <span class='importantHover'>Freelance Frontend Developer based in Tours, France</span>. Passionate about creating <span class='importantHover'>modern</span> and <span class='importantHover'>intuitive</span> web interfaces. Specialized in <span class='importantHover'>React</span>, I design and build high-performance websites that turn your ideas into <span class='importantHover'>memorable digital experiences</span>.",
 
     projectsTitle: "My Projects",
     project1Title: "Booki",
