@@ -17,7 +17,7 @@ function Header() {
   return (
     <header className={isScrolled ? "scrolled" : ""}>
       <div className="headerPortfolio">
-        <h1 className="h1header">{t("portfolio")}</h1>
+        <h2 className="h2header">{t("portfolio")}</h2>
         <nav className="navHeader">
           <a href="#accueil">{t("home")}</a>
           <a href="#apropos">{t("about")}</a>

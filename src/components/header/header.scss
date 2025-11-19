@@ -23,7 +23,7 @@ header.scrolled {
 .headerPortfolio {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem 2rem;
   max-width: 1200px;
@@ -32,17 +32,19 @@ header.scrolled {
 }
 
 /* --- Titre --- */
-.h1header {
+.h2header {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: clamp(1.5rem, 2vw, 3rem);
   margin: 0;
+  margin-right: auto;
 }
 
 /* --- Navigation --- */
 .navHeader {
   display: flex;
-  gap: 1.5rem;
+  gap: 3rem;
+  align-items: center;
 }
 
 .navHeader a {
@@ -87,6 +89,7 @@ header.scrolled {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-left: auto;
 }
 
 /* --- Responsive --- */
