@@ -1,0 +1,199 @@
+.tarifsSection {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tarifsTitle {
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* --- Tabs --- */
+.tarifsTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  button {
+    background: #1f1f1f;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+
+    &:hover {
+      border-color: #b97cf1;
+      color: #fff;
+    }
+
+    &[aria-selected="true"],
+    &.active {
+      border-color: #b97cf1;
+      color: #fff;
+      background-color: rgba(185, 124, 241, 0.15);
+      box-shadow: 0 4px 15px rgba(185, 124, 241, 0.25);
+    }
+  }
+}
+
+/* --- Card Container --- */
+.tarifsContent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* --- Individual Card --- */
+.tarifCard {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+
+  .tarifHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .badge {
+    background-color: #b97cf1;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+
+  .price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #b97cf1;
+  }
+
+  .subtitle {
+    margin: 0.5rem 0;
+    font-weight: 500;
+  }
+
+  .description {
+    margin-top: 0.5rem;
+    opacity: 0.8;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+
+    li {
+      margin: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+
+      &::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #b97cf1;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .delivery {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .tarifCta {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0;
+    background-color: #b97cf1;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #9a5edc;
+    }
+  }
+}
+
+/* --- Animation --- */
+.fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .tarifsContent {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .tarifsTabs {
+    flex-direction: column;
+    gap: 0.7rem;
+    button {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+    }
+  }
+
+  .tarifCard {
+    max-width: 90%;
+    padding: 2rem 1.5rem;
+  }
+
+  .tarifsTitle {
+    font-size: 2rem;
+  }
+}

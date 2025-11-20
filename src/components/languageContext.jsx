@@ -44,6 +44,70 @@ const translations = {
     linkProject:"Voir le site du projet",
     gestionDeProjet:"Gestion de projet",
 
+    // Tarifs
+    pricingTitle: "Mes Tarifs",
+    pricingCta: "Choisir ce pack",
+
+    // Basic
+    basicTitle: "Basique",
+    basicPrice: "149.99 €",
+    basicSubtitle: "Section unique — landing à un bloc",
+    basicDescription: "Une section React moderne et responsive construite selon votre design.",
+    basicFeatures: [
+      "Site fonctionnel",
+      "Intégration du contenu",
+      "Formulaire opt-in",
+      "Optimisation des performances",
+      "Configuration hébergement",
+      "Icônes réseaux sociaux",
+      "1 page",
+      "1 plugin/extension",
+      "1 produit",
+      "1 révision"
+    ],
+    basicDelivery: "Livraison : 3 jours",
+
+    // Standard
+    standardTitle: "Standard",
+    standardBadge: "⭐ Best Seller",
+    standardPrice: "349.99 €",
+    standardSubtitle: "Landing page complète (3–5 sections)",
+    standardDescription: "Landing moderne construite en React, pixel-perfect et totalement responsive.",
+    standardFeatures: [
+      "Site fonctionnel",
+      "Intégration du contenu",
+      "Formulaire opt-in",
+      "Optimisation des performances",
+      "Configuration hébergement",
+      "Icônes réseaux sociaux",
+      "1 page",
+      "3 plugins/extensions",
+      "1 produit",
+      "3 révisions"
+    ],
+    standardDelivery: "Livraison : 7 jours",
+
+    // Premium
+    premiumTitle: "Premium",
+    premiumBadge: "🔥 Recommandé",
+    premiumPrice: "649.99 €",
+    premiumSubtitle: "Landing + Animations + SEO complet",
+    premiumDescription: "Landing premium avec animations, SEO détaillé et performances maximales.",
+    premiumFeatures: [
+      "Site fonctionnel",
+      "Intégration du contenu",
+      "Formulaire opt-in",
+      "Optimisation des performances",
+      "Configuration hébergement",
+      "Icônes réseaux sociaux",
+      "2-3 page",
+      "5 plugins/extensions",
+      "1 produit",
+      "Révisions illimitées"
+    ],
+    premiumDelivery: "Livraison : 14 jours",
+
+
     // Contact
     contactTitle: "Contact",
     yourName: "Votre nom",
@@ -52,11 +116,62 @@ const translations = {
     sendMessage: "Envoyer le message",
     messageSent: "Message envoyé avec succès !",
 
+    //FAQ
+
+     faqTitle: "FAQ",
+    faq: [
+      {
+        question: "De quoi avez-vous besoin de ma part pour commencer ?",
+        answer:
+          "J'aurai besoin de vos fichiers de design (Figma, Adobe XD ou PSD), contenu (textes, images, logos), couleurs de la marque, et tout exemple de site web que vous aimez si vous n'avez pas de fichiers de design. Des instructions claires m'aident à livrer plus rapidement et avec de meilleurs résultats."
+      },
+      {
+        question: "Pouvez-vous rendre ma page d'atterrissage responsive ?",
+        answer: "Absolument ! Chaque page d'atterrissage que je construis est entièrement responsive et fonctionne parfaitement sur mobile, tablette et ordinateur."
+      },
+      {
+        question: "Proposez-vous des révisions ?",
+        answer:
+          "Oui ! Chaque package inclut des révisions : Basique : 1 révision, Standard : 2 révisions, Premium : révisions illimitées. Les révisions couvrent les ajustements de mise en page, les modifications de texte et les petits changements de design."
+      },
+      {
+        question: "Gérez-vous le déploiement ?",
+        answer:
+          "Oui, je peux déployer votre page d'atterrissage sur Vercel, Netlify ou votre hébergeur préféré. Si vous n'avez pas besoin de déploiement, je fournirai un projet React prêt à l'emploi."
+      },
+      {
+        question: "Pouvez-vous ajouter des animations ou des éléments interactifs ?",
+        answer:
+          "Oui ! Pour les packages Standard et Premium, je peux inclure des animations fluides avec Framer Motion et des éléments interactifs comme des sliders, boutons ou formulaires."
+      },
+      {
+        question: "Que faire si je n'ai pas de design prêt ?",
+        answer:
+          "Si vous n'avez pas de design, je peux quand même créer une page d'atterrissage moderne en suivant les meilleures pratiques, mais avoir un design accélère la livraison et garantit que la page correspond à votre vision."
+      },
+      {
+        question: "Quelle rapidité avez-vous pour livrer ma page d'atterrissage ?",
+        answer:
+          "Les délais de livraison dépendent du package : Basique : environ 3 jours, Standard : environ 7 jours, Premium : environ 14 jours. Je propose aussi une livraison ultra rapide en option si vous avez besoin de votre projet plus tôt."
+      },
+      {
+        question: "Optimisez-vous la landing page pour le SEO ?",
+        answer:
+          "Oui ! J'inclus une optimisation SEO de base, comme une structure HTML correcte, des balises meta et un code React performant."
+      },
+      {
+        question: "Qu'est-ce qui vous différencie des autres développeurs ?",
+        answer:
+          "Je me concentre sur des designs pixel-perfect, la responsivité et un code React propre. J'attache aussi de l'importance à une communication claire, une livraison rapide et la satisfaction du client. Même en tant que développeur junior, je suis passionné par la création de sites web de haute qualité."
+      },
+    ],
+
     // Footer
     allRights: "Tous droits réservés",
     developpedBy: "Développé par Kévin Machado"
   },
   en: {
+    // Header
     portfolio: "My Portfolio",
     home: "Home",
     about: "About",
@@ -65,15 +180,18 @@ const translations = {
     CV: "CV",
     contact: "Contact me",
 
+    // Hero
     hello: "Hello",
     frontendDev: "Frontend Web Developer in Tours",
     heroSubtitle: "Creating dynamic and intuitive web experiences",
     discoverProjects: "Discover my projects",
 
+    // About
     aboutTitle: "About Me",
     aboutText1:
       "My name is <span class='importantHover'>Kevin Machado</span>, and I am a <span class='importantHover'>Freelance Frontend Developer based in Tours, France</span>. Passionate about creating <span class='importantHover'>modern</span> and <span class='importantHover'>intuitive</span> web interfaces. Specialized in <span class='importantHover'>React</span>, I design and build high-performance websites that turn your ideas into <span class='importantHover'>memorable digital experiences</span>.",
 
+// Projects
     projectsTitle: "My Projects",
     project1Title: "Booki",
     project1Desc:
@@ -93,6 +211,123 @@ const translations = {
     githubProject:"See the project's GitHub",
     linkProject:"See the project's website",
     gestionDeProjet:"Project management",
+
+        // Pricing
+    pricingTitle: "Pricing",
+    pricingCta: "Choose this plan",
+
+    // Basic
+    basicTitle: "Basic",
+   
+    basicPrice: "€149.99",
+    basicSubtitle: "Single-section landing block",
+    basicDescription: "A clean, modern and responsive React section built based on your design.",
+    basicFeatures: [
+      "Functional website",
+      "Content upload",
+      "Opt-in form",
+      "Speed optimization",
+      "Hosting setup",
+      "Social media icons",
+      "1 page",
+      "1 plugin/extension",
+      "1 product",
+      "1 revision"
+    ],
+    basicDelivery: "Delivery: 3 days",
+
+    // Standard
+    standardTitle: "Standard",
+    standardBadge: "⭐ Best Seller",
+    standardPrice: "€349.99",
+    standardSubtitle: "Full landing page (3–5 sections)",
+    standardDescription: "Modern React landing page, pixel-perfect and fully responsive.",
+    standardFeatures: [
+      "Functional website",
+      "Content upload",
+      "Opt-in form",
+      "Speed optimization",
+      "Hosting setup",
+      "Social media icons",
+      "1 page",
+      "3 plugins/extensions",
+      "1 product",
+      "3 revisions"
+    ],
+    standardDelivery: "Delivery: 7 days",
+
+    // Premium
+    premiumTitle: "Premium",
+    premiumBadge: "🔥 Recommended",
+    premiumPrice: "€649.99",
+    premiumSubtitle: "Landing + Animations + Full SEO",
+    premiumDescription: "Premium landing page with animations, advanced SEO and top performance.",
+    premiumFeatures: [
+      "Functional website",
+      "Content upload",
+      "Opt-in form",
+      "Speed optimization",
+      "Hosting setup",
+      "Social media icons",
+      "2-3 page",
+      "5 plugins/extensions",
+      "1 product",
+      "Unlimited revisions"
+    ],
+    premiumDelivery: "Delivery: 14 days",
+
+    //FAQ
+
+    faqTitle: "FAQ",
+    faq: [
+      {
+        question: "What do you need from me to get started?",
+        answer:
+          "I will need your design files (Figma, Adobe XD or PSD), content (texts, images, logos), brand colors, and any examples of websites you like if you don't have design files. Clear instructions help me deliver faster and with better results."
+      },
+      {
+        question: "Can you make my landing page responsive?",
+        answer:
+          "Absolutely! Every landing page I build is fully responsive and works perfectly on mobile, tablet, and desktop."
+      },
+      {
+        question: "Do you offer revisions?",
+        answer:
+          "Yes! Each package includes revisions: Basic: 1 revision, Standard: 2 revisions, Premium: unlimited revisions. Revisions cover layout adjustments, text edits, and minor design changes."
+      },
+      {
+        question: "Do you handle deployment?",
+        answer:
+          "Yes, I can deploy your landing page on Vercel, Netlify, or your preferred hosting. If you don't need deployment, I will provide a ready-to-use React project."
+      },
+      {
+        question: "Can you add animations or interactive elements?",
+        answer:
+          "Yes! For Standard and Premium packages, I can include smooth animations with Framer Motion and interactive elements like sliders, buttons, or forms."
+      },
+      {
+        question: "What if I don't have a design ready?",
+        answer:
+          "If you don't have a design, I can still create a modern landing page following best practices, but having a design speeds up delivery and ensures the page matches your vision."
+      },
+      {
+        question: "How fast can you deliver my landing page?",
+        answer:
+          "Delivery times depend on the package: Basic: ~3 days, Standard: ~7 days, Premium: ~14 days. I also offer ultra-fast delivery if you need your project sooner."
+      },
+      {
+        question: "Do you optimize the landing page for SEO?",
+        answer:
+          "Yes! I include basic SEO optimization such as proper HTML structure, meta tags, and efficient React code."
+      },
+      {
+        question: "What sets you apart from other developers?",
+        answer:
+          "I focus on pixel-perfect designs, responsiveness, and clean React code. I also value clear communication, fast delivery, and client satisfaction. Even as a junior developer, I am passionate about creating high-quality websites."
+      },
+    ],
+
+    // Contact
 
     contactTitle: "Contact",
     yourName: "Your name",

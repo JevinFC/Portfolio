@@ -1,0 +1,145 @@
+{
+  "basic": {
+    "fr": {
+      "title": "Basique",
+      "price": "150 €",
+      "subtitle": "Bloc de landing page à section unique",
+      "description": "Une section React propre, moderne et responsive basée sur votre design.",
+      "features": [
+        "Site fonctionnel",
+        "Mise en ligne du contenu",
+        "Formulaire d'inscription",
+        "Optimisation de vitesse",
+        "Setup hébergement",
+        "Icônes réseaux sociaux",
+        "1 page",
+        "1 plugin/extension",
+        "1 produit",
+        "1 révision"
+      ],
+      "delivery": {
+        "default": "3 jours",
+        "fast": "1 jour (+75 €)"
+      }
+    },
+
+    "en": {
+      "title": "Basic",
+      "price": "€150",
+      "subtitle": "Single-section landing block",
+      "description": "A clean, modern and responsive React section based on your design.",
+      "features": [
+        "Functional website",
+        "Content upload",
+        "Opt-in form",
+        "Speed optimization",
+        "Hosting setup",
+        "Social media icons",
+        "1 page",
+        "1 plugin/extension",
+        "1 product",
+        "1 revision"
+      ],
+      "delivery": {
+        "default": "3 days",
+        "fast": "1 day (+€75)"
+      }
+    }
+  },
+
+  "standard": {
+    "fr": {
+      "title": "Standard",
+      "price": "350€",
+      "subtitle": "Page d’atterrissage complète (3–5 sections)",
+      "description": "Page d’atterrissage moderne construite en React, pixel-perfect et responsive.",
+      "features": [
+        "Site fonctionnel",
+        "Mise en ligne du contenu",
+        "Formulaire d'inscription",
+        "Optimisation de vitesse",
+        "Setup hébergement",
+        "Icônes réseaux sociaux",
+        "1 page",
+        "3 plugins/extensions",
+        "1 produit",
+        "3 révisions"
+      ],
+      "delivery": {
+        "default": "7 jours",
+        "fast": "3 jours (+150€)"
+      }
+    },
+
+    "en": {
+      "title": "Standard",
+      "price": "€350",
+      "subtitle": "Complete landing page (3–5 sections)",
+      "description": "A modern React landing page built pixel-perfect and fully responsive.",
+      "features": [
+        "Functional website",
+        "Content upload",
+        "Opt-in form",
+        "Speed optimization",
+        "Hosting setup",
+        "Social media icons",
+        "1 page",
+        "3 plugins/extensions",
+        "1 product",
+        "3 revisions"
+      ],
+      "delivery": {
+        "default": "7 days",
+        "fast": "3 days (+€150)"
+      }
+    }
+  },
+
+  "premium": {
+    "fr": {
+      "title": "Premium",
+      "price": "500€",
+      "subtitle": "Page d’atterrissage + Animations + SEO",
+      "description": "Page d’atterrissage premium avec animations, SEO complet et performances optimisées.",
+      "features": [
+        "Site fonctionnel",
+        "Mise en ligne du contenu",
+        "Formulaire d'inscription",
+        "Optimisation de vitesse",
+        "Setup hébergement",
+        "Icônes réseaux sociaux",
+        "1 page",
+        "5 plugins/extensions",
+        "1 produit",
+        "Révisions illimitées"
+      ],
+      "delivery": {
+        "default": "14 jours",
+        "fast": "7 jours (+€200)"
+      }
+    },
+
+    "en": {
+      "title": "Premium",
+      "price": "€500",
+      "subtitle": "Landing page + Animations + SEO",
+      "description": "Premium landing page with animations, full SEO and optimized performance.",
+      "features": [
+        "Functional website",
+        "Content upload",
+        "Opt-in form",
+        "Speed optimization",
+        "Hosting setup",
+        "Social media icons",
+        "1 page",
+        "5 plugins/extensions",
+        "1 product",
+        "Unlimited revisions"
+      ],
+      "delivery": {
+        "default": "14 days",
+        "fast": "7 days (+€200)"
+      }
+    }
+  }
+}
