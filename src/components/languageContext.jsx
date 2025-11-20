@@ -50,7 +50,7 @@ const translations = {
 
     // Basic
     basicTitle: "Basique",
-    basicPrice: "149.99 €",
+    basicPrice: "749.99 €",
     basicSubtitle: "Section unique — landing à un bloc",
     basicDescription: "Une section React moderne et responsive construite selon votre design.",
     basicFeatures: [
@@ -70,7 +70,7 @@ const translations = {
     // Standard
     standardTitle: "Standard",
     standardBadge: "⭐ Best Seller",
-    standardPrice: "349.99 €",
+    standardPrice: "1749.99 €",
     standardSubtitle: "Landing page complète (3–5 sections)",
     standardDescription: "Landing moderne construite en React, pixel-perfect et totalement responsive.",
     standardFeatures: [
@@ -90,7 +90,7 @@ const translations = {
     // Premium
     premiumTitle: "Premium",
     premiumBadge: "🔥 Recommandé",
-    premiumPrice: "649.99 €",
+    premiumPrice: "3299.99 €",
     premiumSubtitle: "Landing + Animations + SEO complet",
     premiumDescription: "Landing premium avec animations, SEO détaillé et performances maximales.",
     premiumFeatures: [
@@ -219,7 +219,7 @@ const translations = {
     // Basic
     basicTitle: "Basic",
    
-    basicPrice: "€149.99",
+    basicPrice: "€749.99",
     basicSubtitle: "Single-section landing block",
     basicDescription: "A clean, modern and responsive React section built based on your design.",
     basicFeatures: [
@@ -239,7 +239,7 @@ const translations = {
     // Standard
     standardTitle: "Standard",
     standardBadge: "⭐ Best Seller",
-    standardPrice: "€349.99",
+    standardPrice: "€1749.99",
     standardSubtitle: "Full landing page (3–5 sections)",
     standardDescription: "Modern React landing page, pixel-perfect and fully responsive.",
     standardFeatures: [
@@ -259,7 +259,7 @@ const translations = {
     // Premium
     premiumTitle: "Premium",
     premiumBadge: "🔥 Recommended",
-    premiumPrice: "€649.99",
+    premiumPrice: "€3299.99",
     premiumSubtitle: "Landing + Animations + Full SEO",
     premiumDescription: "Premium landing page with animations, advanced SEO and top performance.",
     premiumFeatures: [
