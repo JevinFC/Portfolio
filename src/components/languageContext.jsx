@@ -43,6 +43,7 @@ const translations = {
     githubProject:"Voir le GitHub du projet",
     linkProject:"Voir le site du projet",
     gestionDeProjet:"Gestion de projet",
+    seeMore:"Voir plus",
 
     // Tarifs
     pricingTitle: "Mes Tarifs",
@@ -211,6 +212,7 @@ const translations = {
     githubProject:"See the project's GitHub",
     linkProject:"See the project's website",
     gestionDeProjet:"Project management",
+    seeMore:"See more",
 
         // Pricing
     pricingTitle: "Pricing",

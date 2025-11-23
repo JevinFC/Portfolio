@@ -23,14 +23,14 @@ function CardProjects({
         <div className="cardInner">
           <div className="cardFront">
             <img src={imgProjects} alt={titleProjects} title ={titleProjects}className="imgProjects" />
-            <h1>{titleProjects}</h1>
+            <h3>{titleProjects}</h3>
             <ul className="skillsList">
               {competences?.map((skill, index) => (
                 <li key={index}>{skill}</li>
               ))}
             </ul>
             <button className="flipButton" onClick={(e) => { e.stopPropagation(); toggleFlip(); }}>
-  Voir plus
+  {t("seeMore")}
 </button>
           </div>
           <div className="cardBack">
