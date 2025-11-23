@@ -34,7 +34,7 @@ function CardProjects({
 </button>
           </div>
           <div className="cardBack">
-            <h1>{titleProjects}</h1>
+            <h3>{titleProjects}</h3>
             <p>{descriptionProjects}</p>
             {linkProjects && (
               <a href={linkProjects} target="_blank" rel="noreferrer">

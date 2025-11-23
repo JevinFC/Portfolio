@@ -12,7 +12,7 @@ function Projects() {
 
   return (
     <section id="projects">
-    <h1 className="titleProjects">{t("projectsTitle")}</h1>
+    <h2 className="titleProjects">{t("projectsTitle")}</h2>
     <div className="containerProjects">
       <CardProjects
       imgProjects={imgBooki}
