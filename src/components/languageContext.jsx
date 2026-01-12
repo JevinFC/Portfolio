@@ -122,18 +122,8 @@ const translations = {
      faqTitle: "FAQ",
     faq: [
       {
-        question: "De quoi avez-vous besoin de ma part pour commencer ?",
-        answer:
-          "J'aurai besoin de vos fichiers de design (Figma, Adobe XD ou PSD), contenu (textes, images, logos), couleurs de la marque, et tout exemple de site web que vous aimez si vous n'avez pas de fichiers de design. Des instructions claires m'aident à livrer plus rapidement et avec de meilleurs résultats."
-      },
-      {
         question: "Pouvez-vous rendre ma page d'atterrissage responsive ?",
         answer: "Absolument ! Chaque page d'atterrissage que je construis est entièrement responsive et fonctionne parfaitement sur mobile, tablette et ordinateur."
-      },
-      {
-        question: "Proposez-vous des révisions ?",
-        answer:
-          "Oui ! Chaque package inclut des révisions : Basique : 1 révision, Standard : 2 révisions, Premium : révisions illimitées. Les révisions couvrent les ajustements de mise en page, les modifications de texte et les petits changements de design."
       },
       {
         question: "Gérez-vous le déploiement ?",
@@ -143,18 +133,14 @@ const translations = {
       {
         question: "Pouvez-vous ajouter des animations ou des éléments interactifs ?",
         answer:
-          "Oui ! Pour les packages Standard et Premium, je peux inclure des animations fluides avec Framer Motion et des éléments interactifs comme des sliders, boutons ou formulaires."
+          "Oui ! Je peux inclure des animations fluides avec Framer Motion et des éléments interactifs comme des sliders, boutons ou formulaires."
       },
       {
         question: "Que faire si je n'ai pas de design prêt ?",
         answer:
           "Si vous n'avez pas de design, je peux quand même créer une page d'atterrissage moderne en suivant les meilleures pratiques, mais avoir un design accélère la livraison et garantit que la page correspond à votre vision."
       },
-      {
-        question: "Quelle rapidité avez-vous pour livrer ma page d'atterrissage ?",
-        answer:
-          "Les délais de livraison dépendent du package : Basique : environ 3 jours, Standard : environ 7 jours, Premium : environ 14 jours. Je propose aussi une livraison ultra rapide en option si vous avez besoin de votre projet plus tôt."
-      },
+      
       {
         question: "Optimisez-vous la landing page pour le SEO ?",
         answer:
@@ -282,21 +268,13 @@ const translations = {
 
     faqTitle: "FAQ",
     faq: [
-      {
-        question: "What do you need from me to get started?",
-        answer:
-          "I will need your design files (Figma, Adobe XD or PSD), content (texts, images, logos), brand colors, and any examples of websites you like if you don't have design files. Clear instructions help me deliver faster and with better results."
-      },
+      
       {
         question: "Can you make my landing page responsive?",
         answer:
           "Absolutely! Every landing page I build is fully responsive and works perfectly on mobile, tablet, and desktop."
       },
-      {
-        question: "Do you offer revisions?",
-        answer:
-          "Yes! Each package includes revisions: Basic: 1 revision, Standard: 2 revisions, Premium: unlimited revisions. Revisions cover layout adjustments, text edits, and minor design changes."
-      },
+      
       {
         question: "Do you handle deployment?",
         answer:
@@ -311,11 +289,6 @@ const translations = {
         question: "What if I don't have a design ready?",
         answer:
           "If you don't have a design, I can still create a modern landing page following best practices, but having a design speeds up delivery and ensures the page matches your vision."
-      },
-      {
-        question: "How fast can you deliver my landing page?",
-        answer:
-          "Delivery times depend on the package: Basic: ~3 days, Standard: ~7 days, Premium: ~14 days. I also offer ultra-fast delivery if you need your project sooner."
       },
       {
         question: "Do you optimize the landing page for SEO?",
