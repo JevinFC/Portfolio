@@ -6,6 +6,7 @@ import imgNinaCarducci from "/src/assets/imgprojects/ninaCarducci.png";
 import imgKasa from "/src/assets/imgprojects/kasa.png";
 import imgMVG from "/src/assets/imgprojects/MVG.png";
 import imgMenuMaker from "/src/assets/imgprojects/menuMaker.png";
+import imgPortfolioLola from "/src/assets/imgprojects/portfolioLola.png";
 import { useLanguage } from "../languageContext.jsx";
 function Projects() {
   const { t } = useLanguage();
@@ -60,6 +61,14 @@ function Projects() {
         githubProjects="https://github.com/JevinFC/Projet7"
         competences={[t("gestionDeProjet")]}
         descriptionProjects={t("project6Desc")}
+      />
+      <CardProjects
+      imgProjects={imgPortfolioLola}
+      linkProjects="https://lolagauchy.fr"
+      githubProjects="https://github.com/JevinFC/portfolioLola"
+      titleProjects={t("project7Title")}
+      competences={["Next.js", "TailwindCSS"]}
+      descriptionProjects={t("project7Desc")}
       />
     </div>
      </section>
