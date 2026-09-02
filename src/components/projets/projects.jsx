@@ -62,6 +62,7 @@ function Projects() {
         competences={[t("gestionDeProjet")]}
         descriptionProjects={t("project6Desc")}
       />
+    {/* Test pour voir si ça push github */}
       <CardProjects
       imgProjects={imgPortfolioLola}
       linkProjects="https://lolagauchy.fr"
