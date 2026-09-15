@@ -21,7 +21,6 @@ function Header() {
         <nav className="navHeader">
           <a href="#accueil">{t("home")}</a>
           <a href="#apropos">{t("about")}</a>
-          {/* <a href="#competences">Compétences</a> */}
           <a href="#projects">{t("projects")}</a>
           <a href="/CV_Kevin_Machado.pdf" download="CV_Kevin_Machado.pdf">{t("CV")}</a>
         </nav>

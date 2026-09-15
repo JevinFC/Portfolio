@@ -1,6 +1,5 @@
 import "./hero.scss";
 import { useEffect, useState } from "react";
-// import { FaArrowDown } from "react-icons/fa6";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -70,12 +69,6 @@ function Hero() {
           </div>
         </div>
       </div>
-
-      {/* <div className="divFlecheBas">
-        <a href="#projects">
-          <FaArrowDown />
-        </a>
-      </div> */}
     </div>
   );
 }

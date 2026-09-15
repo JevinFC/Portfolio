@@ -1,122 +1,134 @@
+
+@property --hover-lift {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
 .tarifsSection {
   padding: 4rem 1rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
 .tarifsTitle {
   font-size: 2.8rem;
-  margin-bottom: 2.5rem;
+  margin: 0 0 .75rem;
   font-weight: 700;
   color: #fff;
 }
 
-/* --- Tabs --- */
-.tarifsTabs {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-
-  button {
-    background: #1f1f1f;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 600;
-
-    &:hover {
-      border-color: #b97cf1;
-      color: #fff;
-    }
-
-    &[aria-selected="true"],
-    &.active {
-      border-color: #b97cf1;
-      color: #fff;
-      background-color: rgba(185, 124, 241, 0.15);
-      box-shadow: 0 4px 15px rgba(185, 124, 241, 0.25);
-    }
-  }
+.tarifsSubtitle {
+  margin: 0 0 3rem;
+  font-size: 1.05rem;
+  color: #fff;
+  opacity: .75;
+  max-width: 55ch;
 }
 
-/* --- Card Container --- */
-.tarifsContent {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+.tarifsPin.pinned {
+  height: calc(100vh + var(--pin-distance, 800px));
 }
 
-/* --- Individual Card --- */
+.tarifsPin.pinned .tarifsPinInner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-block: 90px 1.5rem;
+}
+
+.tarifsPin.pinned .tarifsPinContent {
+  flex-shrink: 0;
+}
+
+.tarifsPin.pinned .tarifsSubtitle { margin-bottom: 2rem; }
+.tarifsPin.pinned .tarifsBanner { margin-top: 2.5rem; }
+
+.tarifsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
 .tarifCard {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  
+  --card-scale: 1;
+
+  --hover-lift: 0px;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: left;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
   padding: 2rem;
   border-radius: 15px;
-  max-width: 400px;
-  width: auto;
-  margin: 0 auto;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
+  color: #fff;
+
+  opacity: 0;
+  transform: translateY(28px) scale(var(--card-scale));
+  transition:
+    opacity .6s ease,
+    transform .6s ease,
+    border-color .3s ease,
+    box-shadow .3s ease,
+    --hover-lift .3s ease;
 
   .tarifHeader {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: .5rem;
     margin-bottom: 1rem;
   }
 
   h3 {
     font-size: 1.8rem;
     margin: 0;
-  }
 
-  .badge {
-    background-color: #b97cf1;
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.3rem 0.6rem;
-    border-radius: 12px;
-    text-transform: uppercase;
+    min-height: 2.4em;
   }
 
   .price {
     font-size: 2.2rem;
     font-weight: bold;
     color: #b97cf1;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+
+  .delivery {
+    font-size: .9rem;
+    font-weight: 500;
+    opacity: .7;
   }
 
   .subtitle {
-    margin: 0.5rem 0;
+    margin: 0 0 1.5rem;
     font-weight: 500;
-  }
-
-  .description {
-    margin-top: 0.5rem;
-    opacity: 0.8;
+    min-height: 2.4em;
   }
 
   ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: 0 0 2rem;
 
     li {
-      margin: 0.5rem 0;
+      margin: .5rem 0;
       position: relative;
       padding-left: 1.5rem;
-      font-size: 0.95rem;
+      font-size: .95rem;
 
       &::before {
         content: "✔";
@@ -128,79 +140,227 @@
     }
   }
 
-  .delivery {
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-  }
-
   .tarifCta {
+    margin-top: auto;
     display: block;
     width: 100%;
-    padding: 0.8rem 0;
+    box-sizing: border-box;
+    padding: .8rem 0;
+    text-align: center;
+    text-decoration: none;
     background-color: #b97cf1;
-    color: #fff;
+    color: #171a1f;
     font-weight: 700;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    transition: background .3s ease;
 
     &:hover {
-      background-color: #9a5edc;
+      background-color: #cfa2f7;
+    }
+
+    &:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
     }
   }
 }
 
-/* --- Animation --- */
-.fadeIn {
-  animation: fadeIn 0.3s ease-in-out;
+.tarifsGrid.visible .tarifCard {
+  opacity: 1;
+  transform: translateY(var(--hover-lift)) scale(var(--card-scale));
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.tarifsGrid.visible .tarifCard:nth-child(2) { transition-delay: .12s; }
+.tarifsGrid.visible .tarifCard:nth-child(3) { transition-delay: .24s; }
+
+.tarifCard.featured {
+  --card-scale: 1.03;
+
+  z-index: 3;
+  border: 2px solid #b97cf1;
+  background: #272b33;
+  box-shadow: 0 12px 30px rgba(0,0,0,.4);
+
+  .badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: calc(100% - 2rem);
+    text-align: center;
+    background-color: #b97cf1;
+    color: #171a1f;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .3rem .7rem;
+    border-radius: 12px;
   }
 }
 
-/* --- Responsive --- */
- @media (max-width: 900px) {
-  .tarifsContent {
-    flex-direction: column;
-    align-items: center;
+.tarifCard:not(.featured) .tarifCta {
+  background-color: transparent;
+  border-color: #b97cf1;
+  color: #b97cf1;
+  transition: background .3s ease, color .3s ease, border-color .3s ease;
+
+  &:hover {
+    background-color: #b97cf1;
+    color: #171a1f;
   }
+}
+
+.tarifsGrid.spread {
+  --p: 0;
 
   .tarifCard {
-    max-width: 400px;  // limite de largeur pour garder l'effet centré
-    margin: 0 auto;    // force le centrage horizontal
+    opacity: 1;
+    transition:
+      opacity .3s ease,
+      border-color .3s ease,
+      box-shadow .3s ease,
+      --hover-lift .3s ease;
+    transition-delay: 0s;
+  }
+
+  .tarifCard:first-child,
+  .tarifCard:last-child {
+    z-index: 1;
+    opacity: calc(.7 + .3 * var(--p));
+  }
+
+  .tarifCard:first-child {
+    transform:
+      translateX(calc((100% + 2.5rem - 120px) * (1 - var(--p))))
+      translateY(calc(40px * (1 - var(--p)) + var(--hover-lift)))
+      rotate(calc(-7deg * (1 - var(--p))))
+      scale(calc(.94 + .06 * var(--p)));
+  }
+
+  .tarifCard:last-child {
+    transform:
+      translateX(calc((-100% - 2.5rem + 120px) * (1 - var(--p))))
+      translateY(calc(40px * (1 - var(--p)) + var(--hover-lift)))
+      rotate(calc(7deg * (1 - var(--p))))
+      scale(calc(.94 + .06 * var(--p)));
+  }
+
+  .tarifCard.featured {
+    transform: translateY(var(--hover-lift)) scale(var(--card-scale));
   }
 }
 
+@media (hover: hover) {
+  .tarifsGrid.visible .tarifCard:hover,
+  .tarifsGrid.spread .tarifCard:hover {
+    --hover-lift: -8px;
+
+    border-color: #b97cf1;
+    box-shadow: 0 12px 30px rgba(185, 124, 241, .3);
+    z-index: 4;
+  }
+}
+
+.tarifsBanner {
+  margin-top: 5rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.tarifsBannerTrack {
+  display: flex;
+  width: max-content;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: .9rem;
+  opacity: .75;
+  animation: tarifsMarquee 45s linear infinite;
+
+  li {
+    padding-right: 3.5rem;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes tarifsMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (max-width: 900px) {
+  .tarifsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tarifCard.featured {
+    --card-scale: 1;
+    order: -1;
+  }
+}
 
 @media (max-width: 600px) {
-  .tarifsTabs {
-    flex-direction: column;
-    gap: 0.7rem;
-    button {
-      width: 100%;
-      justify-content: center;
-      font-size: 1rem;
-      padding: 0.8rem 1rem;
-    }
+  .tarifsTitle {
+    font-size: 2rem;
   }
 
   .tarifCard {
-    max-width: 90%;
     padding: 2rem 1.5rem;
   }
 
-  .tarifsTitle {
-    font-size: 2rem;
+  .tarifsBanner {
+    margin-top: 4.5rem;
+  }
+
+  .tarifsBannerTrack li {
+    padding-right: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarifCard {
+    opacity: 1;
+    transform: none;
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+
+  .tarifsGrid.visible .tarifCard,
+  .tarifsGrid.visible .tarifCard:hover,
+  .tarifsGrid.spread .tarifCard,
+  .tarifsGrid.spread .tarifCard:first-child,
+  .tarifsGrid.spread .tarifCard:last-child {
+    transform: none;
+    opacity: 1;
+  }
+
+  .tarifsBanner {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: visible;
+  }
+
+  .tarifsBannerTrack {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    li {
+      padding-right: 0;
+      white-space: normal;
+    }
+
+    .bannerClone {
+      display: none;
+    }
   }
 }

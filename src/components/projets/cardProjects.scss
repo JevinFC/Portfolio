@@ -8,8 +8,20 @@
 .cardProjects {
   width: 300px;
   height: 300px;
-  perspective: 1000px; // important pour l'effet 3D
+  perspective: 1000px;
   margin: 20px;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: #f2f2f2;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #b97cf1;
+    }
+  }
 }
 
 .cardInner {
@@ -38,7 +50,7 @@
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
-   pointer-events: auto; // ✅ Important pour que le clic fonctionne sur la face arrière
+  pointer-events: auto;
 }
 
 .cardFront {
@@ -47,21 +59,9 @@
 
 .cardBack {
   transform: rotateY(180deg);
-  transform: rotateY(180deg);
   z-index: 2;
-  pointer-events: auto; // ✅ Important
+  pointer-events: auto;
 }
-  a{
-    text-decoration: none;
-    color: #f2f2f2;
-    margin-top: 15px;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #b97cf1;
-    }
-  }
-
 
 .imgProjects {
   width: 100%;
@@ -69,6 +69,7 @@
   object-fit: cover;
   border-radius: 25px 25px 0 0;
 }
+
 .skillsList {
   list-style: none;
   padding: 0;
@@ -85,22 +86,6 @@
     font-size: 14px;
     color: #f2f2f2;
   }
-}
-.cardProjects {
-  cursor: pointer;
-}
-
-// .cardProjects.flipped .cardInner {
-//   transform: rotateY(180deg);
-// }
-
-.cardFront,
-.cardBack {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transition: opacity 0.3s ease;
 }
 
 .flipButton {
@@ -123,11 +108,8 @@
   .flipButton {
     display: none;
   }
-  .cardProjects:hover .cardInner {
-    transform: rotateY(180deg);
-  }
-
 }
+
 @media (max-width: 1024px) {
   .containerProjects {
     justify-content: center;
@@ -135,19 +117,13 @@
 
   .cardProjects {
     width: 90vw;
-    height: 400px; // Hauteur fixe pour maintenir la 3D
+    height: 400px;
     margin: 10px 0;
     cursor: auto;
   }
 
- .cardFront, .cardBack {
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 20px;
-}
-
-  .cardBack {
-    transform: rotateY(180deg);
+  .cardFront, .cardBack {
+    border-radius: 20px;
   }
 
   .imgProjects {
@@ -163,4 +139,3 @@
     }
   }
 }
-

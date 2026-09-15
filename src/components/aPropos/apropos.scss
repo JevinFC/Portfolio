@@ -1,7 +1,7 @@
 .aproposContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* ✅ centre verticalement sur grand écran */
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   max-width: 1200px;
@@ -9,11 +9,9 @@
   padding: 50px 20px;
   text-align: center;
 
-  /* ✅ Supprime la hauteur fixe pour un layout fluide */
   height: auto;
 }
 
-/* Titre */
 .aproposh2 {
   position: relative;
   display: inline-block;
@@ -36,7 +34,6 @@
   }
 }
 
-/* Texte */
 .p-propos {
   font-family: "Cabinet Grotesk", sans-serif;
   width: 50%;
@@ -47,7 +44,6 @@
   text-align: left;
 }
 
-/* Conteneur image + texte */
 .container-info {
   display: flex;
   flex-direction: row-reverse;
@@ -58,7 +54,6 @@
   flex-wrap: wrap;
 }
 
-/* Image */
 .profile-image {
   width: clamp(200px,35vw, 350px);
   object-fit: cover;
@@ -68,7 +63,6 @@
   top: 30px;
 }
 
-/* Hover */
 .importantHover:hover {
   background-color: #b97cf1;
   color: #000000;

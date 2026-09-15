@@ -12,7 +12,6 @@ function Faq() {
   };
 
   useEffect(() => {
-    // met à jour max-height dynamiquement pour l'animation
     answerRefs.current.forEach((ref, idx) => {
       if (ref) {
         ref.style.maxHeight = openIndex === idx ? `${ref.scrollHeight}px` : "0px";
@@ -23,14 +22,14 @@ function Faq() {
   return (
     <section className="faqSection" id="faq">
       <h2 className="faqTitle">{t("faqTitle")}</h2>
-      <div className="faqContainer">
+      <div className="faqContainer"> 
         {t("faq").map((item, index) => (
           <div
             key={index}
             className={`faqItem ${openIndex === index ? "open" : ""}`}
           >
             <button className="faqQuestion" onClick={() => toggle(index)}>
-              {item.question}
+              <span className="faqQuestionText">{item.question}</span>
               <span className="arrow">{openIndex === index ? "▲" : "▼"}</span>
             </button>
             <div

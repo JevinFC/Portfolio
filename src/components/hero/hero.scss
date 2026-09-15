@@ -8,43 +8,6 @@
     border-color: #b97cf1;
   }
 }
-// @keyframes appear {
-//   from {
-//     opacity: 0;
-//   } to {
-//     opacity: 1;
-//   }
-// }
-// @keyframes dissapear {
-//   from {
-//     border-color: #b97cf1;
-//   } to {
-//     border-color: transparent;
-//   }
-// }
-// @keyframes bounce {
-//   0%,
-//   20%,
-//   50%,
-//   80%,
-//   100% {
-//     transform: translateY(0);
-//   }
-//   40% {
-//     transform: translateY(-30px);
-//   }
-//   60% {
-//     transform: translateY(-15px);
-//   }
-// }
-// @keyframes scrollVertical {
-//   0% {
-//     transform: translateY(0);
-//   }
-//   100% {
-//     transform: translateY(-50%);
-//   }
-// }
 .hero{
   background-color: #520079;
   width: 100vw;
@@ -149,22 +112,6 @@ display: inline-block;
   .heroDescription {
     width: 100%;
     font-size: 18px;
-  }
-
-  .heroSkills {
-    width: 100%;
-    margin-top: 2rem;
-  }
-
-  .skillSlider {
-
-    gap: 0.5rem;
-
-    img {
-      width: 100%;
-      height: auto;
-      max-height: 150px;
-    }
   }
 
   .heroTitle {

@@ -48,67 +48,57 @@ const translations = {
     seeMore:"Voir plus",
 
     // Tarifs
-    pricingTitle: "Mes Tarifs",
-    pricingCta: "Choisir ce pack",
+    pricingTitle: "Tarifs",
+    pricingSubtitle: "Des prix nets, sans surprise. Devis gratuit et sans engagement.",
+    pricingCta: "Demander un devis",
+    pricingNotes: [
+      "Paiement en 3 fois sans frais",
+      "Prix nets, TVA non applicable (art. 293 B du CGI)",
+      "Maintenance et hébergement : 49 €/mois, sans engagement",
+    ],
 
     // Basic
-    basicTitle: "Basique",
-    basicPrice: "749.99 €",
-    basicSubtitle: "Section unique — landing à un bloc",
-    basicDescription: "Une section React moderne et responsive construite selon votre design.",
+    basicTitle: "Une page",
+    basicPrice: "890 €",
+    basicSubtitle: "L'essentiel pour exister sur Google et être joignable.",
     basicFeatures: [
-      "Site fonctionnel",
-      "Intégration du contenu",
-      "Formulaire opt-in",
-      "Optimisation des performances",
-      "Configuration hébergement",
-      "Icônes réseaux sociaux",
-      "1 page",
-      "1 plugin/extension",
-      "1 produit",
-      "1 révision"
+      "Une page unique, tout y est",
+      "Vos horaires, coordonnées et photos",
+      "Bouton appel et itinéraire",
+      "Parfaitement lisible sur mobile",
+      "Mise en ligne et hébergement configurés",
+      "Fiche Google Business créée",
     ],
-    basicDelivery: "Livraison : 3 jours",
+    basicDelivery: "Livré en 1 semaine",
 
     // Standard
-    standardTitle: "Standard",
-    standardBadge: "⭐ Best Seller",
-    standardPrice: "1749.99 €",
-    standardSubtitle: "Landing page complète (3–5 sections)",
-    standardDescription: "Landing moderne construite en React, pixel-perfect et totalement responsive.",
+    standardTitle: "Site complet",
+    standardBadge: "Le plus adapté aux commerces",
+    standardPrice: "1 690 €",
+    standardSubtitle: "Un vrai site pour présenter votre activité en détail.",
     standardFeatures: [
-      "Site fonctionnel",
-      "Intégration du contenu",
-      "Formulaire opt-in",
-      "Optimisation des performances",
-      "Configuration hébergement",
-      "Icônes réseaux sociaux",
-      "1 page",
-      "3 plugins/extensions",
-      "1 produit",
-      "3 révisions"
+      "Tout ce qui est inclus dans \"Une page\"",
+      "4 à 6 pages",
+      "Formulaire de contact",
+      "Galerie photos, menu ou catalogue",
+      "Rédaction des textes à partir de vos infos",
+      "Référencement local de base",
     ],
-    standardDelivery: "Livraison : 7 jours",
+    standardDelivery: "Livré en 2 à 3 semaines",
 
     // Premium
-    premiumTitle: "Premium",
-    premiumBadge: "🔥 Recommandé",
-    premiumPrice: "3299.99 €",
-    premiumSubtitle: "Landing + Animations + SEO complet",
-    premiumDescription: "Landing premium avec animations, SEO détaillé et performances maximales.",
+    premiumTitle: "Site complet + visibilité",
+    premiumPrice: "2 490 €",
+    premiumSubtitle: "Pour être trouvé avant vos concurrents dans votre ville.",
     premiumFeatures: [
-      "Site fonctionnel",
-      "Intégration du contenu",
-      "Formulaire opt-in",
-      "Optimisation des performances",
-      "Configuration hébergement",
-      "Icônes réseaux sociaux",
-      "2-3 page",
-      "5 plugins/extensions",
-      "1 produit",
-      "Révisions illimitées"
+      "Tout ce qui est inclus dans \"Site complet\"",
+      "Référencement local approfondi",
+      "Prise de rendez-vous en ligne",
+      "Séance photo de votre établissement",
+      "Formation 1h pour modifier vous-même",
+      "Suivi pendant 3 mois après la mise en ligne",
     ],
-    premiumDelivery: "Livraison : 14 jours",
+    premiumDelivery: "Livré en 3 à 4 semaines",
 
 
     // Contact
@@ -124,39 +114,38 @@ const translations = {
      faqTitle: "FAQ",
     faq: [
       {
-        question: "Pouvez-vous rendre ma page d'atterrissage responsive ?",
-        answer: "Absolument ! Chaque page d'atterrissage que je construis est entièrement responsive et fonctionne parfaitement sur mobile, tablette et ordinateur."
+        question: "Combien de temps avant que mon site soit en ligne ?",
+        answer:
+          "Une semaine pour une page unique, deux à trois semaines pour un site complet. Le délai démarre quand vous m'avez transmis vos informations : horaires, coordonnées, photos et tout ce qui doit figurer sur le site."
       },
       {
-        question: "Gérez-vous le déploiement ?",
+        question: "Je n'ai ni photos ni textes prêts. C'est un problème ?",
         answer:
-          "Oui, je peux déployer votre page d'atterrissage sur Vercel, Netlify ou votre hébergeur préféré. Si vous n'avez pas besoin de déploiement, je fournirai un projet React prêt à l'emploi."
+          "Non. À partir de l'offre Site complet, je rédige les textes à partir de vos informations, et l'offre Site complet + visibilité comprend une séance photo dans votre établissement. Si vous avez déjà des visuels, je les utilise."
       },
       {
-        question: "Pouvez-vous ajouter des animations ou des éléments interactifs ?",
+        question: "Est-ce que mes clients me trouveront sur Google ?",
         answer:
-          "Oui ! Je peux inclure des animations fluides avec Framer Motion et des éléments interactifs comme des sliders, boutons ou formulaires."
+          "C'est tout l'objectif. Chaque offre comprend la création de votre fiche Google, celle qui affiche vos horaires, votre adresse et vos avis. Les offres supérieures vont plus loin pour vous positionner sur les recherches faites dans votre ville."
       },
       {
-        question: "Que faire si je n'ai pas de design prêt ?",
+        question: "Pourrai-je modifier mon site moi-même ?",
         answer:
-          "Si vous n'avez pas de design, je peux quand même créer une page d'atterrissage moderne en suivant les meilleures pratiques, mais avoir un design accélère la livraison et garantit que la page correspond à votre vision."
-      },
-      
-      {
-        question: "Optimisez-vous la landing page pour le SEO ?",
-        answer:
-          "Oui ! J'inclus une optimisation SEO de base, comme une structure HTML correcte, des balises meta et un code React performant."
+          "Oui. L'offre Site complet + visibilité comprend une heure de formation pour que vous puissiez changer vos horaires, vos prix ou vos photos sans dépendre de moi. Sur les autres offres, je m'occupe des modifications dans le cadre de la maintenance."
       },
       {
-        question: "Qu'est-ce qui vous différencie des autres développeurs ?",
+        question: "Que comprend la maintenance à 49 € par mois ?",
         answer:
-          "Je me concentre sur des designs pixel-perfect, la responsivité et un code React propre. J'attache aussi de l'importance à une communication claire, une livraison rapide et la satisfaction du client. Même en tant que développeur junior, je suis passionné par la création de sites web de haute qualité."
+          "L'hébergement, les mises à jour, les sauvegardes et vos modifications courantes : horaires, tarifs, nouvelles photos. C'est sans engagement, vous pouvez arrêter quand vous le souhaitez."
+      },
+      {
+        question: "Comment ça se passe une fois le devis accepté ?",
+        answer:
+          "On fait le point sur ce que vous voulez, vous me transmettez vos informations, je vous montre une première version que l'on ajuste ensemble, puis je mets le site en ligne. Le devis est gratuit et vous ne payez rien tant que vous ne l'avez pas validé."
       },
     ],
 
     // Footer
-    allRights: "Tous droits réservés",
     developpedBy: "Développé par Kévin Machado"
   },
   en: {
@@ -164,7 +153,6 @@ const translations = {
     portfolio: "My Portfolio",
     home: "Home",
     about: "About",
-    skills: "Skills",
     projects: "Projects",
     CV: "CV",
     contact: "Contact me",
@@ -206,67 +194,56 @@ const translations = {
 
         // Pricing
     pricingTitle: "Pricing",
-    pricingCta: "Choose this plan",
+    pricingSubtitle: "Flat pricing, no surprises. Free quote, no commitment.",
+    pricingCta: "Request a quote",
+    pricingNotes: [
+      "Pay in 3 instalments, no fees",
+      "Net prices, VAT not applicable",
+      "Maintenance and hosting: €49/month, no commitment",
+    ],
 
     // Basic
-    basicTitle: "Basic",
-   
-    basicPrice: "€749.99",
-    basicSubtitle: "Single-section landing block",
-    basicDescription: "A clean, modern and responsive React section built based on your design.",
+    basicTitle: "One page",
+    basicPrice: "€890",
+    basicSubtitle: "The essentials to show up on Google and be reachable.",
     basicFeatures: [
-      "Functional website",
-      "Content upload",
-      "Opt-in form",
-      "Speed optimization",
-      "Hosting setup",
-      "Social media icons",
-      "1 page",
-      "1 plugin/extension",
-      "1 product",
-      "1 revision"
+      "A single page, everything on it",
+      "Your hours, contact details and photos",
+      "Call and directions buttons",
+      "Fully readable on mobile",
+      "Deployment and hosting set up",
+      "Google Business profile created",
     ],
-    basicDelivery: "Delivery: 3 days",
+    basicDelivery: "Delivered in 1 week",
 
     // Standard
-    standardTitle: "Standard",
-    standardBadge: "⭐ Best Seller",
-    standardPrice: "€1749.99",
-    standardSubtitle: "Full landing page (3–5 sections)",
-    standardDescription: "Modern React landing page, pixel-perfect and fully responsive.",
+    standardTitle: "Full website",
+    standardBadge: "Best fit for local businesses",
+    standardPrice: "€1,690",
+    standardSubtitle: "A real website to present your business in full.",
     standardFeatures: [
-      "Functional website",
-      "Content upload",
-      "Opt-in form",
-      "Speed optimization",
-      "Hosting setup",
-      "Social media icons",
-      "1 page",
-      "3 plugins/extensions",
-      "1 product",
-      "3 revisions"
+      "Everything in One page",
+      "4 to 6 pages",
+      "Contact form",
+      "Photo gallery, menu or catalogue",
+      "Copywriting from your notes",
+      "Basic local SEO",
     ],
-    standardDelivery: "Delivery: 7 days",
+    standardDelivery: "Delivered in 2 to 3 weeks",
 
     // Premium
-    premiumTitle: "Premium",
-    premiumBadge: "🔥 Recommended",
-    premiumPrice: "€3299.99",
-    premiumSubtitle: "Landing + Animations + Full SEO",
-    premiumDescription: "Premium landing page with animations, advanced SEO and top performance.",
+    premiumTitle: "Full website + visibility",
+    premiumPrice: "€2,490",
+    premiumSubtitle: "To be found ahead of your competitors locally.",
     premiumFeatures: [
-      "Functional website",
-      "Content upload",
-      "Opt-in form",
-      "Speed optimization",
-      "Hosting setup",
-      "Social media icons",
-      "2-3 page",
-      "5 plugins/extensions",
-      "1 product",
-      "Unlimited revisions"
+      "Everything in Full website",
+      "In-depth local SEO",
+      "Online booking",
+      "Photo session at your premises",
+      "1h training to edit it yourself",
+      "3 months of follow-up after launch",
     ],
-    premiumDelivery: "Delivery: 14 days",
+    premiumDelivery: "Delivered in 3 to 4 weeks",
 
     //FAQ
 
@@ -274,35 +251,34 @@ const translations = {
     faq: [
       
       {
-        question: "Can you make my landing page responsive?",
+        question: "How long before my website is live?",
         answer:
-          "Absolutely! Every landing page I build is fully responsive and works perfectly on mobile, tablet, and desktop."
-      },
-      
-      {
-        question: "Do you handle deployment?",
-        answer:
-          "Yes, I can deploy your landing page on Vercel, Netlify, or your preferred hosting. If you don't need deployment, I will provide a ready-to-use React project."
+          "One week for a single page, two to three weeks for a full website. The clock starts once you have sent me your information: opening hours, contact details, photos and anything else the site needs to show."
       },
       {
-        question: "Can you add animations or interactive elements?",
+        question: "I don't have photos or written content ready. Is that a problem?",
         answer:
-          "Yes! For Standard and Premium packages, I can include smooth animations with Framer Motion and interactive elements like sliders, buttons, or forms."
+          "No. From the Full website plan onwards I write the content from your notes, and the Full website + visibility plan includes a photo session at your premises. If you already have visuals, I will use them."
       },
       {
-        question: "What if I don't have a design ready?",
+        question: "Will my customers find me on Google?",
         answer:
-          "If you don't have a design, I can still create a modern landing page following best practices, but having a design speeds up delivery and ensures the page matches your vision."
+          "That is the whole point. Every plan includes setting up your Google listing, the one showing your hours, address and reviews. The higher plans go further to get you found on searches made in your town."
       },
       {
-        question: "Do you optimize the landing page for SEO?",
+        question: "Will I be able to update the site myself?",
         answer:
-          "Yes! I include basic SEO optimization such as proper HTML structure, meta tags, and efficient React code."
+          "Yes. The Full website + visibility plan includes an hour of training so you can change your hours, prices or photos without going through me. On the other plans, I handle updates as part of the maintenance."
       },
       {
-        question: "What sets you apart from other developers?",
+        question: "What does the €49/month maintenance cover?",
         answer:
-          "I focus on pixel-perfect designs, responsiveness, and clean React code. I also value clear communication, fast delivery, and client satisfaction. Even as a junior developer, I am passionate about creating high-quality websites."
+          "Hosting, updates, backups and your everyday changes: hours, prices, new photos. There is no commitment, you can stop whenever you want."
+      },
+      {
+        question: "What happens once the quote is accepted?",
+        answer:
+          "We go over what you need, you send me your information, I show you a first version that we adjust together, then I put the site live. The quote is free and you pay nothing until you have approved it."
       },
     ],
 
@@ -315,7 +291,6 @@ const translations = {
     sendMessage: "Send message",
     messageSent: "Message sent successfully!",
 
-    allRights: "All rights reserved",
     developpedBy: "Developed by Kevin Machado"
   },
 };

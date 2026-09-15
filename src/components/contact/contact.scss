@@ -27,7 +27,8 @@
   button {
     padding: 12px;
     background-color: #b97cf1;
-    color: white;
+    color: #171a1f;
+    font-weight: 700;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -35,7 +36,12 @@
     transition: background 0.3s ease;
 
     &:hover {
-      background-color: #a647ff;
+      background-color: #cfa2f7;
+    }
+
+    &:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
     }
   }
 
