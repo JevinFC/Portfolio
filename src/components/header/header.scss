@@ -11,10 +11,8 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: var(--bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .headerPortfolio {
@@ -29,7 +27,8 @@ header.scrolled {
 }
 
 .h2header {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
   font-weight: 700;
   font-size: clamp(1.5rem, 2vw, 3rem);
   margin: 0;
@@ -37,6 +36,11 @@ header.scrolled {
 }
 
 .navHeader {
+  display: flex;
+  align-items: center;
+}
+
+.navHeaderInner {
   display: flex;
   gap: 3rem;
   align-items: center;
@@ -46,52 +50,159 @@ header.scrolled {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   text-transform: capitalize;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--text);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
 }
 
 .languageButton {
-  border: 2px solid #b97cf1;
+  border: 2px solid var(--accent);
   background-color: transparent;
-  color: #fff;
+  color: var(--text);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: auto;
   min-width: 60px;
   text-align: center;
 
   &:hover {
-    background-color: #b97cf1;
-    color: #fff;
+    background-color: var(--accent);
+    color: var(--surface);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
   }
 }
 
-@media (max-width: 600px) {
-   .headerPortfolio {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
+.burgerButton {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--text);
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerPortfolio {
+    flex-wrap: nowrap;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .burgerButton {
+    display: flex;
   }
 
   .navHeader {
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-    gap: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    visibility: hidden;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    transition: grid-template-rows 0.35s ease, visibility 0s 0.35s;
   }
-   .languageButton {
-    margin-left: 0;
+
+  .navHeaderInner {
+    min-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 1.25rem;
+  }
+
+  .navHeader a {
+    width: 100%;
+    padding: 0.85rem 0;
+    font-size: 1.05rem;
+  }
+
+  .headerPortfolio.open .navHeader {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition: grid-template-rows 0.35s ease, visibility 0s;
+  }
+
+  .headerPortfolio.open .navHeaderInner {
+    padding: 0.5rem 1.25rem 1rem;
+    transition: padding 0.35s ease;
+  }
+
+  .headerPortfolio.open .burgerButton span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .headerPortfolio.open .burgerButton span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .headerPortfolio.open .burgerButton span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .languageButton {
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
-    width: auto;
     min-width: unset;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burgerButton span {
+    transition: none;
+  }
+
+  .navHeader,
+  .headerPortfolio.open .navHeader,
+  .headerPortfolio.open .navHeaderInner {
+    transition: none;
   }
 }

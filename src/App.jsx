@@ -1,6 +1,5 @@
 import "./App.css";
 import { LanguageProvider } from "./components/languageContext.jsx";
-import "./assets/fonts/CabinetGrotesk_Complete/Fonts/WEB/css/cabinet-grotesk.css"
 import Footer from "./components/footer/footer.jsx";
 import Header from "./components/header/header.jsx";
 import Hero from "./components/hero/hero.jsx";
@@ -15,9 +14,9 @@ function App() {
       <LanguageProvider>
       <Header />
       <Hero />
-      <Apropos/>
       <Projects />
       <Tarifs />
+      <Apropos/>
       <Faq />
       <Contact />
       <Footer />

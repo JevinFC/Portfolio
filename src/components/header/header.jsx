@@ -5,6 +5,7 @@ import { useLanguage } from "../languageContext";
 function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,20 +17,44 @@ function Header() {
 
   return (
     <header className={isScrolled ? "scrolled" : ""}>
-      <div className="headerPortfolio">
+      <div className={menuOpen ? "headerPortfolio open" : "headerPortfolio"}>
         <h2 className="h2header">{t("portfolio")}</h2>
-        <nav className="navHeader">
-          <a href="#accueil">{t("home")}</a>
-          <a href="#apropos">{t("about")}</a>
-          <a href="#projects">{t("projects")}</a>
-          <a href="/CV_Kevin_Machado.pdf" download="CV_Kevin_Machado.pdf">{t("CV")}</a>
+
+        <nav className="navHeader" id="mainNav">
+          <div className="navHeaderInner">
+            <a href="#accueil" onClick={() => setMenuOpen(false)}>
+              {t("home")}
+            </a>
+            <a href="#projects" onClick={() => setMenuOpen(false)}>
+              {t("projects")}
+            </a>
+            <a href="#apropos" onClick={() => setMenuOpen(false)}>
+              {t("about")}
+            </a>
+          </div>
         </nav>
-        <button
-        onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
-        className="languageButton"
-      >
-        {language.toUpperCase()}
-      </button>
+
+        <div className="headerActions">
+          <button
+            onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
+            className="languageButton"
+          >
+            {language.toUpperCase()}
+          </button>
+
+          <button
+            type="button"
+            className="burgerButton"
+            aria-expanded={menuOpen}
+            aria-controls="mainNav"
+            aria-label={menuOpen ? t("navClose") : t("navOpen")}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
     </header>
   );

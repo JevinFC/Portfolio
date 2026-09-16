@@ -1,103 +1,174 @@
-.aproposContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 20px;
-  text-align: center;
-
-  height: auto;
+.apropos {
+  padding: 6rem 0;
 }
 
-.aproposh2 {
-  position: relative;
-  display: inline-block;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
+.aproposInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 4rem;
+  align-items: center;
+}
 
-  &::after {
+.aproposPhoto {
+  position: relative;
+  width: clamp(240px, 30vw, 380px);
+
+  &::before {
     content: "";
     position: absolute;
-    bottom: clamp(-0.3em, -1vw, -0.6em);
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(3rem, 30%, 8rem);
-    height: clamp(2px, 0.4vw, 4px);
-    background-color: #b97cf1;
-    border-radius: 2px;
+    inset: 0;
+    z-index: 0;
+    transform: translate(-12px, 12px);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 12px;
   }
 }
 
-.p-propos {
-  font-family: "Cabinet Grotesk", sans-serif;
-  width: 50%;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #ffffff;
-  margin: 0;
-  text-align: left;
+.aproposContent {
+  min-width: 0;
 }
 
-.container-info {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 40px;
-  flex-wrap: wrap;
+.aproposTitle {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
-.profile-image {
-  width: clamp(200px,35vw, 350px);
-  object-fit: cover;
-  border-radius: 12px;
-  position: relative;
-  bottom: 0;
-  top: 30px;
+.aproposLead {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 52ch;
 }
 
-.importantHover:hover {
-  background-color: #b97cf1;
-  color: #000000;
-  transition: background-color 0.3s ease;
+.aproposText {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.aproposFacts {
+  list-style: none;
+  padding: 0;
+  margin: 2.25rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem 2rem;
+  max-width: 52ch;
+
+  li {
+    position: relative;
+    padding-left: 1.1rem;
+    font-size: 0.9375rem;
+    color: var(--text);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+  }
+}
+
+.aproposTech {
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.aproposInner.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aproposInner.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 900px) {
-  .aproposContainer {
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 10px;
+  .aproposInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .p-propos {
-    width: 80%;
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-  .profile-image {
-    width: 60%;
-    margin-top: 2rem;
-    top: 0;
+  .aproposPhoto {
+    width: min(300px, 100%);
   }
 }
 
 @media (max-width: 600px) {
-  .p-propos {
-    width: 100%;
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .apropos {
+    padding: 4rem 0;
   }
 
-  .profile-image {
-    width: 80%;
-    margin-top: -3.5rem;
+  .aproposInner {
+    padding: 0 1.25rem;
+  }
+
+  .aproposFacts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aproposInner.js-reveal .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .aproposFacts a {
+    transition: none;
   }
 }

@@ -1,43 +1,81 @@
-import './apropos.scss';
-import {useLanguage} from '../languageContext';
-import {motion} from 'framer-motion';
+import "./apropos.scss";
+import { useState, useRef, useLayoutEffect } from "react";
+import { useLanguage } from "../languageContext";
+
 function APropos() {
-    const { t } = useLanguage();
+  const { t } = useLanguage();
+  const [animate, setAnimate] = useState(false);
+  const rootRef = useRef(null);
 
-    return (
-        <section className="aproposContainer" id='apropos'>
-            <div className="presentationSection">
-                <h2 className='aproposh2'>{t("aboutTitle")}</h2>
-                 <div className="container-info">
-          {/* Texte animé */}
-          <motion.p
-  className="p-propos"
-  initial={{ opacity: 0, y: 50 }}          // position de départ
-  whileInView={{ opacity: 1, y: 0 }}       // position finale
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: false, amount: 0.3 }}  // déclenche l'animation quand 30% de l'élément est visible
-  dangerouslySetInnerHTML={{ __html: t("aboutText1") }}
-/>
-            
+  useLayoutEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-                <div className="stats-section">
-                    <div className="profile-image-container">
-                        <motion.img
-            src='/photoProfil.png'
-            alt="Photo de profil"
-            title='Photo de profil'
-            className="profile-image"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.3 }}
-          />
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
+    setAnimate(true);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
     );
-};
+
+    root.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="apropos" id="apropos">
+      <div
+        className={animate ? "aproposInner js-reveal" : "aproposInner"}
+        ref={rootRef}
+      >
+        <div className="aproposPhoto reveal">
+          <img
+            src="/photoProfil.png"
+            alt={t("aboutPhotoAlt")}
+            width="1200"
+            height="1500"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div className="aproposContent">
+          <h2 className="aproposTitle reveal">{t("aboutHeading")}</h2>
+
+          <p className="aproposLead reveal">{t("aboutP1")}</p>
+          <p className="aproposText reveal">{t("aboutP2")}</p>
+          <p className="aproposText reveal">{t("aboutP3")}</p>
+          <p className="aproposText reveal">{t("aboutP4")}</p>
+
+          <ul className="aproposFacts reveal">
+            <li>{t("aboutFact1")}</li>
+            <li>
+              <a
+                href="/mentions-legales.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("aboutFact2")}
+              </a>
+            </li>
+            <li>{t("aboutFact3")}</li>
+            <li>{t("aboutFact4")}</li>
+          </ul>
+
+          <p className="aproposTech reveal">{t("aboutTech")}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default APropos;

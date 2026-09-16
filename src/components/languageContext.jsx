@@ -3,49 +3,71 @@ import React, { createContext, useContext, useState } from "react";
 const translations = {
   fr: {
     // Header
-    portfolio: "Mon Portfolio",
+    portfolio: "Kévin Machado",
     home: "Accueil",
-    about: "À propos",
-    projects: "Projets",
-    CV: "CV",
-    contact: "Contactez-moi",
+    about: "Qui suis-je",
+    projects: "Réalisations",
+    navOpen: "Ouvrir le menu",
+    navClose: "Fermer le menu",
 
     // Hero
-    hello: "Bonjour",
-    frontendDev: "Développeur Web basé à Tours",
-    heroSubtitle: "Créateur d'expériences web dynamiques et intuitives",
-    discoverProjects: "Découvrez mes projets",
+    heroEyebrow: "Développeur web · Tours",
+    heroTitle: "Je crée des sites internet pour les commerçants de Tours.",
+    heroText:
+      "Un site clair, rapide, trouvable sur Google. Livré rapidement, à partir de 890 €.",
+    heroCta: "Demander un devis gratuit",
+    heroLink: "Voir mes réalisations",
+    heroTrust: "Réponse sous 48 h · Devis sans engagement · Basé à Tours",
+    heroShotAlt:
+      "Page d'accueil d'un site vitrine réalisé pour un commerce de Tours",
 
     // About
-    aboutTitle: "À Propos de moi",
-    aboutText1:
-      "Je m'appelle <span class='importantHover'>Kévin Machado</span>, je suis <span class='importantHover'>développeur basé à Tours</span> et passionné par la création d'interfaces web <span class='importantHover'>modernes</span> et <span class='importantHover'>intuitives</span>. Spécialisé dans <span class='importantHover'>React</span>, je conçois et développe des sites web performants qui transforment vos idées en expériences <span class='importantHover'>digitales mémorables</span>.",
+    aboutHeading: "Qui va faire votre site",
+    aboutP1: "Je m'appelle Kévin Machado, développeur web à Tours.",
+    aboutP2:
+      "Je travaille seul, en micro-entreprise. La personne que vous avez au téléphone est celle qui code votre site, et celle que vous rappellerez dans six mois si quelque chose ne va pas.",
+    aboutP3:
+      "Votre site est écrit sur mesure, ligne par ligne. Ce n'est pas un modèle repeint aux couleurs de votre enseigne : il est plus rapide, mieux référencé, et il vous appartient vraiment.",
+    aboutP4:
+      "Pas de jargon ni de réunions inutiles : vous me racontez votre métier, je vous montre une maquette, on ajuste ensemble, je livre. Et comme je suis à Tours, on peut se rencontrer.",
+    aboutFact1: "Basé à Tours (37)",
+    aboutFact2: "Micro-entreprise, SIRET affiché",
+    aboutFact3: "Réponse sous 48 h",
+    aboutFact4: "Devis gratuit, sans engagement",
+    aboutTech:
+      "Sites développés en React et Next.js, sans WordPress ni constructeur de pages.",
+    aboutPhotoAlt: "Kévin Machado, développeur web à Tours",
 
     // Projects
-    projectsTitle: "Mes Projets",
-    project1Title: "Booki",
-    project1Desc:
-      "Ce projet est un site de réservation d'hébergement. Il m'a permis de mettre en pratique mes compétences en HTML5 et CSS3.",
-    project2Title: "Sophie Bluel",
-    project2Desc:
-      "Ce projet est un site vitrine pour une artiste. Il m'a permis d'apprendre à utiliser JavaScript pour ajouter des interactions dynamiques.",
-    project3Title: "Nina Carducci",
-    project3Desc:
-      "Ce projet est un site de portfolio pour une photographe. Il m'a permis de travailler sur le SEO d'un site web et d'améliorer mes compétences en accessibilité.",
-
-    project4Title: "Kasa",
-    project4Desc:
-    "Ce projet est une plateforme de location immobilière. Il m'a permis de renforcer mes compétences en React, notamment en gestion d'état et en routage.",
-    project5Title: "Mon Vieux Grimoire",
-    project5Desc:"Ce projet est un site de gestion de livres. Il m'a permis d'apprendre à utiliser Node.js pour créer une API et de travailler avec une base de données MongoDB.",
-    project6Title: "Qwenta",
-    project6Desc:"Ce projet est un site de gestion de menus pour un restaurant. Il m'a permis de travailler sur la gestion d'un projet. Et de découvrir la méthodologie Agile.",
-    project7Title: "Portfolio Lola Gauchy",
-    project7Desc:"Ce projet est un site de portfolio pour une freelance en marketing digital. Il m'a permis de travailler avec Next.js et TailwindCSS pour créer un site web moderne et responsive.",
-    githubProject:"Voir le GitHub du projet",
-    linkProject:"Voir le site du projet",
-    gestionDeProjet:"Gestion de projet",
-    seeMore:"Voir plus",
+    projectsTitle: "Ils ont désormais un site",
+    projectsSubtitle: "Trois réalisations, et une place qui vous attend.",
+    projectLink: "Voir le site en ligne",
+    projectLolaStatus: "Client",
+    projectLolaName: "Lola Gauchy",
+    projectLolaRole: "Communication digitale, freelance",
+    projectLolaText:
+      "Lola n'avait qu'un profil sur les réseaux pour montrer son travail. Elle dispose maintenant d'un portfolio qui lui appartient, qu'elle envoie directement à ses prospects.",
+    projectLolaTags: ["Portfolio", "Rédaction", "Mise en ligne"],
+    projectLolaAlt: "Page d'accueil du portfolio de Lola Gauchy",
+    projectKasaStatus: "Projet d'apprentissage",
+    projectKasaName: "Kasa",
+    projectKasaRole: "Plateforme de location immobilière",
+    projectKasaText:
+      "Une application de location construite en React, avec navigation entre les pages et composants réutilisables. Gestion des états de chargement et des pages d'erreur incluse.",
+    projectKasaTags: ["React", "Routage", "Responsive"],
+    projectKasaAlt: "Page d'accueil de la plateforme de location Kasa",
+    projectNinaStatus: "Projet d'apprentissage",
+    projectNinaName: "Nina Carducci",
+    projectNinaRole: "Photographe",
+    projectNinaText:
+      "Optimisation complète d'un site de photographe : temps de chargement divisé par trois, images compressées, balises de référencement et données structurées ajoutées.",
+    projectNinaTags: ["Référencement", "Performances", "Accessibilité"],
+    projectNinaAlt: "Page d'accueil du site de la photographe Nina Carducci",
+    projectsCtaPlaceholder: "Votre commerce ici",
+    projectsCtaTitle: "La prochaine, c'est peut-être la vôtre",
+    projectsCtaText:
+      "Dites-moi ce que vous faites, je vous montre à quoi ressemblerait votre site. Sans engagement.",
+    projectsCtaButton: "Demander un devis gratuit",
 
     // Tarifs
     pricingTitle: "Tarifs",
@@ -146,51 +168,78 @@ const translations = {
     ],
 
     // Footer
+    footerLinkedin: "Mon profil LinkedIn",
+    footerEmail: "Aller au formulaire de contact",
+    footerLegal: "Mentions légales",
+    footerCgv: "CGV",
     developpedBy: "Développé par Kévin Machado"
   },
   en: {
     // Header
-    portfolio: "My Portfolio",
+    portfolio: "Kévin Machado",
     home: "Home",
-    about: "About",
-    projects: "Projects",
-    CV: "CV",
-    contact: "Contact me",
+    about: "About me",
+    projects: "Work",
+    navOpen: "Open menu",
+    navClose: "Close menu",
 
     // Hero
-    hello: "Hello",
-    frontendDev: "Web Developer in Tours",
-    heroSubtitle: "Creating dynamic and intuitive web experiences",
-    discoverProjects: "Discover my projects",
+    heroEyebrow: "Web developer · Tours",
+    heroTitle: "I build websites for local businesses in Tours.",
+    heroText:
+      "A clear, fast website that shows up on Google. Delivered quickly, from €890.",
+    heroCta: "Get a free quote",
+    heroLink: "See my work",
+    heroTrust: "Reply within 48h · No-commitment quote · Based in Tours",
+    heroShotAlt:
+      "Home page of a showcase website built for a local business in Tours",
 
     // About
-    aboutTitle: "About Me",
-    aboutText1:
-      "My name is <span class='importantHover'>Kevin Machado</span>, and I am a <span class='importantHover'> Developer based in Tours, France</span>. Passionate about creating <span class='importantHover'>modern</span> and <span class='importantHover'>intuitive</span> web interfaces. Specialized in <span class='importantHover'>React</span>, I design and build high-performance websites that turn your ideas into <span class='importantHover'>memorable digital experiences</span>.",
+    aboutHeading: "Who will build your website",
+    aboutP1: "My name is Kévin Machado, a web developer based in Tours, France.",
+    aboutP2:
+      "I work alone, as a sole trader. The person you speak to on the phone is the one who builds your website, and the one you'll call back in six months if something goes wrong.",
+    aboutP3:
+      "Your website is written from scratch, line by line. It isn't a template repainted in your colours: it's faster, ranks better, and it's genuinely yours.",
+    aboutP4:
+      "No jargon, no pointless meetings: you tell me about your trade, I show you a mockup, we adjust it together, I deliver. And since I'm in Tours, we can meet in person.",
+    aboutFact1: "Based in Tours, France",
+    aboutFact2: "Registered sole trader",
+    aboutFact3: "Reply within 48h",
+    aboutFact4: "Free quote, no commitment",
+    aboutTech: "Built with React and Next.js — no WordPress, no page builder.",
+    aboutPhotoAlt: "Kévin Machado, web developer in Tours, France",
 
-// Projects
-    projectsTitle: "My Projects",
-    project1Title: "Booki",
-    project1Desc:
-      "This project is a booking site for accommodations. It allowed me to practice my skills in HTML5 and CSS3.",
-    project2Title: "Sophie Bluel",
-    project2Desc: "This project is a showcase site for an artist. It allowed me to learn how to use JavaScript to add dynamic interactions.",
-    project3Title: "Nina Carducci",
-    project3Desc:
-      "This project is a portfolio site for a photographer. It allowed me to work on the SEO of a website and improve my accessibility skills.",
-    project4Title: "Kasa",
-    project4Desc:
-    "This project is a real estate rental platform. It allowed me to strengthen my skills in React, particularly in state management and routing.",
-    project5Title: "Mon Vieux Grimoire",
-    project5Desc:"This project is a book management site. It allowed me to learn how to use Node.js to create an API and work with a MongoDB database.",
-    project6Title: "Qwenta",
-    project6Desc:"This project is a menu management site for a restaurant. It allowed me to work on project management and discover Agile methodology.",
-    project7Title: "Portfolio Lola Gauchy",
-    project7Desc:"This project is a portfolio site for a freelance digital marketer. It allowed me to work with Next.js and TailwindCSS to create a modern and responsive website.",
-    githubProject:"See the project's GitHub",
-    linkProject:"See the project's website",
-    gestionDeProjet:"Project management",
-    seeMore:"See more",
+    // Projects
+    projectsTitle: "They now have a website",
+    projectsSubtitle: "Three projects, and one spot waiting for you.",
+    projectLink: "View the live site",
+    projectLolaStatus: "Client",
+    projectLolaName: "Lola Gauchy",
+    projectLolaRole: "Freelance digital communications",
+    projectLolaText:
+      "Lola only had a social media profile to show her work. She now has a portfolio of her own that she sends straight to prospects.",
+    projectLolaTags: ["Portfolio", "Copywriting", "Deployment"],
+    projectLolaAlt: "Home page of Lola Gauchy's portfolio",
+    projectKasaStatus: "Training project",
+    projectKasaName: "Kasa",
+    projectKasaRole: "Property rental platform",
+    projectKasaText:
+      "A rental application built with React, with page routing and reusable components. Includes loading states and error pages.",
+    projectKasaTags: ["React", "Routing", "Responsive"],
+    projectKasaAlt: "Home page of the Kasa rental platform",
+    projectNinaStatus: "Training project",
+    projectNinaName: "Nina Carducci",
+    projectNinaRole: "Photographer",
+    projectNinaText:
+      "Full optimisation of a photographer's website: load time cut by three, compressed images, SEO tags and structured data added.",
+    projectNinaTags: ["SEO", "Performance", "Accessibility"],
+    projectNinaAlt: "Home page of photographer Nina Carducci's website",
+    projectsCtaPlaceholder: "Your business here",
+    projectsCtaTitle: "The next one could be yours",
+    projectsCtaText:
+      "Tell me what you do and I'll show you what your website could look like. No commitment.",
+    projectsCtaButton: "Get a free quote",
 
         // Pricing
     pricingTitle: "Pricing",
@@ -291,6 +340,10 @@ const translations = {
     sendMessage: "Send message",
     messageSent: "Message sent successfully!",
 
+    footerLinkedin: "My LinkedIn profile",
+    footerEmail: "Go to the contact form",
+    footerLegal: "Legal notice",
+    footerCgv: "Terms of sale",
     developpedBy: "Developed by Kevin Machado"
   },
 };

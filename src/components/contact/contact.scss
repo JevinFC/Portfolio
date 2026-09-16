@@ -26,8 +26,8 @@
 
   button {
     padding: 12px;
-    background-color: #b97cf1;
-    color: #171a1f;
+    background-color: var(--accent);
+    color: var(--surface);
     font-weight: 700;
     border: none;
     border-radius: 8px;
@@ -36,11 +36,11 @@
     transition: background 0.3s ease;
 
     &:hover {
-      background-color: #cfa2f7;
+      background-color: var(--accent-strong);
     }
 
     &:focus-visible {
-      outline: 3px solid #fff;
+      outline: 3px solid var(--text);
       outline-offset: 3px;
     }
   }

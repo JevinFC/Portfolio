@@ -3,3 +3,56 @@
   text-align: center;
   width: 100%;
 }
+
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-bottom: 1.25rem;
+
+  a {
+    color: var(--text);
+    font-size: 1.75rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footerSocial a {
+    transition: none;
+  }
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footerLegal {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+}

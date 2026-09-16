@@ -1,75 +1,49 @@
 import "./hero.scss";
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import BrowserFrame from "../ui/browserFrame.jsx";
 import { useLanguage } from "../languageContext";
 
 function Hero() {
   const { t } = useLanguage();
-  const [displayText, setDisplayText] = useState("");
-  const fullText = t("frontendDev");
-
-  useEffect(() => {
-  const chars = Array.from(fullText); // Gère correctement les caractères
-  let index = 0;
-
-  const interval = setInterval(() => {
-    setDisplayText(chars.slice(0, index + 1).join(""));
-    index++;
-
-    if (index === chars.length) {
-      clearInterval(interval);
-    }
-  }, 100);
-
-  return () => clearInterval(interval);
-}, [fullText]);
-
 
   return (
-    <div className="hero" id="accueil">
-      <div className="heroContent">
+    <section className="hero" id="accueil">
+      <div className="heroInner">
         <div className="heroText">
-          <div className="containerTitle">
-            <h2 className="heroTitle">
-              <span className="h1hello">{t("hello")}</span>
-              </h2>
-              <h1 className="heroTitle">
-              <span className="typing-text">{displayText}</span>
-            </h1>
-          </div>
-          <p className="heroDescription">
-            {t("heroSubtitle")}
-          </p>
-          <div className="linkHero">
-            <a href="#projects">{t("discoverProjects")}</a>
-            <a href="#contact">{t("contact")}</a>
-          </div>
-          <div className="socialHero">
-            <a
-              href="https://www.linkedin.com/in/kevin-machado-devfront"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FontAwesomeIcon icon={faLinkedin} className="icon" />
+          <p className="heroEyebrow">{t("heroEyebrow")}</p>
+
+          <h1 className="heroTitle">
+            {t("heroTitle")}
+          </h1>
+
+          <p className="heroLead">{t("heroText")}</p>
+
+          <div className="heroActions">
+            <a href="#contact" className="heroCta">
+              {t("heroCta")}
             </a>
-            <a
-              href="https://www.github.com/JevinFC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FontAwesomeIcon icon={faGithub} className="icon" />
-            </a>
-            <a href="#contact" className="social-link">
-              <FontAwesomeIcon icon={faEnvelope} className="icon" />
+            <a href="#projects" className="heroLink">
+              {t("heroLink")}
+              <span className="heroArrow" aria-hidden="true">
+                →
+              </span>
             </a>
           </div>
+
+          <p className="heroTrust">{t("heroTrust")}</p>
+        </div>
+
+        <div className="heroShowcase">
+          <BrowserFrame
+            src="/realisations/hero.png"
+            alt={t("heroShotAlt")}
+            width="1200"
+            height="750"
+            eager
+            className="heroBrowser"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
