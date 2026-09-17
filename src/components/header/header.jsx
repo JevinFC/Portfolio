@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
 import { useLanguage } from "../languageContext";
+import AxeIcon from "../ui/axeIcon.jsx";
 
 function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -18,7 +19,10 @@ function Header() {
   return (
     <header className={isScrolled ? "scrolled" : ""}>
       <div className={menuOpen ? "headerPortfolio open" : "headerPortfolio"}>
-        <h2 className="h2header">{t("portfolio")}</h2>
+        <h2 className="h2header">
+          <AxeIcon className="headerLogo" />
+          {t("portfolio")}
+        </h2>
 
         <nav className="navHeader" id="mainNav">
           <div className="navHeaderInner">

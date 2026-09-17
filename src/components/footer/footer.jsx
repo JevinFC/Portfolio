@@ -28,7 +28,6 @@ function Footer() {
           <a
             className="footerLegal"
             href="/mentions-legales.html"
-            target="_blank"
             rel="noopener noreferrer"
           >
             {t("footerLegal")}
@@ -36,7 +35,6 @@ function Footer() {
           <a
             className="footerLegal"
             href="/cgv.html"
-            target="_blank"
             rel="noopener noreferrer"
           >
             {t("footerCgv")}

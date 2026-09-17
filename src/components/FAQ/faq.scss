@@ -4,7 +4,7 @@
   margin: 0 auto;
   text-align: center;
   font-family: var(--font-body);
-  color: var(--text);
+  color: var(--color-ink);
 }
 
 .faqTitle {
@@ -20,8 +20,8 @@
 }
 
 .faqItem {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -40,7 +40,7 @@
     gap: 1rem;
     font-weight: 600;
     font-size: 1.1rem;
-    color: var(--text);
+    color: var(--color-ink);
     background-color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -53,26 +53,31 @@
       left: 0;
       bottom: 0;
       width: 200%;
-      background-repeat: repeat-x;
-      background-size: 50% 100%;
+      background-color: var(--color-accent);
+      -webkit-mask-repeat: repeat-x;
+      mask-repeat: repeat-x;
+      -webkit-mask-size: 50% 100%;
+      mask-size: 50% 100%;
       pointer-events: none;
     }
 
     &::before {
       height: 2.6rem;
       opacity: 0.45;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,62 C150,18 250,106 400,62 C550,18 650,106 800,62 C950,18 1050,106 1200,62 L1200,120 L0,120 Z' fill='%23b97cf1'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,62 C150,18 250,106 400,62 C550,18 650,106 800,62 C950,18 1050,106 1200,62 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,62 C150,18 250,106 400,62 C550,18 650,106 800,62 C950,18 1050,106 1200,62 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
       animation: faqWaveBack 13s linear infinite;
     }
 
     &::after {
       height: 2.1rem;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,22 250,98 400,60 C550,22 650,98 800,60 C950,22 1050,98 1200,60 L1200,120 L0,120 Z' fill='%23b97cf1'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,22 250,98 400,60 C550,22 650,98 800,60 C950,22 1050,98 1200,60 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,22 250,98 400,60 C550,22 650,98 800,60 C950,22 1050,98 1200,60 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
       animation: faqWaveFront 9s linear infinite;
     }
 
     &:focus-visible {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--color-accent);
       outline-offset: -3px;
     }
 
@@ -90,8 +95,8 @@
   .faqAnswer {
     font-size: 0.95rem;
     line-height: 1.5;
-    background: var(--accent);
-    color: var(--surface);
+    background: var(--color-accent);
+    color: var(--color-surface);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease, padding 0.35s ease;

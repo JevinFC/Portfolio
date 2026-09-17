@@ -12,12 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --bg: #0e0a14;
-        --surface: #17121f;
-        --border: rgba(255, 255, 255, 0.12);
-        --accent: #b97cf1;
-        --text: #f4f1f8;
-        --text-muted: #a79fb5;
+        color-scheme: light;
+        --color-bg: #F6EFE7;
+        --color-surface: #FFF8F1;
+        --color-ink: #23171D;
+        --color-ink-soft: #5B4A52;
+        --color-accent: #C9285B;
+        --color-accent-hover: #A8204D;
+        --color-accent-hot: #E2396F;
+        --color-accent-pale: #FFB3C9;
+        --color-line: rgba(35, 23, 29, 0.14);
         --font-display: "Bricolage Grotesque", sans-serif;
         --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif;
@@ -29,10 +33,20 @@
 
       body {
         margin: 0;
-        background: var(--bg);
-        color: var(--text);
+        background: var(--color-bg);
+        color: var(--color-ink);
         font-family: var(--font-body);
         line-height: 1.65;
+      }
+
+      ::selection {
+        background-color: var(--color-accent-pale);
+        color: var(--color-ink);
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--color-accent);
+        outline-offset: 3px;
       }
 
       .wrap {
@@ -58,12 +72,12 @@
         font-weight: 700;
         margin: 2.5rem 0 0.75rem;
         padding-top: 1.5rem;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--color-line);
       }
 
       p,
       li {
-        color: var(--text-muted);
+        color: var(--color-ink-soft);
         font-size: 1rem;
         margin: 0 0 0.75rem;
       }
@@ -74,23 +88,23 @@
       }
 
       strong {
-        color: var(--text);
+        color: var(--color-ink);
         font-weight: 600;
       }
 
       .todo {
-        color: var(--accent);
+        color: var(--color-accent);
         font-weight: 600;
       }
 
       a {
-        color: var(--text);
+        color: var(--color-ink);
         text-decoration: underline;
         text-underline-offset: 3px;
       }
 
       a:hover {
-        color: var(--accent);
+        color: var(--color-accent);
       }
 
       .back {
@@ -102,7 +116,7 @@
       .updated {
         margin-top: 3rem;
         padding-top: 1.5rem;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--color-line);
         font-size: 0.8125rem;
       }
     </style>

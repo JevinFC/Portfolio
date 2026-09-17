@@ -16,14 +16,14 @@
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--color-ink);
 }
 
 .projectsSubtitle {
   margin: 0 0 5rem;
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  color: var(--text-muted);
+  color: var(--color-ink-soft);
 }
 
 .projectRow {
@@ -59,7 +59,7 @@
     inset: 0;
     z-index: 0;
     transform: translate(-12px, 12px);
-    border: 1px solid var(--accent);
+    border: 1px solid var(--color-accent);
     border-radius: 12px;
     transition: transform 0.4s ease;
   }
@@ -109,12 +109,11 @@
   text-transform: uppercase;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  background: var(--surface);
-  color: var(--text-muted);
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
 
   &--client {
-    background: rgba(185, 124, 241, 0.12);
-    color: var(--accent);
+    color: var(--color-accent);
   }
 }
 
@@ -125,13 +124,13 @@
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--color-ink);
 }
 
 .projectRole {
   margin: 0 0 1.25rem;
   font-size: 0.9375rem;
-  color: var(--text-muted);
+  color: var(--color-ink-soft);
 }
 
 .projectText {
@@ -139,7 +138,7 @@
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: var(--text-muted);
+  color: var(--color-ink-soft);
   max-width: 46ch;
 }
 
@@ -153,9 +152,9 @@
 
   li {
     font-size: 0.8125rem;
-    color: var(--text);
-    background: var(--surface);
-    border: 1px solid var(--border);
+    color: var(--color-ink);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
     border-radius: 999px;
     padding: 0.3rem 0.8rem;
   }
@@ -165,7 +164,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--text);
+  color: var(--color-ink);
   text-decoration: underline;
   text-underline-offset: 4px;
 
@@ -178,7 +177,7 @@
   }
 
   &:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--color-accent);
     outline-offset: 4px;
   }
 }
@@ -188,36 +187,36 @@
   align-items: center;
   justify-content: center;
   height: calc(var(--frame-h) + 28px);
-  border: 1.5px dashed var(--border);
+  border: 1.5px dashed var(--color-line);
   border-radius: 12px;
   background: transparent;
-  color: var(--text-muted);
+  color: var(--color-ink-soft);
   font-size: 0.9375rem;
   transition: border-color 0.3s ease;
 }
 
 .projectRow--cta:hover .projectSlot,
 .projectRow--cta:focus-within .projectSlot {
-  border-color: var(--accent);
+  border-color: var(--color-accent);
 }
 
 .projectCta {
   display: inline-block;
   padding: 0.9rem 1.6rem;
   border-radius: 12px;
-  background-color: var(--accent);
-  color: var(--surface);
+  background-color: var(--color-accent);
+  color: var(--color-surface);
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.25s ease;
 
   &:hover {
-    background-color: var(--accent-strong);
+    background-color: var(--color-accent-hover);
   }
 
   &:focus-visible {
-    outline: 3px solid var(--text);
+    outline: 3px solid var(--color-ink);
     outline-offset: 3px;
   }
 }

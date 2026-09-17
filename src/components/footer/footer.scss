@@ -11,17 +11,17 @@
   margin-bottom: 1.25rem;
 
   a {
-    color: var(--text);
+    color: var(--color-ink);
     font-size: 1.75rem;
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: var(--accent);
+      color: var(--color-accent);
     }
 
     &:focus-visible {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--color-accent);
       outline-offset: 4px;
       border-radius: 4px;
     }
@@ -42,17 +42,17 @@
 }
 
 .footerLegal {
-  color: var(--text-muted);
+  color: var(--color-ink-soft);
   font-size: 0.875rem;
   text-decoration: underline;
   text-underline-offset: 3px;
 
   &:hover {
-    color: var(--accent);
+    color: var(--color-accent);
   }
 
   &:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--color-accent);
     outline-offset: 3px;
   }
 }

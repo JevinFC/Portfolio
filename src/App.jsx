@@ -8,9 +8,11 @@ import Contact from "./components/contact/contact.jsx";
 import Apropos from "./components/aPropos/apropos.jsx";
 import Tarifs from "./components/tarifs/tarifs.jsx";
 import Faq from "./components/FAQ/faq.jsx";
+import IntroAxe from "./components/IntroAxe/IntroAxe.jsx";
 function App() {
   return (
     <div>
+      <IntroAxe />
       <LanguageProvider>
       <Header />
       <Hero />

@@ -1,9 +1,8 @@
 .browserFrame {
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-line);
   border-radius: 12px;
   overflow: hidden;
-  background: var(--surface);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  background: var(--color-surface);
 }
 
 .browserFrameBar {
@@ -12,19 +11,20 @@
   gap: 0.4rem;
   height: 28px;
   padding: 0 0.9rem;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-line);
 
   span {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: var(--border);
+    background: var(--color-ink);
+    opacity: 0.35;
   }
 }
 
 .browserFrameBody {
-  background: var(--surface);
+  background: var(--color-surface);
   aspect-ratio: 1200 / 750;
 
   img {

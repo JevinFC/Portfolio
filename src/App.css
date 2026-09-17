@@ -1,11 +1,17 @@
 :root {
-  --bg: #0E0A14;
-  --surface: #17121F;
-  --border: rgba(255, 255, 255, 0.12);
-  --accent: #b97cf1;
-  --accent-strong: #a26ae0;
-  --text: #F4F1F8;
-  --text-muted: #A79FB5;
+  color-scheme: light;
+
+  --color-bg: #F6EFE7;
+  --color-surface: #FFF8F1;
+  --color-ink: #23171D;
+  --color-ink-soft: #5B4A52;
+  --color-accent: #C9285B;
+  --color-accent-hover: #A8204D;
+  --color-accent-hot: #E2396F;
+  --color-accent-pale: #FFB3C9;
+  --color-line: rgba(35, 23, 29, 0.14);
+
+  --shadow-soft: 0 8px 24px rgba(35, 23, 29, 0.08);
 
   --font-display: "Bricolage Grotesque", sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -14,26 +20,10 @@
 
 body {
   position: relative;
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
   font-family: var(--font-body);
   margin: 0;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 900px;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    60% 50% at 30% 40%,
-    rgba(185, 124, 241, 0.16) 0%,
-    rgba(185, 124, 241, 0) 70%
-  );
 }
 
 body::after {
@@ -50,6 +40,16 @@ body::after {
 #root {
   position: relative;
   z-index: 1;
+}
+
+::selection {
+  background-color: var(--color-accent-pale);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 h1, h2, h3 {
