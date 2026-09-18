@@ -13,7 +13,7 @@
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-ink);
@@ -23,12 +23,14 @@
   margin: 0 0 5rem;
   font-family: var(--font-body);
   font-size: 1.0625rem;
+  line-height: 1.55;
   color: var(--color-ink-soft);
 }
 
 .projectRow {
   --enter-x: -32px;
   --frame-h: 320px;
+  --tilt: -2deg;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -42,6 +44,7 @@
 
   &.reversed {
     --enter-x: 32px;
+    --tilt: 2deg;
 
     .projectVisual {
       order: 2;
@@ -58,7 +61,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    transform: translate(-12px, 12px);
+    transform: rotate(var(--tilt)) translate(-12px, 12px);
     border: 1px solid var(--color-accent);
     border-radius: 12px;
     transition: transform 0.4s ease;
@@ -68,7 +71,16 @@
 .projectFrame {
   position: relative;
   z-index: 1;
+  transform: rotate(var(--tilt));
   transition: transform 0.4s ease;
+
+  &.browserFrame {
+    border: 2px solid var(--color-ink);
+  }
+
+  .browserFrameBar {
+    border-bottom: 2px solid var(--color-ink);
+  }
 
   .browserFrameBody {
     aspect-ratio: auto;
@@ -86,11 +98,11 @@
 .projectRow:hover,
 .projectRow:focus-within {
   .projectFrame {
-    transform: translateY(-8px);
+    transform: rotate(var(--tilt)) translateY(-8px);
   }
 
   .projectVisual::before {
-    transform: translate(-6px, 6px);
+    transform: rotate(var(--tilt)) translate(-6px, 6px);
   }
 
   .projectFrame .browserFrameBody img {
@@ -104,16 +116,17 @@
 
 .projectStatus {
   display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
   background: var(--color-surface);
-  color: var(--color-ink-soft);
+  color: var(--color-accent);
 
   &--client {
-    color: var(--color-accent);
+    background: var(--color-accent-pale);
+    color: var(--color-ink);
   }
 }
 
@@ -137,7 +150,7 @@
   margin: 0 0 1.75rem;
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.55;
   color: var(--color-ink-soft);
   max-width: 46ch;
 }
@@ -206,7 +219,7 @@
   border-radius: 12px;
   background-color: var(--color-accent);
   color: var(--color-surface);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.25s ease;
@@ -266,6 +279,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .projectRow,
+  .projectRow.reversed {
+    --tilt: 0deg;
+  }
+}
+
 @media (max-width: 600px) {
   .projectsInner {
     padding: 0 1.25rem;
@@ -295,8 +315,14 @@
 
   .projectRow:hover,
   .projectRow:focus-within {
-    .projectFrame,
-    .projectVisual::before,
+    .projectFrame {
+      transform: rotate(var(--tilt));
+    }
+
+    .projectVisual::before {
+      transform: rotate(var(--tilt)) translate(-12px, 12px);
+    }
+
     .projectFrame .browserFrameBody img {
       transform: none;
     }

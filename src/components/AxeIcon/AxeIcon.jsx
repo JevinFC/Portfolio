@@ -1,13 +1,17 @@
-import "./axeIcon.scss";
+import "./AxeIcon.scss";
 
 const BLADE_PATH = "M88 50 L58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 L88 74 Z";
 const EDGE_PATH =
   "M58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 C45 83 35 74 35 62 C35 50 45 41 58 36 Z";
 
-function AxeIcon({ className = "" }) {
+function AxeIcon({ variant = "onHot", size, className = "" }) {
+  const classes = ["axe", `axe--${variant}`, className].filter(Boolean).join(" ");
+  const style = size ? { width: `${size}px`, height: `${size}px` } : undefined;
+
   return (
     <svg
-      className={className ? `axe ${className}` : "axe"}
+      className={classes}
+      style={style}
       viewBox="0 0 200 200"
       aria-hidden="true"
       focusable="false"

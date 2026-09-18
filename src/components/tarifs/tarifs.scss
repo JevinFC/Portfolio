@@ -13,15 +13,18 @@
 }
 
 .tarifsTitle {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
   margin: 0 0 .75rem;
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--color-ink);
 }
 
 .tarifsSubtitle {
   margin: 0 0 3rem;
-  font-size: 1.05rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
   color: var(--color-ink-soft);
   max-width: 55ch;
 }
@@ -39,15 +42,15 @@
   flex-direction: column;
   justify-content: center;
 
-  padding-block: 90px 1.5rem;
+  padding-block: 86px 1rem;
 }
 
 .tarifsPin.pinned .tarifsPinContent {
   flex-shrink: 0;
 }
 
-.tarifsPin.pinned .tarifsSubtitle { margin-bottom: 2rem; }
-.tarifsPin.pinned .tarifsBanner { margin-top: 2.5rem; }
+.tarifsPin.pinned .tarifsSubtitle { margin-bottom: 1.5rem; }
+.tarifsPin.pinned .tarifsBanner { margin-top: 1.75rem; }
 
 .tarifsGrid {
   display: grid;
@@ -69,9 +72,8 @@
   text-align: left;
   background: var(--color-surface);
   border: 1px solid var(--color-line);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-soft);
+  padding: 1.75rem;
+  border-radius: 12px;
   color: var(--color-ink);
 
   opacity: 0;
@@ -80,22 +82,21 @@
     opacity .6s ease,
     transform .6s ease,
     border-color .3s ease,
-    box-shadow .3s ease,
     --hover-lift .3s ease;
 
   .tarifHeader {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: .5rem;
-    margin-bottom: 1rem;
+    gap: .4rem;
+    margin-bottom: .75rem;
   }
 
   h3 {
     font-size: 1.8rem;
     margin: 0;
 
-    min-height: 2.4em;
+    min-height: 2.1em;
   }
 
   .price {
@@ -115,18 +116,25 @@
   }
 
   .subtitle {
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.25rem;
     font-weight: 500;
-    min-height: 2.4em;
+    min-height: 2.1em;
+  }
+
+  .tarifIncluded {
+    margin: 0 0 .3rem;
+    font-size: .8125rem;
+    font-weight: 600;
+    color: var(--color-accent);
   }
 
   ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 2rem;
+    margin: 0 0 1.5rem;
 
     li {
-      margin: .5rem 0;
+      margin: .3rem 0;
       position: relative;
       padding-left: 1.5rem;
       font-size: .95rem;
@@ -220,7 +228,6 @@
     transition:
       opacity .3s ease,
       border-color .3s ease,
-      box-shadow .3s ease,
       --hover-lift .3s ease;
     transition-delay: 0s;
   }
@@ -328,7 +335,7 @@
   .tarifCard {
     opacity: 1;
     transform: none;
-    transition: border-color .3s ease, box-shadow .3s ease;
+    transition: border-color .3s ease;
   }
 
   .tarifsGrid.visible .tarifCard,

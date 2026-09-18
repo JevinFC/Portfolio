@@ -28,12 +28,21 @@ function Faq() {
             key={index}
             className={`faqItem ${openIndex === index ? "open" : ""}`}
           >
-            <button className="faqQuestion" onClick={() => toggle(index)}>
+            <button
+              type="button"
+              className="faqQuestion"
+              onClick={() => toggle(index)}
+              aria-expanded={openIndex === index}
+              aria-controls={`faqAnswer-${index}`}
+            >
               <span className="faqQuestionText">{item.question}</span>
-              <span className="arrow">{openIndex === index ? "▲" : "▼"}</span>
+              <span className="arrow" aria-hidden="true">
+                {openIndex === index ? "▲" : "▼"}
+              </span>
             </button>
             <div
               className="faqAnswer"
+              id={`faqAnswer-${index}`}
               ref={(el) => (answerRefs.current[index] = el)}
             >
               <p>{item.answer}</p>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page introuvable - Kévin Machado</title>
+    <meta name="description" content="Cette page n'existe pas ou plus sur le site de Kévin Machado, développeur web à Tours." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light;
+        --color-bg: #F6EFE7;
+        --color-surface: #FFF8F1;
+        --color-ink: #23171D;
+        --color-ink-soft: #5B4A52;
+        --color-accent: #C9285B;
+        --color-accent-hover: #A8204D;
+        --color-accent-hot: #E2396F;
+        --color-accent-pale: #FFB3C9;
+        --color-line: rgba(35, 23, 29, 0.14);
+        --font-display: "Bricolage Grotesque", sans-serif;
+        --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: var(--color-bg);
+        color: var(--color-ink);
+        font-family: var(--font-body);
+        line-height: 1.55;
+      }
+
+      ::selection {
+        background-color: var(--color-accent-pale);
+        color: var(--color-ink);
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--color-accent);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      .axe {
+        display: block;
+        width: 72px;
+        height: 72px;
+        margin-bottom: 2rem;
+        transform: rotate(-18deg);
+      }
+
+      .label {
+        margin: 0 0 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-accent);
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-optical-sizing: auto;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin: 0 0 1.25rem;
+        max-width: 18ch;
+      }
+
+      p.text {
+        margin: 0 0 2.5rem;
+        font-size: 1.0625rem;
+        color: var(--color-ink-soft);
+        max-width: 50ch;
+      }
+
+      .cta {
+        display: inline-block;
+        padding: 0.9rem 1.6rem;
+        border-radius: 12px;
+        background-color: var(--color-accent);
+        color: var(--color-surface);
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background-color 0.25s ease;
+      }
+
+      .cta:hover {
+        background-color: var(--color-accent-hover);
+      }
+
+      .langButton {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        border: 2px solid var(--color-ink);
+        background: transparent;
+        color: var(--color-ink);
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        font-family: var(--font-body);
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .langButton:hover {
+        background-color: var(--color-accent-hover);
+        border-color: var(--color-accent-hover);
+        color: var(--color-surface);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cta {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" class="langButton" id="langButton">EN</button>
+
+    <div class="wrap">
+      <svg class="axe" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <rect x="93" y="28" width="14" height="162" rx="7" fill="#C9285B" />
+        <rect x="90" y="150" width="20" height="6" rx="3" fill="#23171D" />
+        <rect x="90" y="162" width="20" height="6" rx="3" fill="#23171D" />
+        <rect x="90" y="174" width="20" height="6" rx="3" fill="#23171D" />
+        <g>
+          <path d="M88 50 L58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 L88 74 Z" fill="#23171D" />
+          <path d="M58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 C45 83 35 74 35 62 C35 50 45 41 58 36 Z" fill="#FFB3C9" />
+        </g>
+        <g transform="translate(200 0) scale(-1 1)">
+          <path d="M88 50 L58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 L88 74 Z" fill="#23171D" />
+          <path d="M58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 C45 83 35 74 35 62 C35 50 45 41 58 36 Z" fill="#FFB3C9" />
+        </g>
+        <rect x="83" y="45" width="34" height="34" rx="5" fill="#23171D" />
+        <circle cx="100" cy="62" r="5.5" fill="#FFF8F1" />
+      </svg>
+
+      <p class="label" id="label">Erreur 404</p>
+      <h1 id="title">Cette page est tombée sous la hache.</h1>
+      <p class="text" id="text">
+        Elle n'existe pas ou plus. Pas de panique, l'essentiel est toujours là.
+      </p>
+      <a class="cta" href="/" id="cta">Retour à l'accueil</a>
+    </div>
+
+    <script>
+      var content = {
+        fr: {
+          htmlLang: "fr",
+          docTitle: "Page introuvable - Kévin Machado",
+          label: "Erreur 404",
+          title: "Cette page est tombée sous la hache.",
+          text: "Elle n'existe pas ou plus. Pas de panique, l'essentiel est toujours là.",
+          cta: "Retour à l'accueil",
+          button: "EN",
+          buttonLabel: "Switch to English"
+        },
+        en: {
+          htmlLang: "en",
+          docTitle: "Page not found - Kévin Machado",
+          label: "Error 404",
+          title: "This page got chopped.",
+          text: "It doesn't exist, or not anymore. Don't worry, everything that matters is still here.",
+          cta: "Back to home",
+          button: "FR",
+          buttonLabel: "Passer en français"
+        }
+      };
+
+      var button = document.getElementById("langButton");
+
+      function render(lang) {
+        var c = content[lang];
+        document.documentElement.lang = c.htmlLang;
+        document.title = c.docTitle;
+        document.getElementById("label").textContent = c.label;
+        document.getElementById("title").textContent = c.title;
+        document.getElementById("text").textContent = c.text;
+        document.getElementById("cta").textContent = c.cta;
+        button.textContent = c.button;
+        button.setAttribute("aria-label", c.buttonLabel);
+        button.dataset.lang = lang;
+      }
+
+      render(
+        (navigator.language || "fr").toLowerCase().indexOf("fr") === 0
+          ? "fr"
+          : "en"
+      );
+
+      button.addEventListener("click", function () {
+        render(button.dataset.lang === "fr" ? "en" : "fr");
+      });
+    </script>
+  </body>
+</html>

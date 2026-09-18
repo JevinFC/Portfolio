@@ -11,8 +11,7 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  background-color: var(--color-bg);
-  backdrop-filter: blur(12px);
+  background-color: var(--color-accent);
 }
 
 .headerPortfolio {
@@ -29,27 +28,21 @@ header.scrolled {
 .h2header {
   display: flex;
   align-items: center;
-  gap: 0.35em;
+  gap: 10px;
   font-family: var(--font-display);
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-weight: 800;
   font-size: clamp(1.5rem, 2vw, 3rem);
+  color: var(--color-surface);
   margin: 0;
   margin-right: auto;
 }
 
 .headerLogo {
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.2em;
+  height: 1.2em;
   flex-shrink: 0;
-
-  .axe__handle {
-    fill: var(--color-accent-hot);
-  }
-
-  .axe__edge {
-    fill: var(--color-accent);
-  }
+  transform: rotate(-18deg);
 }
 
 .navHeader {
@@ -65,20 +58,20 @@ header.scrolled {
 
 .navHeader a {
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
-  color: var(--color-ink-soft);
+  color: var(--color-surface);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  text-transform: capitalize;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-surface);
     outline-offset: 3px;
   }
 }
@@ -91,12 +84,12 @@ header.scrolled {
 }
 
 .languageButton {
-  border: 2px solid var(--color-ink);
+  border: 2px solid var(--color-surface);
   background-color: transparent;
-  color: var(--color-ink);
+  color: var(--color-surface);
   padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  border-radius: 12px;
+  font-family: var(--font-body);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -104,13 +97,13 @@ header.scrolled {
   text-align: center;
 
   &:hover {
-    background-color: var(--color-accent-hover);
-    color: var(--color-surface);
-    border-color: var(--color-accent-hover);
+    background-color: var(--color-surface);
+    color: var(--color-accent);
+    border-color: var(--color-surface);
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-surface);
     outline-offset: 3px;
   }
 }
@@ -120,8 +113,8 @@ header.scrolled {
   width: 42px;
   height: 42px;
   padding: 0;
-  border: 2px solid var(--color-ink);
-  border-radius: 8px;
+  border: 2px solid var(--color-surface);
+  border-radius: 12px;
   background: transparent;
   cursor: pointer;
   flex-direction: column;
@@ -134,12 +127,12 @@ header.scrolled {
     width: 18px;
     height: 2px;
     border-radius: 2px;
-    background: var(--color-ink);
+    background: var(--color-surface);
     transition: transform 0.3s ease, opacity 0.2s ease;
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-surface);
     outline-offset: 3px;
   }
 }
@@ -152,12 +145,7 @@ header.scrolled {
   }
 
   .h2header {
-    gap: 0.25em;
-  }
-
-  .headerLogo {
-    width: 1.3em;
-    height: 1.3em;
+    gap: 8px;
   }
 
   .burgerButton {
@@ -173,8 +161,8 @@ header.scrolled {
     grid-template-rows: 0fr;
     overflow: hidden;
     visibility: hidden;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-line);
+    background: var(--color-accent);
+    border-bottom: 2px solid var(--color-surface);
     transition: grid-template-rows 0.35s ease, visibility 0s 0.35s;
   }
 

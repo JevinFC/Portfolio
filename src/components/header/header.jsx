@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
 import { useLanguage } from "../languageContext";
-import AxeIcon from "../ui/axeIcon.jsx";
+import AxeIcon from "../AxeIcon/AxeIcon.jsx";
 
 function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -20,7 +20,7 @@ function Header() {
     <header className={isScrolled ? "scrolled" : ""}>
       <div className={menuOpen ? "headerPortfolio open" : "headerPortfolio"}>
         <h2 className="h2header">
-          <AxeIcon className="headerLogo" />
+          <AxeIcon variant="onHot" className="headerLogo" />
           {t("portfolio")}
         </h2>
 
@@ -40,8 +40,10 @@ function Header() {
 
         <div className="headerActions">
           <button
+            type="button"
             onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
             className="languageButton"
+            aria-label={t("langSwitch")}
           >
             {language.toUpperCase()}
           </button>

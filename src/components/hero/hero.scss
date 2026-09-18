@@ -1,12 +1,15 @@
+@use "../../styles/cuts" as cuts;
+
 .hero {
   position: relative;
   isolation: isolate;
-  padding: 7rem 0 6rem;
+  padding: 7rem 0 0;
   min-height: 640px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  background-color: var(--color-accent);
 
+  @include cuts.cut-bottom(6rem);
 }
 
 .heroInner {
@@ -32,10 +35,9 @@
   margin: 0 0 1.25rem;
   font-family: var(--font-body);
   font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-surface);
 }
 
 .heroTitle {
@@ -43,20 +45,20 @@
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(2.5rem, 6.5vw, 5.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.03em;
   font-variation-settings: "wdth" 88;
-  color: var(--color-ink);
-  max-width: 14ch;
+  color: var(--color-surface);
+  max-width: 16ch;
 }
 
 .heroLead {
   margin: 1.75rem 0 0;
   font-family: var(--font-body);
   font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--color-ink-soft);
+  line-height: 1.55;
+  color: var(--color-surface);
   max-width: 46ch;
 }
 
@@ -72,15 +74,15 @@
   display: inline-block;
   padding: 0.9rem 1.6rem;
   border-radius: 12px;
-  background-color: var(--color-accent);
-  color: var(--color-surface);
-  font-weight: 500;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.25s ease;
 
   &:hover {
-    background-color: var(--color-accent-hover);
+    background-color: var(--color-accent-pale);
   }
 
   &:focus-visible {
@@ -93,7 +95,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-ink);
+  color: var(--color-surface);
   font-size: 1rem;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -107,7 +109,7 @@
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-surface);
     outline-offset: 4px;
   }
 }
@@ -115,7 +117,7 @@
 .heroTrust {
   margin: 2rem 0 0;
   font-size: 0.875rem;
-  color: var(--color-ink-soft);
+  color: var(--color-surface);
 }
 
 .heroShowcase {
@@ -123,10 +125,10 @@
 }
 
 .heroBrowser {
-  transform: rotate(-2deg);
+  transform: rotate(-4deg);
 
   &.browserFrame {
-    border: 2px solid var(--color-ink);
+    border: 2px solid var(--color-surface);
   }
 
   .browserFrameBar {
@@ -139,7 +141,9 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+}
 
+@media (max-width: 768px) {
   .heroBrowser {
     transform: none;
   }
@@ -147,7 +151,9 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding: 5rem 0 3rem;
+    padding-top: 5rem;
+
+    @include cuts.cut-bottom(3rem);
   }
 
   .heroActions {

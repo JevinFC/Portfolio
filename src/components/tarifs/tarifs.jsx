@@ -4,7 +4,7 @@ import "./tarifs.scss";
 
 const PIN_DISTANCE = 800;
 
-const PIN_HEADROOM = 130;
+const PIN_HEADROOM = 118;
 
 const easeInOutCubic = (x) =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
@@ -170,6 +170,8 @@ function Tarifs() {
                   </div>
 
                   <p className="subtitle">{pack.subtitle}</p>
+
+                  <p className="tarifIncluded">{t("pricingIncluded")}</p>
 
                   <ul>
                     {pack.features.map((feat, idx) => (

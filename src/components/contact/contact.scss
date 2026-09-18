@@ -1,13 +1,36 @@
+@use "../../styles/cuts" as cuts;
+
 .contactSection {
   margin-top: 150px;
   width: 100%;
-  color: var(--color-ink);
-  text-align: center;
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  padding-top: 5rem;
+
+  @include cuts.cut-bottom(4rem);
 
   h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-surface);
   }
+}
+
+.contactInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.contactSubtitle {
+  margin: 0 0 2.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--color-surface);
 }
 
 .contactForm {
@@ -15,12 +38,25 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.25rem;
+  text-align: left;
+
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-surface);
+  }
 
   input, textarea {
-    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
     border: 1px solid var(--color-line);
-    border-radius: 8px;
+    border-radius: 12px;
+    font-family: var(--font-body);
     font-size: 1rem;
     background-color: var(--color-surface);
     color: var(--color-ink);
@@ -31,23 +67,7 @@
     }
 
     &:focus {
-      border-color: var(--color-accent);
-    }
-  }
-
-  button {
-    padding: 12px;
-    background-color: var(--color-accent);
-    color: var(--color-surface);
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-
-    &:hover {
-      background-color: var(--color-accent-hover);
+      border-color: var(--color-ink);
     }
 
     &:focus-visible {
@@ -56,9 +76,63 @@
     }
   }
 
-  .successMsg {
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    padding: 0.9rem;
+    background-color: var(--color-surface);
     color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
     font-size: 1rem;
-    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-accent-pale);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-ink);
+      outline-offset: 3px;
+    }
+  }
+}
+
+.contactStatus {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.successMsg {
+  color: var(--color-surface);
+}
+
+.errorMsg {
+  color: var(--color-surface);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .contactSection {
+    margin-top: 90px;
+    padding-top: 3.5rem;
+
+    @include cuts.cut-bottom(2.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contactForm button {
+    transition: none;
   }
 }

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./IntroAxe.scss";
-import AxeIcon from "../ui/axeIcon.jsx";
+import AxeIcon from "../AxeIcon/AxeIcon.jsx";
 
 const DURATIONS = {
   full: {

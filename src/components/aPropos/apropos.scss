@@ -43,21 +43,31 @@
 }
 
 .aproposTitle {
-  margin: 0 0 1.75rem;
+  margin: 0 0 0.6rem;
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-ink);
 }
 
+.aproposSubtitle {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--color-accent);
+  max-width: 52ch;
+}
+
 .aproposLead {
   margin: 0 0 1.25rem;
   font-family: var(--font-body);
-  font-size: 1.25rem;
-  line-height: 1.65;
+  font-size: 1.1875rem;
+  line-height: 1.55;
   color: var(--color-ink);
   max-width: 52ch;
 }
@@ -66,7 +76,7 @@
   margin: 0 0 1.25rem;
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.55;
   color: var(--color-ink-soft);
   max-width: 52ch;
 }

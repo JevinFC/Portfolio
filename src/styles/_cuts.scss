@@ -1,0 +1,13 @@
+$cut-ratio: 0.1228;
+
+@mixin cut-bottom($pad: 0rem) {
+  --cut-h: calc(100vw * #{$cut-ratio});
+
+  padding-bottom: calc(#{$pad} + var(--cut-h));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--cut-h)),
+    0 100%
+  );
+}

@@ -1,7 +1,24 @@
 .footerPortfolio {
   margin-top: 150px;
+  padding-bottom: 3rem;
   text-align: center;
   width: 100%;
+}
+
+.footerMade {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.footerCopyright {
+  margin: 0 0 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
 }
 
 .footerSocial {

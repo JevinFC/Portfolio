@@ -22,8 +22,10 @@ function Footer() {
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </div>
-        <p>© 2025 - Kévin Machado</p>
-        <p>{t("developpedBy")}</p>
+        <p className="footerMade">{t("footerMade")}</p>
+        <p className="footerCopyright">
+          {t("footerCopyright").replace("{year}", new Date().getFullYear())}
+        </p>
         <p className="footerLinks">
           <a
             className="footerLegal"

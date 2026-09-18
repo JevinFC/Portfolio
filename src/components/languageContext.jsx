@@ -9,12 +9,13 @@ const translations = {
     projects: "Réalisations",
     navOpen: "Ouvrir le menu",
     navClose: "Fermer le menu",
+    langSwitch: "Passer en anglais",
 
     // Hero
     heroEyebrow: "Développeur web · Tours",
-    heroTitle: "Je crée des sites internet pour les commerçants de Tours.",
+    heroTitle: "Des sites taillés sur mesure pour les commerçants de Tours.",
     heroText:
-      "Un site clair, rapide, trouvable sur Google. Livré rapidement, à partir de 890 €.",
+      "On coupe le superflu, on garde ce qui fait venir des clients. Livré rapidement, à partir de 890 €.",
     heroCta: "Demander un devis gratuit",
     heroLink: "Voir mes réalisations",
     heroTrust: "Réponse sous 48 h · Devis sans engagement · Basé à Tours",
@@ -23,6 +24,7 @@ const translations = {
 
     // About
     aboutHeading: "Qui va faire votre site",
+    aboutSubtitle: "Machado, ça veut dire « hache » en portugais.",
     aboutP1: "Je m'appelle Kévin Machado, développeur web à Tours.",
     aboutP2:
       "Je travaille seul, en micro-entreprise. La personne que vous avez au téléphone est celle qui code votre site, et celle que vous rappellerez dans six mois si quelque chose ne va pas.",
@@ -30,38 +32,40 @@ const translations = {
       "Votre site est écrit sur mesure, ligne par ligne. Ce n'est pas un modèle repeint aux couleurs de votre enseigne : il est plus rapide, mieux référencé, et il vous appartient vraiment.",
     aboutP4:
       "Pas de jargon ni de réunions inutiles : vous me racontez votre métier, je vous montre une maquette, on ajuste ensemble, je livre. Et comme je suis à Tours, on peut se rencontrer.",
+    aboutP5:
+      "J'en ai fait ma façon de travailler : couper tout ce qui ne vous sert pas, et tailler un site sur mesure pour votre commerce. Une hache à double tranchant, ce sont deux promesses : un site simple pour vous, et efficace pour Google.",
     aboutFact1: "Basé à Tours (37)",
     aboutFact2: "Micro-entreprise, SIRET affiché",
     aboutFact3: "Réponse sous 48 h",
     aboutFact4: "Devis gratuit, sans engagement",
     aboutTech:
-      "Sites développés en React et Next.js, sans WordPress ni constructeur de pages.",
+      "Aucun modèle tout fait, aucun montage automatique : tout est écrit à la main.",
     aboutPhotoAlt: "Kévin Machado, développeur web à Tours",
 
     // Projects
     projectsTitle: "Ils ont désormais un site",
-    projectsSubtitle: "Trois réalisations, et une place qui vous attend.",
+    projectsSubtitle: "Des sites taillés pour des commerces bien réels.",
     projectLink: "Voir le site en ligne",
     projectLolaStatus: "Client",
     projectLolaName: "Lola Gauchy",
     projectLolaRole: "Communication digitale, freelance",
     projectLolaText:
-      "Lola n'avait qu'un profil sur les réseaux pour montrer son travail. Elle dispose maintenant d'un portfolio qui lui appartient, qu'elle envoie directement à ses prospects.",
-    projectLolaTags: ["Portfolio", "Rédaction", "Mise en ligne"],
+      "Lola n'avait qu'un profil sur les réseaux pour montrer son travail. Elle dispose maintenant d'un site qui lui appartient, qu'elle envoie directement à ses prospects.",
+    projectLolaTags: ["Présenter son travail", "Textes rédigés", "Mis en ligne"],
     projectLolaAlt: "Page d'accueil du portfolio de Lola Gauchy",
     projectKasaStatus: "Projet d'apprentissage",
     projectKasaName: "Kasa",
     projectKasaRole: "Plateforme de location immobilière",
     projectKasaText:
-      "Une application de location construite en React, avec navigation entre les pages et composants réutilisables. Gestion des états de chargement et des pages d'erreur incluse.",
-    projectKasaTags: ["React", "Routage", "Responsive"],
+      "Un site de location où l'on cherche un logement, ouvre une annonce et consulte les photos sans jamais se perdre.",
+    projectKasaTags: ["Navigation simple", "Lisible sur mobile", "Pages d'annonces"],
     projectKasaAlt: "Page d'accueil de la plateforme de location Kasa",
     projectNinaStatus: "Projet d'apprentissage",
     projectNinaName: "Nina Carducci",
     projectNinaRole: "Photographe",
     projectNinaText:
-      "Optimisation complète d'un site de photographe : temps de chargement divisé par trois, images compressées, balises de référencement et données structurées ajoutées.",
-    projectNinaTags: ["Référencement", "Performances", "Accessibilité"],
+      "Le site d'une photographe remis d'aplomb : il s'affiche trois fois plus vite et ressort mieux dans les résultats Google.",
+    projectNinaTags: ["Chargement rapide", "Trouvé sur Google", "Lisible par tous"],
     projectNinaAlt: "Page d'accueil du site de la photographe Nina Carducci",
     projectsCtaPlaceholder: "Votre commerce ici",
     projectsCtaTitle: "La prochaine, c'est peut-être la vôtre",
@@ -71,7 +75,9 @@ const translations = {
 
     // Tarifs
     pricingTitle: "Tarifs",
-    pricingSubtitle: "Des prix nets, sans surprise. Devis gratuit et sans engagement.",
+    pricingSubtitle:
+      "Pas de frais cachés, pas d'options inutiles. Vous savez exactement ce que vous payez.",
+    pricingIncluded: "Ce qui est inclus",
     pricingCta: "Demander un devis",
     pricingNotes: [
       "Paiement en 3 fois sans frais",
@@ -86,10 +92,10 @@ const translations = {
     basicFeatures: [
       "Une page unique, tout y est",
       "Vos horaires, coordonnées et photos",
-      "Bouton appel et itinéraire",
-      "Parfaitement lisible sur mobile",
-      "Mise en ligne et hébergement configurés",
-      "Fiche Google Business créée",
+      "Un bouton pour vous appeler, un autre pour venir chez vous",
+      "S'affiche parfaitement sur téléphone",
+      "Mis en ligne et hébergé, je m'occupe de tout",
+      "Votre fiche Google créée : horaires, adresse, avis",
     ],
     basicDelivery: "Livré en 1 semaine",
 
@@ -99,12 +105,12 @@ const translations = {
     standardPrice: "1 690 €",
     standardSubtitle: "Un vrai site pour présenter votre activité en détail.",
     standardFeatures: [
-      "Tout ce qui est inclus dans \"Une page\"",
+      "Tout ce qui est inclus dans « Une page »",
       "4 à 6 pages",
-      "Formulaire de contact",
+      "Un formulaire pour recevoir vos demandes",
       "Galerie photos, menu ou catalogue",
-      "Rédaction des textes à partir de vos infos",
-      "Référencement local de base",
+      "Vos textes rédigés à partir de ce que vous me dites",
+      "Pensé pour être trouvé sur Google à Tours",
     ],
     standardDelivery: "Livré en 2 à 3 semaines",
 
@@ -113,27 +119,32 @@ const translations = {
     premiumPrice: "2 490 €",
     premiumSubtitle: "Pour être trouvé avant vos concurrents dans votre ville.",
     premiumFeatures: [
-      "Tout ce qui est inclus dans \"Site complet\"",
-      "Référencement local approfondi",
+      "Tout ce qui est inclus dans « Site complet »",
+      "Un travail poussé pour ressortir sur les recherches de votre ville",
       "Prise de rendez-vous en ligne",
       "Séance photo de votre établissement",
-      "Formation 1h pour modifier vous-même",
+      "Une heure de formation pour modifier votre site vous-même",
       "Suivi pendant 3 mois après la mise en ligne",
     ],
     premiumDelivery: "Livré en 3 à 4 semaines",
 
-
     // Contact
     contactTitle: "Contact",
-    yourName: "Votre nom",
-    yourEmail: "Votre email",
-    yourMessage: "Votre message",
+    contactSubtitle: "Réponse sous 48 h, devis sans engagement.",
+    labelName: "Votre nom",
+    labelEmail: "Votre e-mail",
+    labelMessage: "Votre message",
+    yourName: "Prénom et nom",
+    yourEmail: "Pour que je puisse vous répondre",
+    yourMessage: "Dites-moi ce que vous faites et ce dont vous avez besoin.",
     sendMessage: "Envoyer le message",
-    messageSent: "Message envoyé avec succès !",
+    messageSent: "C'est envoyé. Je vous réponds sous 48 h.",
+    messageError:
+      "L'envoi n'a pas fonctionné. Écrivez-moi directement à contact@kevinmachado.dev.",
 
     //FAQ
 
-     faqTitle: "FAQ",
+    faqTitle: "FAQ",
     faq: [
       {
         question: "Combien de temps avant que mon site soit en ligne ?",
@@ -172,7 +183,8 @@ const translations = {
     footerEmail: "Aller au formulaire de contact",
     footerLegal: "Mentions légales",
     footerCgv: "CGV",
-    developpedBy: "Développé par Kévin Machado"
+    footerMade: "Taillé à Tours.",
+    footerCopyright: "© {year} · Kévin Machado"
   },
   en: {
     // Header
@@ -182,20 +194,22 @@ const translations = {
     projects: "Work",
     navOpen: "Open menu",
     navClose: "Close menu",
+    langSwitch: "Switch to French",
 
     // Hero
     heroEyebrow: "Web developer · Tours",
-    heroTitle: "I build websites for local businesses in Tours.",
+    heroTitle: "Websites cut to measure for local shops in Tours.",
     heroText:
-      "A clear, fast website that shows up on Google. Delivered quickly, from €890.",
+      "We cut the fluff and keep what brings customers in. Delivered fast, from €890.",
     heroCta: "Get a free quote",
     heroLink: "See my work",
-    heroTrust: "Reply within 48h · No-commitment quote · Based in Tours",
+    heroTrust: "Reply within 48 hours · No-obligation quote · Based in Tours",
     heroShotAlt:
       "Home page of a showcase website built for a local business in Tours",
 
     // About
     aboutHeading: "Who will build your website",
+    aboutSubtitle: "Machado means “axe” in Portuguese.",
     aboutP1: "My name is Kévin Machado, a web developer based in Tours, France.",
     aboutP2:
       "I work alone, as a sole trader. The person you speak to on the phone is the one who builds your website, and the one you'll call back in six months if something goes wrong.",
@@ -203,37 +217,40 @@ const translations = {
       "Your website is written from scratch, line by line. It isn't a template repainted in your colours: it's faster, ranks better, and it's genuinely yours.",
     aboutP4:
       "No jargon, no pointless meetings: you tell me about your trade, I show you a mockup, we adjust it together, I deliver. And since I'm in Tours, we can meet in person.",
+    aboutP5:
+      "I made it my way of working: cutting everything you don't need, and shaping a website that fits your business. A double-bit axe carries two promises: a site that's simple for you, and effective on Google.",
     aboutFact1: "Based in Tours, France",
     aboutFact2: "Registered sole trader",
-    aboutFact3: "Reply within 48h",
+    aboutFact3: "Reply within 48 hours",
     aboutFact4: "Free quote, no commitment",
-    aboutTech: "Built with React and Next.js — no WordPress, no page builder.",
+    aboutTech:
+      "No off-the-shelf template, no automated assembly: everything is written by hand.",
     aboutPhotoAlt: "Kévin Machado, web developer in Tours, France",
 
     // Projects
     projectsTitle: "They now have a website",
-    projectsSubtitle: "Three projects, and one spot waiting for you.",
+    projectsSubtitle: "Websites cut for real local businesses.",
     projectLink: "View the live site",
     projectLolaStatus: "Client",
     projectLolaName: "Lola Gauchy",
     projectLolaRole: "Freelance digital communications",
     projectLolaText:
-      "Lola only had a social media profile to show her work. She now has a portfolio of her own that she sends straight to prospects.",
-    projectLolaTags: ["Portfolio", "Copywriting", "Deployment"],
+      "Lola only had a social media profile to show her work. She now has a site of her own that she sends straight to prospects.",
+    projectLolaTags: ["Showing her work", "Written content", "Put online"],
     projectLolaAlt: "Home page of Lola Gauchy's portfolio",
     projectKasaStatus: "Training project",
     projectKasaName: "Kasa",
     projectKasaRole: "Property rental platform",
     projectKasaText:
-      "A rental application built with React, with page routing and reusable components. Includes loading states and error pages.",
-    projectKasaTags: ["React", "Routing", "Responsive"],
+      "A rental site where you look for a place, open a listing and browse the photos without ever getting lost.",
+    projectKasaTags: ["Simple navigation", "Readable on mobile", "Listing pages"],
     projectKasaAlt: "Home page of the Kasa rental platform",
     projectNinaStatus: "Training project",
     projectNinaName: "Nina Carducci",
     projectNinaRole: "Photographer",
     projectNinaText:
-      "Full optimisation of a photographer's website: load time cut by three, compressed images, SEO tags and structured data added.",
-    projectNinaTags: ["SEO", "Performance", "Accessibility"],
+      "A photographer's website put back in shape: it loads three times faster and shows up better in Google results.",
+    projectNinaTags: ["Fast loading", "Found on Google", "Readable by everyone"],
     projectNinaAlt: "Home page of photographer Nina Carducci's website",
     projectsCtaPlaceholder: "Your business here",
     projectsCtaTitle: "The next one could be yours",
@@ -243,7 +260,9 @@ const translations = {
 
         // Pricing
     pricingTitle: "Pricing",
-    pricingSubtitle: "Flat pricing, no surprises. Free quote, no commitment.",
+    pricingSubtitle:
+      "No hidden fees, no useless extras. You know exactly what you pay for.",
+    pricingIncluded: "What's included",
     pricingCta: "Request a quote",
     pricingNotes: [
       "Pay in 3 instalments, no fees",
@@ -258,10 +277,10 @@ const translations = {
     basicFeatures: [
       "A single page, everything on it",
       "Your hours, contact details and photos",
-      "Call and directions buttons",
-      "Fully readable on mobile",
-      "Deployment and hosting set up",
-      "Google Business profile created",
+      "One button to call you, one to find you",
+      "Looks perfect on a phone",
+      "Put online and hosted, I handle all of it",
+      "Your Google listing created: hours, address, reviews",
     ],
     basicDelivery: "Delivered in 1 week",
 
@@ -271,12 +290,12 @@ const translations = {
     standardPrice: "€1,690",
     standardSubtitle: "A real website to present your business in full.",
     standardFeatures: [
-      "Everything in One page",
+      "Everything included in “One page”",
       "4 to 6 pages",
-      "Contact form",
+      "A form to receive your enquiries",
       "Photo gallery, menu or catalogue",
-      "Copywriting from your notes",
-      "Basic local SEO",
+      "Your text written from what you tell me",
+      "Built to be found on Google in Tours",
     ],
     standardDelivery: "Delivered in 2 to 3 weeks",
 
@@ -285,11 +304,11 @@ const translations = {
     premiumPrice: "€2,490",
     premiumSubtitle: "To be found ahead of your competitors locally.",
     premiumFeatures: [
-      "Everything in Full website",
-      "In-depth local SEO",
+      "Everything included in “Full website”",
+      "Deeper work to stand out in searches made in your town",
       "Online booking",
       "Photo session at your premises",
-      "1h training to edit it yourself",
+      "One hour of training to edit the site yourself",
       "3 months of follow-up after launch",
     ],
     premiumDelivery: "Delivered in 3 to 4 weeks",
@@ -298,7 +317,7 @@ const translations = {
 
     faqTitle: "FAQ",
     faq: [
-      
+
       {
         question: "How long before my website is live?",
         answer:
@@ -334,17 +353,24 @@ const translations = {
     // Contact
 
     contactTitle: "Contact",
-    yourName: "Your name",
-    yourEmail: "Your email",
-    yourMessage: "Your message",
+    contactSubtitle: "Reply within 48 hours, no-obligation quote.",
+    labelName: "Your name",
+    labelEmail: "Your email",
+    labelMessage: "Your message",
+    yourName: "First and last name",
+    yourEmail: "So I can get back to you",
+    yourMessage: "Tell me what you do and what you need.",
     sendMessage: "Send message",
-    messageSent: "Message sent successfully!",
+    messageSent: "Sent! I'll get back to you within 48 hours.",
+    messageError:
+      "The message didn't go through. Write to me directly at contact@kevinmachado.dev.",
 
     footerLinkedin: "My LinkedIn profile",
     footerEmail: "Go to the contact form",
     footerLegal: "Legal notice",
     footerCgv: "Terms of sale",
-    developpedBy: "Developed by Kevin Machado"
+    footerMade: "Hand-cut in Tours.",
+    footerCopyright: "© {year} · Kévin Machado"
   },
 };
 
