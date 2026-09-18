@@ -3,14 +3,16 @@
 
   position: relative;
   overflow: hidden;
-  height: 100%;
+  height: auto;
+  min-height: 38em;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 10px 12px;
+  gap: 0.7em;
+  padding: 1.1em 1.3em;
   box-sizing: border-box;
   font-family: "Comic Neue", "Comic Sans MS", cursive;
-  font-size: 9px;
+  font-size: 7.5px;
+  font-size: clamp(6px, 1.9cqw, 11px);
   line-height: 1.25;
   color: #eaf3ff;
   background-color: #123f6d;
@@ -25,13 +27,13 @@
 .hc-head {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 0.9em;
   flex-wrap: wrap;
 }
 
 .hc-name {
   font-weight: 700;
-  font-size: 11px;
+  font-size: 1.3em;
   color: #ffd400;
   text-shadow: 1.5px 1.5px 0 #7a0000, 3px 3px 0 rgba(0, 0, 0, 0.3);
   transition: color calc(420ms * var(--hc-speed)) ease,
@@ -40,9 +42,9 @@
 
 .hc-menu {
   display: flex;
-  gap: 6px;
+  gap: 0.7em;
   flex-wrap: wrap;
-  font-size: 8px;
+  font-size: 0.95em;
 
   span {
     color: #7fe0ff;
@@ -55,13 +57,13 @@
 
   .extra {
     overflow: hidden;
-    max-width: 60px;
+    max-width: 8em;
   }
 }
 
 .hc-title {
   margin: 0;
-  font-size: 14px;
+  font-size: 1.7em;
   font-weight: 700;
   text-align: center;
   color: #ff4d4d;
@@ -72,7 +74,7 @@
 
 .hc-lead {
   margin: 0;
-  font-size: 9px;
+  font-size: 1.1em;
   text-align: center;
   color: #cfe3ff;
   transition: color calc(420ms * var(--hc-speed)) ease;
@@ -81,7 +83,7 @@
 .hc-marquee {
   overflow: hidden;
   white-space: nowrap;
-  padding: 1px 0;
+  padding: 0.15em 0;
   background: #ff2d00;
   border: 2px ridge #ffd400;
 
@@ -103,7 +105,7 @@
 }
 
 .hc-promo {
-  padding: 2px 4px;
+  padding: 0.25em 0.5em;
   text-align: center;
   font-weight: 700;
   background: #00b300;
@@ -115,26 +117,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
-  padding: 6px 4px;
+  gap: 0.7em;
+  padding: 0.7em 0.5em;
   background: #6b6b6b;
   border: 3px inset #c0c0c0;
 }
 
 .hc-carousel-label {
-  font-size: 8px;
+  font-size: 0.95em;
   color: #eaf3ff;
 }
 
 .hc-arrow {
-  padding: 0 4px;
+  padding: 0 0.5em;
   color: #000;
   background: #c0c0c0;
   border: 2px outset #c0c0c0;
 }
 
 .hc-ad {
-  padding: 3px;
+  padding: 0.4em;
   text-align: center;
   font-weight: 700;
   border: 3px dashed #ff2d00;
@@ -143,10 +145,10 @@
 }
 
 .hc-counter {
-  padding: 1px 3px;
+  padding: 0.15em 0.4em;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
-  font-size: 8px;
+  font-size: 0.95em;
   color: #9fe8ff;
   border: 1px solid #7fe0ff;
 }
@@ -154,7 +156,7 @@
 .hc-cards,
 .hc-cols {
   display: flex;
-  gap: 6px;
+  gap: 0.7em;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
@@ -168,21 +170,21 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 3px;
+  gap: 0.35em;
+  padding: 0.35em;
   border: 1px solid transparent;
   border-radius: 6px;
 }
 
 .hc-thumb {
   display: block;
-  height: 24px;
+  height: 2.9em;
   background: #e3d9cf;
   border-radius: 3px;
 }
 
 .hc-card-label {
-  font-size: 8px;
+  font-size: 0.95em;
   line-height: 1.2;
 }
 
@@ -191,34 +193,34 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0.25em;
 }
 
 .hc-col-label {
-  font-size: 9px;
+  font-size: 1.1em;
   letter-spacing: 0.06em;
 }
 
 .hc-row {
   display: flex;
   justify-content: space-between;
-  gap: 6px;
-  font-size: 9px;
+  gap: 0.7em;
+  font-size: 1.1em;
 }
 
 .hc-addr {
-  font-size: 9px;
+  font-size: 1.1em;
 }
 
 .hc-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.9em;
   flex-wrap: wrap;
 }
 
 .hc-call {
-  padding: 3px 6px;
+  padding: 0.35em 0.7em;
   font-weight: 700;
   background: #0000ee;
   color: #ffff00;
@@ -233,25 +235,25 @@
 
 .hc-phone,
 .hc-itinerary {
-  font-size: 9px;
+  font-size: 1.1em;
   transition: color calc(420ms * var(--hc-speed)) ease;
 }
 
 .hc-foot {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
-  font-size: 8px;
+  gap: 0.9em;
+  font-size: 0.95em;
   transition: color calc(420ms * var(--hc-speed)) ease;
 }
 
 .hc-works {
   position: absolute;
   top: 34%;
-  right: -6px;
-  padding: 2px 6px;
+  right: -0.7em;
+  padding: 0.25em 0.7em;
   font-weight: 700;
-  font-size: 8px;
+  font-size: 0.95em;
   background: #ffd400;
   color: #7a0000;
   border: 2px solid #7a0000;
@@ -260,10 +262,10 @@
 
 .hc-chat {
   position: absolute;
-  right: 8px;
-  bottom: 26px;
-  padding: 3px 6px;
-  font-size: 8px;
+  right: 0.9em;
+  bottom: 3.2em;
+  padding: 0.35em 0.7em;
+  font-size: 0.95em;
   font-weight: 700;
   background: #00b300;
   color: #ffff00;
@@ -272,17 +274,17 @@
 
 .hc-popup {
   position: absolute;
-  top: 44%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 8px 12px;
+  gap: 0.5em;
+  padding: 0.9em 1.4em;
   text-align: center;
   font-weight: 700;
-  font-size: 9px;
+  font-size: 1.1em;
   background: #ffff99;
   color: #b30000;
   border: 4px ridge #ff2d00;
@@ -295,7 +297,7 @@
 }
 
 .hc-popup-button {
-  padding: 2px 6px;
+  padding: 0.25em 0.7em;
   background: #ff2d00;
   color: #ffff00;
 }
@@ -308,9 +310,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
-  padding: 4px 6px;
-  font-size: 8px;
+  gap: 0.7em;
+  padding: 0.5em 0.7em;
+  font-size: 0.95em;
   background: #2b2b2b;
   color: #fff;
   border-top: 2px solid #888;
@@ -318,7 +320,7 @@
 
 .hc-cookie-button {
   flex-shrink: 0;
-  padding: 1px 5px;
+  padding: 0.15em 0.6em;
   font-weight: 700;
   background: #00b300;
   border: 2px outset #7bff7b;
@@ -351,7 +353,7 @@
 
 .junk.flow {
   overflow: hidden;
-  max-height: 90px;
+  max-height: 11em;
 }
 
 .blade {
@@ -380,7 +382,7 @@
   font-family: var(--font-body);
 
   .hc-name {
-    font-size: 13px;
+    font-size: 1.55em;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: var(--color-ink);
@@ -398,7 +400,7 @@
   }
 
   .hc-title {
-    font-size: 21px;
+    font-size: 2.5em;
     font-weight: 800;
     letter-spacing: -0.03em;
     text-align: left;
@@ -407,7 +409,7 @@
   }
 
   .hc-lead {
-    font-size: 11px;
+    font-size: 1.3em;
     text-align: left;
     color: var(--color-ink-soft);
   }
@@ -417,7 +419,7 @@
     color: var(--color-surface);
     border: 0 solid transparent;
     border-radius: 8px;
-    padding: 5px 9px;
+    padding: 0.6em 1.1em;
     text-decoration: none;
   }
 
@@ -429,7 +431,7 @@
 
   .hc-cards,
   .hc-cols {
-    max-height: 130px;
+    max-height: 16em;
     opacity: 1;
   }
 
@@ -463,68 +465,29 @@
   .hc-carousel,
   .hc-ad,
   .hc-counter {
-    transform: translateY(130px) rotate(4deg);
+    transform: translateY(16em) rotate(4deg);
   }
 
   .hc-cookie {
-    transform: translateY(130px) rotate(-3deg);
+    transform: translateY(16em) rotate(-3deg);
   }
 
   .hc-popup {
-    transform: translate(-50%, 130px) rotate(5deg);
+    transform: translate(-50%, 16em) rotate(5deg);
     box-shadow: none;
   }
 
   .hc-chat {
-    transform: translateY(130px) rotate(6deg);
+    transform: translateY(16em) rotate(6deg);
   }
 
   .hc-works {
-    transform: translateY(130px) rotate(-22deg);
+    transform: translateY(16em) rotate(-22deg);
   }
 
   .hc-marquee span,
   .blink {
     animation: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero-cut {
-    font-size: 10px;
-  }
-
-  .hc-name {
-    font-size: 12px;
-  }
-
-  .hero-cut.cut .hc-name {
-    font-size: 14px;
-  }
-
-  .hero-cut.cut .hc-title {
-    font-size: 23px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-cut {
-    gap: 5px;
-    padding: 8px 9px;
-    font-size: 8px;
-  }
-
-  .hc-title {
-    font-size: 12px;
-  }
-
-  .hero-cut.cut .hc-title {
-    font-size: 17px;
-  }
-
-  .hc-name,
-  .hero-cut.cut .hc-name {
-    font-size: 11px;
   }
 }
 

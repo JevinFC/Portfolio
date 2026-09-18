@@ -136,7 +136,8 @@
   }
 
   .browserFrameBody {
-    min-height: 300px;
+    aspect-ratio: auto;
+    container-type: inline-size;
   }
 }
 
