@@ -19,8 +19,6 @@ const translations = {
     heroCta: "Demander un devis gratuit",
     heroLink: "Voir mes réalisations",
     heroTrust: "Réponse sous 48 h · Devis sans engagement · Basé à Tours",
-    heroShotAlt:
-      "Page d'accueil d'un site vitrine réalisé pour un commerce de Tours",
 
     // About
     aboutHeading: "Qui va faire votre site",
@@ -204,8 +202,6 @@ const translations = {
     heroCta: "Get a free quote",
     heroLink: "See my work",
     heroTrust: "Reply within 48 hours · No-obligation quote · Based in Tours",
-    heroShotAlt:
-      "Home page of a showcase website built for a local business in Tours",
 
     // About
     aboutHeading: "Who will build your website",

@@ -1,7 +1,16 @@
 import { useState } from "react";
 import "./browserFrame.scss";
 
-function BrowserFrame({ src, alt, width, height, eager = false, className = "" }) {
+function BrowserFrame({
+  src,
+  alt,
+  width,
+  height,
+  eager = false,
+  className = "",
+  url,
+  children,
+}) {
   const [failed, setFailed] = useState(false);
 
   return (
@@ -10,19 +19,27 @@ function BrowserFrame({ src, alt, width, height, eager = false, className = "" }
         <span />
         <span />
         <span />
+        {url && (
+          <small className="browserFrameUrl" aria-hidden="true">
+            {url}
+          </small>
+        )}
       </div>
       <div className="browserFrameBody">
-        {!failed && src && (
-          <img
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            loading={eager ? "eager" : "lazy"}
-            decoding="async"
-            onError={() => setFailed(true)}
-          />
-        )}
+        {children
+          ? children
+          : !failed &&
+            src && (
+              <img
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                loading={eager ? "eager" : "lazy"}
+                decoding="async"
+                onError={() => setFailed(true)}
+              />
+            )}
       </div>
     </div>
   );

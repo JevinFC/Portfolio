@@ -1,9 +1,12 @@
+import { useState } from "react";
 import "./hero.scss";
 import BrowserFrame from "../ui/browserFrame.jsx";
+import HeroCut from "../HeroCut/HeroCut.jsx";
 import { useLanguage } from "../languageContext";
 
 function Hero() {
   const { t } = useLanguage();
+  const [shopUrl, setShopUrl] = useState("");
 
   return (
     <section className="hero" id="accueil">
@@ -33,14 +36,9 @@ function Hero() {
         </div>
 
         <div className="heroShowcase">
-          <BrowserFrame
-            src="/realisations/hero.png"
-            alt={t("heroShotAlt")}
-            width="1200"
-            height="750"
-            eager
-            className="heroBrowser"
-          />
+          <BrowserFrame url={shopUrl} className="heroBrowser">
+            <HeroCut onShopChange={(shop) => setShopUrl(shop.url)} />
+          </BrowserFrame>
         </div>
       </div>
     </section>

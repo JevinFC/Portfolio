@@ -28,6 +28,7 @@ const DURATIONS = {
 
 const STORAGE_KEY = "intro-axe-seen";
 const PENDING_CLASS = "intro-pending";
+const DONE_EVENT = "intro-axe:done";
 const SPIN_PERIOD = 1100;
 const SAFETY_DELAY = 4000;
 const IMPACT_PROGRESS = 0.86;
@@ -118,6 +119,8 @@ function IntroAxe() {
 
     const finish = () => {
       release();
+      window.__introAxeDone = true;
+      window.dispatchEvent(new Event(DONE_EVENT));
       setDone(true);
     };
 
