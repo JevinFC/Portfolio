@@ -1,0 +1,17 @@
+@mixin title-underline($color: var(--color-accent), $center: false) {
+  &::after {
+    content: "";
+    display: block;
+    width: 2.4em;
+    height: 0.11em;
+    margin: 0.28em 0 0;
+
+    @if $center {
+      margin-inline: auto;
+    }
+
+    border-radius: 999px;
+    background: $color;
+    transform: rotate(-6.5deg);
+  }
+}

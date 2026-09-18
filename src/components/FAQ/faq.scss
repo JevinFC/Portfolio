@@ -1,3 +1,5 @@
+@use "../../styles/headings" as headings;
+
 .faqSection {
   padding: 4rem 1rem;
   max-width: 900px;
@@ -12,7 +14,9 @@
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+
+  @include headings.title-underline($center: true);
 }
 
 .faqContainer {

@@ -1,3 +1,4 @@
+@use "../../styles/headings" as headings;
 
 @property --hover-lift {
   syntax: '<length>';
@@ -19,6 +20,8 @@
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-ink);
+
+  @include headings.title-underline;
 }
 
 .tarifsSubtitle {

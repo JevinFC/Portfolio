@@ -3,8 +3,8 @@ import "./HeroCut.scss";
 import shops, { JUNK } from "./shops.js";
 
 const SLICE_AT = 1500;
-const CUT_AT = 1850;
-const RESET_AT = 5400;
+const CUT_AT = 2300;
+const RESET_AT = 6200;
 const GAP = 400;
 const MAX_CYCLES = 3;
 

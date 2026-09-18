@@ -365,7 +365,7 @@
   background: var(--color-accent-hot);
   transform: rotate(-7deg) translateX(-130%);
   opacity: 0;
-  transition: transform calc(420ms * var(--hc-speed))
+  transition: transform calc(1000ms * var(--hc-speed))
       cubic-bezier(0.4, 0, 0.2, 1),
     opacity calc(120ms * var(--hc-speed)) linear;
 }
