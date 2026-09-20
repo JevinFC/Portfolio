@@ -2,9 +2,9 @@ import { useState, useRef, useLayoutEffect } from "react";
 import "./projects.scss";
 import BrowserFrame from "../ui/browserFrame.jsx";
 import { useLanguage } from "../languageContext.jsx";
-import imgNinaCarducci from "/src/assets/imgprojects/ninaCarducci.png";
-import imgKasa from "/src/assets/imgprojects/kasa.png";
-import imgPortfolioLola from "/src/assets/imgprojects/screenshotLola.png";
+import imgNinaCarducci from "/src/assets/imgprojects/ninaCarducci.webp";
+import imgKasa from "/src/assets/imgprojects/kasa.webp";
+import imgPortfolioLola from "/src/assets/imgprojects/screenshotLola.webp";
 
 function Projects() {
   const { t } = useLanguage();
