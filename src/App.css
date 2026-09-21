@@ -11,7 +11,7 @@
   --color-accent-pale: #FFB3C9;
   --color-line: rgba(35, 23, 29, 0.14);
 
-  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-display: "Bricolage Grotesque", "Bricolage Fallback", Arial, sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                Helvetica, Arial, sans-serif;
 }

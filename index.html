@@ -4,11 +4,28 @@
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>document.documentElement.classList.add("intro-pending");</script>
+    <!-- Cette logique doit rester synchronisee avec src/utils/introDecision.js, qui
+         applique exactement les memes regles cote React. Si les deux divergent, le
+         calque rose est peint pour une intro qui ne se joue jamais. -->
+    <script>
+      (function () {
+        var p = new URLSearchParams(location.search).get("intro");
+        var skip;
+        if (p === "force") skip = false;
+        else if (p === "skip") skip = true;
+        else if (matchMedia("(prefers-reduced-motion: reduce)").matches) skip = false;
+        else {
+          var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+          var mobile = matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+          if (c && c.saveData === true) skip = true;
+          else if (c && mobile && ["slow-2g", "2g", "3g"].indexOf(c.effectiveType) > -1) skip = true;
+          else skip = false;
+        }
+        if (!skip) document.documentElement.classList.add("intro-pending");
+      })();
+    </script>
     <style>html.intro-pending body { background: #E2396F; }</style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/bricolage-grotesque-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
     <title>Kévin Machado · Sites taillés sur mesure pour les commerçants de Tours</title>
     <meta
       name="description"

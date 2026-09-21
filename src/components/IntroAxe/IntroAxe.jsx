@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./IntroAxe.scss";
 import AxeIcon from "../AxeIcon/AxeIcon.jsx";
+import { decideIntro, isMobile } from "../../utils/introDecision.js";
 
 const DURATIONS = {
   full: {
@@ -33,6 +34,17 @@ const SPIN_PERIOD = 1100;
 const SAFETY_DELAY = 4000;
 const IMPACT_PROGRESS = 0.86;
 const REDUCED_FADE = 200;
+const MOBILE_ABORT_DELAY = 1200;
+const ABORT_FADE = 200;
+
+const signalDone = () => {
+  window.__introAxeDone = true;
+  window.dispatchEvent(new Event(DONE_EVENT));
+};
+
+const logDecision = (message) => {
+  if (import.meta.env.DEV) console.log(message);
+};
 
 const readMode = () => {
   try {
@@ -64,6 +76,7 @@ const readRotation = (element) => {
 };
 
 function IntroAxe() {
+  const [decision] = useState(decideIntro);
   const [reducedMotion] = useState(prefersReducedMotion);
   const [done, setDone] = useState(false);
   const rootRef = useRef(null);
@@ -74,6 +87,19 @@ function IntroAxe() {
   const spinRef = useRef(null);
 
   useLayoutEffect(() => {
+    logDecision(
+      `IntroAxe : ${decision.skip ? "sautée" : "jouée"}, raison : ${decision.reason}`
+    );
+
+    if (!decision.skip) return;
+
+    document.documentElement.classList.remove(PENDING_CLASS);
+    signalDone();
+  }, [decision]);
+
+  useLayoutEffect(() => {
+    if (decision.skip) return;
+
     const root = rootRef.current;
     const top = topRef.current;
     const bottom = bottomRef.current;
@@ -112,6 +138,19 @@ function IntroAxe() {
 
     const safety = wait(SAFETY_DELAY);
 
+    let aborted = false;
+    let abortTimer = null;
+    const abortSignal =
+      isMobile() && !decision.forced
+        ? new Promise((resolve) => {
+            abortTimer = window.setTimeout(() => {
+              aborted = true;
+              resolve();
+            }, MOBILE_ABORT_DELAY);
+            timers.push(abortTimer);
+          })
+        : null;
+
     const release = () => {
       timers.forEach((timer) => window.clearTimeout(timer));
       listeners.forEach((remove) => remove());
@@ -119,8 +158,7 @@ function IntroAxe() {
 
     const finish = () => {
       release();
-      window.__introAxeDone = true;
-      window.dispatchEvent(new Event(DONE_EVENT));
+      signalDone();
       setDone(true);
     };
 
@@ -135,11 +173,21 @@ function IntroAxe() {
       if (!cancelled) finish();
     };
 
+    const bail = async (idle) => {
+      idle?.cancel();
+      await root.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: ABORT_FADE,
+        fill: "forwards",
+      }).finished;
+      if (cancelled) return;
+      logDecision("IntroAxe : abandonnée, raison : page pas prête après 1200 ms sur mobile");
+      finish();
+    };
+
     const play = async () => {
-      const gate = Promise.race([
-        Promise.all([ready, wait(timings.idleMin)]),
-        safety,
-      ]);
+      const gate = Promise.race(
+        [Promise.all([ready, wait(timings.idleMin)]), safety, abortSignal].filter(Boolean)
+      );
 
       await axe.animate(
         [
@@ -162,6 +210,12 @@ function IntroAxe() {
         );
         await gate;
         if (cancelled) return;
+      }
+
+      window.clearTimeout(abortTimer);
+      if (aborted) {
+        await bail(idle);
+        return;
       }
 
       markSeen();
@@ -277,9 +331,9 @@ function IntroAxe() {
       release();
       root.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, decision]);
 
-  if (done) return null;
+  if (decision.skip || done) return null;
 
   return createPortal(
     <div className="introAxe" ref={rootRef} aria-hidden="true">
