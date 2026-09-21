@@ -20,8 +20,8 @@ function Faq() {
   }, [openIndex]);
 
   return (
-    <section className="faqSection" id="faq">
-      <h2 className="faqTitle">{t("faqTitle")}</h2>
+    <section className="faqSection" id="faq" aria-labelledby="faqTitle">
+      <h2 className="faqTitle" id="faqTitle">{t("faqTitle")}</h2>
       <div className="faqContainer"> 
         {t("faq").map((item, index) => (
           <div

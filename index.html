@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Cette logique doit rester synchronisee avec src/utils/introDecision.js, qui
          applique exactement les memes regles cote React. Si les deux divergent, le
-         calque rose est peint pour une intro qui ne se joue jamais. -->
+         calque rose est peint pour une intro qui ne se joue jamais.
+
+         Toute modification de ce script impose de recalculer son empreinte dans
+         public/_headers, sinon il sera bloque. L'empreinte se calcule sur le script
+         tel qu'il apparait dans dist/index.html apres build, pas sur cette source :
+             node scripts/csp-hash.mjs -->
     <script>
       (function () {
         var p = new URLSearchParams(location.search).get("intro");
@@ -26,45 +31,69 @@
     </script>
     <style>html.intro-pending body { background: #E2396F; }</style>
     <link rel="preload" href="/fonts/bricolage-grotesque-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <title>Kévin Machado · Sites taillés sur mesure pour les commerçants de Tours</title>
+    <title>Création de site internet à Tours · Kévin Machado</title>
     <meta
       name="description"
-      content="Développeur web à Tours. Des sites clairs, rapides et bien référencés pour les commerçants et artisans. On coupe le superflu, à partir de 890 €."
+      content="Création de site internet à Tours pour commerçants et artisans. Sur mesure, rapide, bien référencé. Devis gratuit sous 48 h, à partir de 890 €."
     />
     <meta name="author" content="Kévin Machado" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="__SITE_URL__/" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
 
-    <meta property="og:title" content="Kévin Machado · Sites taillés sur mesure pour les commerçants de Tours" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Kévin Machado" />
+    <meta property="og:title" content="Création de site internet à Tours · Kévin Machado" />
     <meta
       property="og:description"
-      content="Développeur web à Tours. Des sites clairs, rapides et bien référencés pour les commerçants et artisans. On coupe le superflu, à partir de 890 €."
+      content="Création de site internet à Tours pour commerçants et artisans. Sur mesure, rapide, bien référencé. Devis gratuit sous 48 h, à partir de 890 €."
     />
-    <meta property="og:image" content="https://portfolio.kevinmachado.dev/preview.png" />
-    <meta property="og:url" content="https://portfolio.kevinmachado.dev/" />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Des sites taillés sur mesure pour les commerçants de Tours — Kévin Machado, développeur web à Tours"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kévin Machado · Sites taillés sur mesure pour les commerçants de Tours" />
+    <meta name="twitter:title" content="Création de site internet à Tours · Kévin Machado" />
     <meta
       name="twitter:description"
-      content="Développeur web à Tours. Des sites clairs, rapides et bien référencés pour les commerçants et artisans. On coupe le superflu, à partir de 890 €."
+      content="Création de site internet à Tours pour commerçants et artisans. Sur mesure, rapide, bien référencé. Devis gratuit sous 48 h, à partir de 890 €."
     />
-    <meta name="twitter:image" content="https://portfolio.kevinmachado.dev/preview.png" />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
 
     <meta name="theme-color" content="#C9285B" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Kévin Machado",
-  "jobTitle": "Développeur web",
-  "url": "https://portfolio.kevinmachado.dev",
-   "image": "https://portfolio.kevinmachado.dev/photoProfil.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tours",
-    "addressCountry": "FR"
+  "@type": "ProfessionalService",
+  "name": "Kévin Machado · Développeur web",
+  "description": "Création de sites internet sur mesure pour les commerçants et artisans de Tours et de ses environs.",
+  "url": "__SITE_URL__/",
+  "image": "__SITE_URL__/og-image.png",
+  "priceRange": "890 € - 2 490 €",
+  "areaServed": {
+    "@type": "City",
+    "name": "Tours",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tours",
+      "addressRegion": "Indre-et-Loire",
+      "addressCountry": "FR"
+    }
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Kévin Machado",
+    "jobTitle": "Développeur web",
+    "image": "__SITE_URL__/photoProfil.webp"
   },
   "sameAs": [
     "https://www.linkedin.com/in/kevin-machado-devfront",

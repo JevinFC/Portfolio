@@ -63,12 +63,12 @@ function Projects() {
   const cap = (key) => key.charAt(0).toUpperCase() + key.slice(1);
 
   return (
-    <section className="projects" id="projects">
+    <section className="projects" id="projects" aria-labelledby="projectsTitle">
       <div
         className={animate ? "projectsInner js-reveal" : "projectsInner"}
         ref={rootRef}
       >
-        <h2 className="projectsTitle">{t("projectsTitle")}</h2>
+        <h2 className="projectsTitle" id="projectsTitle">{t("projectsTitle")}</h2>
         <p className="projectsSubtitle">{t("projectsSubtitle")}</p>
 
         {projects.map((project, index) => {

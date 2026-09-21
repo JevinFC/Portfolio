@@ -140,7 +140,7 @@ function Tarifs() {
   const marqueeNotes = [...notes, ...notes, ...notes, ...notes];
 
   return (
-    <section className="tarifsSection" id="tarifs">
+    <section className="tarifsSection" id="tarifs" aria-labelledby="tarifsTitle">
       <div
         className={spread ? "tarifsPin pinned" : "tarifsPin"}
         ref={pinRef}
@@ -148,7 +148,7 @@ function Tarifs() {
       >
         <div className="tarifsPinInner">
           <div className="tarifsPinContent" ref={pinContentRef}>
-            <h2 className="tarifsTitle">{t("pricingTitle")}</h2>
+            <h2 className="tarifsTitle" id="tarifsTitle">{t("pricingTitle")}</h2>
             <p className="tarifsSubtitle">{t("pricingSubtitle")}</p>
 
             <div

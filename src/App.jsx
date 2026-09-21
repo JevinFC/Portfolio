@@ -14,16 +14,18 @@ function App() {
     <div>
       <IntroAxe />
       <LanguageProvider>
-      <Header />
-      <Hero />
-      <Projects />
-      <Tarifs />
-      <Apropos/>
-      <Faq />
-      <Contact />
-      <Footer />
+        <Header />
+        <main>
+          <Hero />
+          <Projects />
+          <Tarifs />
+          <Apropos />
+          <Faq />
+          <Contact />
+        </main>
+        <Footer />
       </LanguageProvider>
-          </div>
+    </div>
   );
 }
 

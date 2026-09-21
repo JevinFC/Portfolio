@@ -33,9 +33,9 @@ function Contact() {
   };
 
   return (
-    <section className="contactSection" id="contact">
+    <section className="contactSection" id="contact" aria-labelledby="contactTitle">
       <div className="contactInner">
-        <h2>{t("contactTitle")}</h2>
+        <h2 id="contactTitle">{t("contactTitle")}</h2>
         <p className="contactSubtitle">{t("contactSubtitle")}</p>
 
         <form ref={form} onSubmit={sendEmail} className="contactForm">
