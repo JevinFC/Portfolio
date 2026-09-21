@@ -39,10 +39,10 @@ function APropos() {
       >
         <div className="aproposPhoto reveal">
           <img
-            src="/photoProfil.png"
+            src="/photoProfil.webp"
             alt={t("aboutPhotoAlt")}
-            width="1200"
-            height="1500"
+            width="760"
+            height="833"
             loading="lazy"
             decoding="async"
           />
