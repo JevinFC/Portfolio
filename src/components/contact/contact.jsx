@@ -11,6 +11,12 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    if (form.current.company.value.trim() !== "") {
+      setStatus("sent");
+      form.current.reset();
+      return;
+    }
+
     emailjs.sendForm(
       "service_96fhtaa",
       "template_u6cnmln",
@@ -41,6 +47,7 @@ function Contact() {
               name="name"
               placeholder={t("yourName")}
               autoComplete="name"
+              maxLength={80}
               required
             />
           </div>
@@ -53,11 +60,23 @@ function Contact() {
               name="reply_to"
               placeholder={t("yourEmail")}
               autoComplete="email"
+              maxLength={120}
               required
             />
           </div>
 
           <input type="hidden" name="time" value={new Date().toLocaleString()} />
+
+          <div className="contactHoneypot" aria-hidden="true">
+            <label htmlFor="contactCompany">Société</label>
+            <input
+              type="text"
+              id="contactCompany"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
 
           <div className="contactField">
             <label htmlFor="contactMessage">{t("labelMessage")}</label>
@@ -66,6 +85,7 @@ function Contact() {
               name="message"
               rows="5"
               placeholder={t("yourMessage")}
+              maxLength={2000}
               required
             />
           </div>
