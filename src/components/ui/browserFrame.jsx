@@ -1,16 +1,7 @@
 import { useState } from "react";
 import "./browserFrame.scss";
 
-function BrowserFrame({
-  src,
-  alt,
-  width,
-  height,
-  eager = false,
-  className = "",
-  url,
-  children,
-}) {
+function BrowserFrame({ src, alt, width, height, className = "", url, children }) {
   const [failed, setFailed] = useState(false);
 
   return (
@@ -35,7 +26,7 @@ function BrowserFrame({
                 alt={alt}
                 width={width}
                 height={height}
-                loading={eager ? "eager" : "lazy"}
+                loading="lazy"
                 decoding="async"
                 onError={() => setFailed(true)}
               />
