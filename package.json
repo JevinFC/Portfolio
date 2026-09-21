@@ -31,5 +31,11 @@
     "pngjs": "^7.0.0",
     "sass-embedded": "^1.87.0",
     "vite": "^6.3.5"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "last 2 versions",
+    "not dead",
+    "supports es6-module"
+  ]
 }
