@@ -1,0 +1,21 @@
+{
+  "name": "Kévin Machado · Développeur web à Tours",
+  "short_name": "Kévin Machado",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#C9285B",
+  "background_color": "#F6EFE7",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

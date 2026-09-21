@@ -32,24 +32,24 @@ function APropos() {
   }, []);
 
   return (
-    <section className="apropos" id="apropos">
+    <section className="apropos" id="apropos" aria-labelledby="aproposTitle">
       <div
         className={animate ? "aproposInner js-reveal" : "aproposInner"}
         ref={rootRef}
       >
         <div className="aproposPhoto reveal">
           <img
-            src="/photoProfil.png"
+            src="/photoProfil.webp"
             alt={t("aboutPhotoAlt")}
-            width="1200"
-            height="1500"
+            width="760"
+            height="833"
             loading="lazy"
             decoding="async"
           />
         </div>
 
         <div className="aproposContent">
-          <h2 className="aproposTitle reveal">{t("aboutHeading")}</h2>
+          <h2 className="aproposTitle reveal" id="aproposTitle">{t("aboutHeading")}</h2>
           <p className="aproposSubtitle reveal">{t("aboutSubtitle")}</p>
 
           <p className="aproposLead reveal">{t("aboutP1")}</p>

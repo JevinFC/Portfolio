@@ -39,23 +39,23 @@ function Projects() {
     {
       key: "lola",
       img: imgPortfolioLola,
-      width: 1600,
-      height: 1000,
+      width: 1704,
+      height: 3744,
       link: "https://lolagauchy.fr",
       featured: true,
     },
     {
       key: "kasa",
       img: imgKasa,
-      width: 1864,
-      height: 918,
+      width: 1704,
+      height: 2941,
       link: "https://kasa.kevinmachado.dev",
     },
     {
       key: "nina",
       img: imgNinaCarducci,
-      width: 1855,
-      height: 961,
+      width: 1704,
+      height: 4537,
       link: "https://jevinfc.github.io/Projet-4-KM-master/",
     },
   ];
@@ -63,12 +63,12 @@ function Projects() {
   const cap = (key) => key.charAt(0).toUpperCase() + key.slice(1);
 
   return (
-    <section className="projects" id="projects">
+    <section className="projects" id="projects" aria-labelledby="projectsTitle">
       <div
         className={animate ? "projectsInner js-reveal" : "projectsInner"}
         ref={rootRef}
       >
-        <h2 className="projectsTitle">{t("projectsTitle")}</h2>
+        <h2 className="projectsTitle" id="projectsTitle">{t("projectsTitle")}</h2>
         <p className="projectsSubtitle">{t("projectsSubtitle")}</p>
 
         {projects.map((project, index) => {
