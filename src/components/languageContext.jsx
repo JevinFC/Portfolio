@@ -181,6 +181,7 @@ const translations = {
     footerEmail: "Aller au formulaire de contact",
     footerLegal: "Mentions légales",
     footerCgv: "CGV",
+    footerPrivacy: "Confidentialité",
     footerMade: "Taillé à Tours.",
     footerCopyright: "© {year} · Kévin Machado"
   },
@@ -365,6 +366,7 @@ const translations = {
     footerEmail: "Go to the contact form",
     footerLegal: "Legal notice",
     footerCgv: "Terms of sale",
+    footerPrivacy: "Privacy",
     footerMade: "Hand-cut in Tours.",
     footerCopyright: "© {year} · Kévin Machado"
   },
