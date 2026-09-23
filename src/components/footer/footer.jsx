@@ -41,6 +41,13 @@ function Footer() {
           >
             {t("footerCgv")}
           </a>
+          <a
+            className="footerLegal"
+            href="/politique-confidentialite.html"
+            rel="noopener noreferrer"
+          >
+            {t("footerPrivacy")}
+          </a>
         </p>
       </div>
     </footer>
