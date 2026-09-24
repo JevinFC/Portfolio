@@ -11,9 +11,7 @@ function BrowserFrame({ src, alt, width, height, className = "", url, children }
         <span />
         <span />
         {url && (
-          <small className="browserFrameUrl" aria-hidden="true">
-            {url}
-          </small>
+          <small className="browserFrameUrl" aria-hidden="true" data-t={url} />
         )}
       </div>
       <div className="browserFrameBody">

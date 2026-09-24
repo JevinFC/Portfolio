@@ -133,93 +133,89 @@ function HeroCut({ onShopChange }) {
   return (
     <div className={classes} ref={rootRef} aria-hidden="true">
       <div className="hc-head">
-        <span className="hc-name">{shop.name}</span>
+        <span className="hc-name" data-t={shop.name} />
         <span className="hc-menu">
           {shop.nav.map((item) => (
-            <span key={item}>{item}</span>
+            <span key={item} data-t={item} />
           ))}
           {JUNK.extraNav.map((item) => (
-            <span key={item} className="extra">
-              {item}
-            </span>
+            <span key={item} className="extra" data-t={item} />
           ))}
         </span>
       </div>
 
       <div className="hc-marquee junk flow">
-        <span>{JUNK.marquee}</span>
+        <span data-t={JUNK.marquee} />
       </div>
 
-      <div className="hc-promo junk flow blink">{shop.promo}</div>
+      <div className="hc-promo junk flow blink" data-t={shop.promo} />
 
       {showHeavy && (
         <div className="hc-carousel junk flow">
-          <span className="hc-arrow">◄</span>
-          <span className="hc-carousel-label">{JUNK.carousel}</span>
-          <span className="hc-arrow">►</span>
+          <span className="hc-arrow" data-t="◄" />
+          <span className="hc-carousel-label" data-t={JUNK.carousel} />
+          <span className="hc-arrow" data-t="►" />
         </div>
       )}
 
-      <p className="hc-title">{shop.title}</p>
-      <p className="hc-lead">{shop.lead}</p>
+      <p className="hc-title" data-t={shop.title} />
+      <p className="hc-lead" data-t={shop.lead} />
 
       <div className="hc-cards reveal">
         {shop.cards.map((label) => (
           <div className="hc-card" key={label}>
             <span className="hc-thumb" />
-            <span className="hc-card-label">{label}</span>
+            <span className="hc-card-label" data-t={label} />
           </div>
         ))}
       </div>
 
       <div className="hc-cols reveal">
         <div className="hc-col">
-          <span className="hc-col-label">{JUNK.hoursLabel}</span>
+          <span className="hc-col-label" data-t={JUNK.hoursLabel} />
           {shop.hours.map(([day, time]) => (
             <span className="hc-row" key={day}>
-              <span>{day}</span>
-              <span>{time}</span>
+              <span data-t={day} />
+              <span data-t={time} />
             </span>
           ))}
         </div>
         <div className="hc-col">
-          <span className="hc-col-label">{JUNK.addrLabel}</span>
+          <span className="hc-col-label" data-t={JUNK.addrLabel} />
           {shop.addr.map((line) => (
-            <span className="hc-addr" key={line}>
-              {line}
-            </span>
+            <span className="hc-addr" key={line} data-t={line} />
           ))}
         </div>
       </div>
 
       <div className="hc-actions">
-        <span className="hc-call">{shop.call}</span>
-        <span className="hc-phone">{shop.phone}</span>
-        <span className="hc-itinerary">{JUNK.itinerary}</span>
+        <span className="hc-call" data-t={shop.call} />
+        <span className="hc-phone" data-t={shop.phone} />
+        <span className="hc-itinerary" data-t={JUNK.itinerary} />
       </div>
 
-      <div className="hc-ad junk flow blink">{JUNK.ad}</div>
+      <div className="hc-ad junk flow blink" data-t={JUNK.ad} />
 
-      {showHeavy && <div className="hc-counter junk flow">{JUNK.counter}</div>}
+      {showHeavy && <div className="hc-counter junk flow" data-t={JUNK.counter} />}
 
       <div className="hc-foot">
-        <span>{shop.avis}</span>
-        <span>{shop.type}</span>
+        <span data-t={shop.avis} />
+        <span data-t={shop.type} />
       </div>
 
-      {showHeavy && <div className="hc-works junk">{JUNK.works}</div>}
+      {showHeavy && <div className="hc-works junk" data-t={JUNK.works} />}
 
-      <div className="hc-chat junk">{JUNK.chat}</div>
+      <div className="hc-chat junk" data-t={JUNK.chat} />
 
       <div className="hc-popup junk">
-        <span className="hc-popup-close">✕</span>
-        <span className="hc-popup-text">{JUNK.popup}</span>
-        <span className="hc-popup-button">{JUNK.popupButton}</span>
+        <span className="hc-popup-close" data-t="✕" />
+        <span className="hc-popup-text" data-t={JUNK.popup} />
+        <span className="hc-popup-button" data-t={JUNK.popupButton} />
       </div>
 
       <div className="hc-cookie junk">
-        <span>{JUNK.cookie}</span>
-        <span className="hc-cookie-button">{JUNK.cookieButton}</span>
+        <span data-t={JUNK.cookie} />
+        <span className="hc-cookie-button" data-t={JUNK.cookieButton} />
       </div>
 
       <span className="blade" />
