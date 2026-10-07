@@ -75,16 +75,24 @@ const readRotation = (element) => {
   return toDegrees(Math.atan2(matrix.b, matrix.a));
 };
 
+const IS_SERVER = typeof window === "undefined";
+const SERVER_DECISION = { skip: true, reason: "pre-rendu", forced: false };
+
 function IntroAxe() {
-  const [decision] = useState(decideIntro);
-  const [reducedMotion] = useState(prefersReducedMotion);
+  const [decision] = useState(() => (IS_SERVER ? SERVER_DECISION : decideIntro()));
+  const [reducedMotion] = useState(() => !IS_SERVER && prefersReducedMotion());
   const [done, setDone] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const rootRef = useRef(null);
   const topRef = useRef(null);
   const bottomRef = useRef(null);
   const cutRef = useRef(null);
   const axeRef = useRef(null);
   const spinRef = useRef(null);
+
+  useLayoutEffect(() => {
+    setMounted(true);
+  }, []);
 
   useLayoutEffect(() => {
     logDecision(
@@ -331,9 +339,9 @@ function IntroAxe() {
       release();
       root.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     };
-  }, [reducedMotion, decision]);
+  }, [reducedMotion, decision, mounted]);
 
-  if (decision.skip || done) return null;
+  if (decision.skip || done || !mounted) return null;
 
   return createPortal(
     <div className="introAxe" ref={rootRef} aria-hidden="true">

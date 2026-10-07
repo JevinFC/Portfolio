@@ -23,7 +23,7 @@ function Footer() {
           </a>
         </div>
         <p className="footerMade">{t("footerMade")}</p>
-        <p className="footerCopyright">
+        <p className="footerCopyright" suppressHydrationWarning>
           {t("footerCopyright").replace("{year}", new Date().getFullYear())}
         </p>
         <p className="footerLinks">

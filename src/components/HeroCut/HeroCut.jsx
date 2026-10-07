@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./HeroCut.scss";
 import shops, { JUNK } from "./shops.js";
+import { useMediaQuery } from "../../utils/useMediaQuery.js";
 
 const SLICE_AT = 1500;
 const CUT_AT = 2300;
@@ -12,11 +13,9 @@ const INTRO_EVENT = "intro-axe:done";
 const SMALL_QUERY = "(max-width: 767px)";
 const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
 
-const matches = (query) => window.matchMedia(query).matches;
-
 function HeroCut({ onShopChange }) {
-  const [reduced] = useState(() => matches(REDUCED_QUERY));
-  const [small, setSmall] = useState(() => matches(SMALL_QUERY));
+  const reduced = useMediaQuery(REDUCED_QUERY);
+  const small = useMediaQuery(SMALL_QUERY);
   const [index, setIndex] = useState(0);
   const [slice, setSlice] = useState(false);
   const [cut, setCut] = useState(false);
@@ -30,13 +29,6 @@ function HeroCut({ onShopChange }) {
   const shopChangeRef = useRef(onShopChange);
 
   shopChangeRef.current = onShopChange;
-
-  useEffect(() => {
-    const media = window.matchMedia(SMALL_QUERY);
-    const onChange = (event) => setSmall(event.matches);
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
-  }, []);
 
   useEffect(() => {
     shopChangeRef.current?.(shops[index]);

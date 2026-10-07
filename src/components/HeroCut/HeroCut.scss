@@ -498,3 +498,11 @@
     transition: none !important;
   }
 }
+
+@media (max-width: 767px) {
+  .hc-carousel,
+  .hc-counter,
+  .hc-works {
+    display: none;
+  }
+}

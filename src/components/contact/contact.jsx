@@ -17,6 +17,8 @@ function Contact() {
       return;
     }
 
+    form.current.time.value = new Date().toLocaleString();
+
     emailjs.sendForm(
       "service_96fhtaa",
       "template_u6cnmln",
@@ -65,7 +67,7 @@ function Contact() {
             />
           </div>
 
-          <input type="hidden" name="time" value={new Date().toLocaleString()} />
+          <input type="hidden" name="time" />
 
           <div className="contactHoneypot" aria-hidden="true">
             <label htmlFor="contactCompany">Société</label>
