@@ -3,4 +3,4 @@
 // (voir le plugin injectSiteUrl de vite.config.js).
 // Changer de nom de domaine : modifier cette ligne, puis public/robots.txt
 // et public/sitemap.xml, qui sont servis tels quels sans passer par le build.
-export const SITE_URL = "https://portfolio.kevinmachado.dev";
+export const SITE_URL = "https://hachado.fr";
