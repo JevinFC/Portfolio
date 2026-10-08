@@ -25,24 +25,32 @@ header.scrolled {
   margin: 0 auto;
 }
 
-.h2header {
+.headerBrand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.12em;
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-weight: 800;
-  font-size: clamp(1.5rem, 2vw, 3rem);
+  font-size: clamp(2rem, 2.4vw, 2.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--color-surface);
-  margin: 0;
+  text-decoration: none;
   margin-right: auto;
+
+  &:focus-visible {
+    outline: 3px solid var(--color-surface);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
 }
 
 .headerLogo {
-  width: 1.2em;
-  height: 1.2em;
+  display: block;
+  width: auto;
+  height: 1.4em;
   flex-shrink: 0;
-  transform: rotate(-18deg);
 }
 
 .navHeader {
@@ -142,10 +150,6 @@ header.scrolled {
     flex-wrap: nowrap;
     gap: 0.75rem;
     padding: 0.75rem 1.25rem;
-  }
-
-  .h2header {
-    gap: 8px;
   }
 
   .burgerButton {

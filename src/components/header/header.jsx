@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
 import { useLanguage } from "../languageContext";
-import AxeIcon from "../AxeIcon/AxeIcon.jsx";
 
 function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -19,10 +18,21 @@ function Header() {
   return (
     <header className={isScrolled ? "scrolled" : ""}>
       <div className={menuOpen ? "headerPortfolio open" : "headerPortfolio"}>
-        <h2 className="h2header">
-          <AxeIcon variant="onHot" className="headerLogo" />
-          {t("portfolio")}
-        </h2>
+        <a
+          className="headerBrand"
+          href="#accueil"
+          aria-label="Hachado"
+          onClick={() => setMenuOpen(false)}
+        >
+          <img
+            className="headerLogo"
+            src="/logo-hachado-h.webp"
+            alt=""
+            width="303"
+            height="380"
+          />
+          <span aria-hidden="true">achado</span>
+        </a>
 
         <nav className="navHeader" id="mainNav">
           <div className="navHeaderInner">

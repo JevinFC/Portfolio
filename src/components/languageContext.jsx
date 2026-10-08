@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 const translations = {
   fr: {
     // Header
-    portfolio: "Kévin Machado",
     home: "Accueil",
     about: "Qui suis-je",
     projects: "Réalisations",
@@ -187,7 +186,6 @@ const translations = {
   },
   en: {
     // Header
-    portfolio: "Kévin Machado",
     home: "Home",
     about: "About me",
     projects: "Work",

@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./IntroAxe.scss";
-import AxeIcon from "../AxeIcon/AxeIcon.jsx";
 import { decideIntro, isMobile } from "../../utils/introDecision.js";
 
 const DURATIONS = {
@@ -362,7 +361,7 @@ function IntroAxe() {
 
           <div className="introAxe__axe" ref={axeRef}>
             <div className="introAxe__spin" ref={spinRef}>
-              <AxeIcon />
+              <img src="/logo-hachado-h.webp" alt="" width="303" height="380" />
             </div>
           </div>
         </>
