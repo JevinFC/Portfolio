@@ -1,41 +1,19 @@
 import { chromium } from "playwright";
 import sharp from "sharp";
-import { stat } from "node:fs/promises";
+import { stat, writeFile } from "node:fs/promises";
 
 const baseUrl = process.argv[2] || "http://localhost:4173";
 
-const BLADE = "M88 50 L58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 L88 74 Z";
-const EDGE =
-  "M58 36 C40 28 24 44 24 62 C24 80 40 96 58 88 C45 83 35 74 35 62 C35 50 45 41 58 36 Z";
+const MARK = "public/logo-hachado-h.webp";
+const CREAM = "#F6EFE7";
 
-// Variante onHot : manche et rivet en rose pale, lames en encre, tranchant en creme.
-// Le manche du favicon est en #C9285B, invisible sur ce fond framboise.
-const AXE = `
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <rect x="93" y="28" width="14" height="162" rx="7" fill="#FFB3C9"/>
-    <rect x="90" y="150" width="20" height="6" rx="3" fill="#23171D"/>
-    <rect x="90" y="162" width="20" height="6" rx="3" fill="#23171D"/>
-    <rect x="90" y="174" width="20" height="6" rx="3" fill="#23171D"/>
-    <g>
-      <path d="${BLADE}" fill="#23171D"/>
-      <path d="${EDGE}" fill="#FFF8F1"/>
-    </g>
-    <g transform="translate(200 0) scale(-1 1)">
-      <path d="${BLADE}" fill="#23171D"/>
-      <path d="${EDGE}" fill="#FFF8F1"/>
-    </g>
-    <rect x="83" y="45" width="34" height="34" rx="5" fill="#23171D"/>
-    <circle cx="100" cy="62" r="5.5" fill="#FFB3C9"/>
-  </svg>
-`;
-
-const TEMPLATE = (axe) => `
+const TEMPLATE = `
   <div id="og">
     <div class="og-text">
       <p class="og-title">Des sites taillés sur mesure pour les commerçants de Tours.</p>
       <p class="og-byline">Kévin Machado · Développeur web à Tours</p>
     </div>
-    <div class="og-axe">${axe}</div>
+    <div class="og-axe"><img src="/logo-hachado-h.webp" alt="" /></div>
   </div>
 `;
 
@@ -71,8 +49,33 @@ const STYLE = `
     color: #FFB3C9;
   }
   .og-axe { flex: 0 0 340px; display: flex; align-items: center; justify-content: center; }
-  .og-axe svg { width: 340px; height: 340px; transform: rotate(14deg); }
+  .og-axe img { display: block; width: auto; height: 360px; }
 `;
+
+const markAt = (height, format = "png") => {
+  const resized = sharp(MARK).resize({ height, kernel: "lanczos3" });
+  const encoded = format === "webp" ? resized.webp({ quality: 90, alphaQuality: 100 }) : resized.png();
+  return encoded.toBuffer({ resolveWithObject: true });
+};
+
+const writeFavicon = async () => {
+  const { data, info } = await markAt(160, "webp");
+  const x = ((200 - info.width) / 2).toFixed(1);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="34" fill="${CREAM}"/>
+  <image href="data:image/webp;base64,${data.toString("base64")}" x="${x}" y="20" width="${info.width}" height="${info.height}"/>
+</svg>
+`;
+  await writeFile("public/favicon.svg", svg);
+};
+
+const writeAppleTouchIcon = async () => {
+  const { data, info } = await markAt(136);
+  await sharp({ create: { width: 180, height: 180, channels: 4, background: CREAM } })
+    .composite([{ input: data, left: Math.round((180 - info.width) / 2), top: 22 }])
+    .png({ compressionLevel: 9 })
+    .toFile("public/apple-touch-icon.png");
+};
 
 const run = async () => {
   const browser = await chromium.launch();
@@ -90,9 +93,10 @@ const run = async () => {
       style.textContent = css;
       document.head.appendChild(style);
     },
-    { html: TEMPLATE(AXE), css: STYLE }
+    { html: TEMPLATE, css: STYLE }
   );
   await page.evaluate(() => document.fonts.ready.then(() => undefined));
+  await page.locator(".og-axe img").evaluate((img) => img.decode());
   await page.waitForTimeout(500);
 
   const raw = await page.locator("#og").screenshot({ type: "png" });
@@ -103,12 +107,10 @@ const run = async () => {
     .png({ compressionLevel: 9, palette: true, quality: 90 })
     .toFile("public/og-image.png");
 
-  await sharp("public/favicon.svg")
-    .resize(180, 180, { fit: "fill" })
-    .png({ compressionLevel: 9 })
-    .toFile("public/apple-touch-icon.png");
+  await writeFavicon();
+  await writeAppleTouchIcon();
 
-  for (const file of ["public/og-image.png", "public/apple-touch-icon.png"]) {
+  for (const file of ["public/og-image.png", "public/apple-touch-icon.png", "public/favicon.svg"]) {
     const meta = await sharp(file).metadata();
     const size = (await stat(file)).size;
     console.log(
