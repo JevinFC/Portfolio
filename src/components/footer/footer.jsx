@@ -1,7 +1,7 @@
 import "./footer.scss";
 import { useLanguage } from "../languageContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
@@ -17,6 +17,14 @@ function Footer() {
             aria-label={t("footerLinkedin")}
           >
             <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a
+            href="https://www.instagram.com/hachado_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t("footerInstagram")}
+          >
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a href="#contact" aria-label={t("footerEmail")}>
             <FontAwesomeIcon icon={faEnvelope} />

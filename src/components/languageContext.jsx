@@ -177,6 +177,7 @@ const translations = {
 
     // Footer
     footerLinkedin: "Mon profil LinkedIn",
+    footerInstagram: "Mon compte Instagram",
     footerEmail: "Aller au formulaire de contact",
     footerLegal: "Mentions légales",
     footerCgv: "CGV",
@@ -361,6 +362,7 @@ const translations = {
       "The message didn't go through. Write to me directly at contact@kevinmachado.dev.",
 
     footerLinkedin: "My LinkedIn profile",
+    footerInstagram: "My Instagram account",
     footerEmail: "Go to the contact form",
     footerLegal: "Legal notice",
     footerCgv: "Terms of sale",
