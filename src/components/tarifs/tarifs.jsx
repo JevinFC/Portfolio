@@ -210,6 +210,50 @@ function Tarifs() {
           </div>
         </div>
       </div>
+
+      <div className="tarifsDetails">
+        <div className="tarifsBase">
+          <div className="tarifsStamp" aria-hidden="true">
+            <span>{t("pricingStampLabel")}</span>
+            <strong>{t("pricingStampValue")}</strong>
+          </div>
+          <h3>{t("pricingBaseTitle")}</h3>
+          <ul>
+            {t("pricingBase").map((item) => (
+              <li key={item.lead}>
+                <b>{item.lead}</b>
+                {item.rest}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="tarifsCoupon">
+          <img
+            className="tarifsCouponAxe"
+            src="/logo-hachado-h.webp"
+            alt=""
+            width="303"
+            height="380"
+          />
+          <p className="tarifsCouponKicker">{t("pricingGoodKicker")}</p>
+          <h3>{t("pricingGoodTitle")}</h3>
+          <ul>
+            {t("pricingGood").map((item) => (
+              <li key={item.label}>
+                <p className="tarifsCouponFigure">
+                  {item.figure}
+                  <small>{item.unit}</small>
+                </p>
+                <p>
+                  <b>{item.label}</b>
+                  {item.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   );
 }

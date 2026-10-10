@@ -59,13 +59,54 @@ const translations = {
     // Tarifs
     pricingTitle: "Tarifs",
     pricingSubtitle:
-      "Pas de frais cachés, pas d'options inutiles. Vous savez exactement ce que vous payez.",
+      "Pas de frais cachés : chaque offre comprend le référencement de base, votre fiche Google et l'hébergement gratuit à votre nom.",
     pricingIncluded: "Ce qui est inclus",
     pricingCta: "Demander un devis",
     pricingNotes: [
+      "Hébergement gratuit, à votre nom",
       "Paiement en 3 fois sans frais",
+      "Maintenance facultative : 49 €/mois, sans engagement",
       "Prix nets, TVA non applicable (art. 293 B du CGI)",
-      "Maintenance et hébergement : 49 €/mois, sans engagement",
+    ],
+    pricingBaseTitle: "Inclus dans toutes les offres",
+    pricingStampLabel: "Frais cachés",
+    pricingStampValue: "0 €",
+    pricingBase: [
+      { lead: "Un site sur mesure", rest: ", rapide et parfait sur téléphone" },
+      { lead: "Le référencement de base", rest: " : textes, titres et réglages pensés pour être trouvé dans votre ville" },
+      { lead: "Votre fiche Google", rest: " créée ou optimisée" },
+      { lead: "L'hébergement gratuit", rest: ", à votre nom" },
+      { lead: "La mise en ligne", rest: " et le branchement de votre nom de domaine" },
+      { lead: "Les pages légales", rest: " et des statistiques de visite sans cookies" },
+      { lead: "Une garantie de 3 mois", rest: " sur le bon fonctionnement du site" },
+    ],
+    pricingGoodKicker: "À garder sous le coude",
+    pricingGoodTitle: "Bon à savoir",
+    pricingGood: [
+      {
+        figure: "10–15 €",
+        unit: "par an",
+        label: "Nom de domaine",
+        text: " à votre nom, réglé directement par vous. Je vous aide gratuitement à l'acheter.",
+      },
+      {
+        figure: "49 €",
+        unit: "par mois",
+        label: "Maintenance",
+        text: " facultative et sans engagement : gestion de l'hébergement, sauvegardes, surveillance, fiche Google à jour et 3 modifications courtes par mois.",
+      },
+      {
+        figure: "40 €",
+        unit: "de l'heure",
+        label: "En dehors de la maintenance",
+        text: ", facturés par demi-heure. Devis préalable au-delà de 2 h.",
+      },
+      {
+        figure: "3×",
+        unit: "sans frais",
+        label: "Paiement",
+        text: " échelonné si vous le souhaitez. Prix nets, TVA non applicable (art. 293 B du CGI).",
+      },
     ],
 
     // Basic
@@ -76,9 +117,7 @@ const translations = {
       "Une page unique, tout y est",
       "Vos horaires, coordonnées et photos",
       "Un bouton pour vous appeler, un autre pour venir chez vous",
-      "S'affiche parfaitement sur téléphone",
-      "Mis en ligne et hébergé, je m'occupe de tout",
-      "Votre fiche Google créée : horaires, adresse, avis",
+      "Des textes courts rédigés à partir de vos informations",
     ],
     basicDelivery: "Livré en 1 semaine",
 
@@ -89,25 +128,26 @@ const translations = {
     standardSubtitle: "Un vrai site pour présenter votre activité en détail.",
     standardFeatures: [
       "Tout ce qui est inclus dans « Une page »",
-      "4 à 6 pages",
+      "4 à 6 pages, dont une par service principal",
       "Un formulaire pour recevoir vos demandes",
-      "Galerie photos, menu ou catalogue",
+      "Galerie photos, menu ou catalogue (sans vente en ligne)",
       "Vos textes rédigés à partir de ce que vous me dites",
-      "Pensé pour être trouvé sur Google à Tours",
+      "Plus de pages, donc plus de recherches où vous apparaissez",
     ],
     standardDelivery: "Livré en 2 à 3 semaines",
 
     // Premium
     premiumTitle: "Site complet + visibilité",
     premiumPrice: "2 490 €",
-    premiumSubtitle: "Pour être trouvé avant vos concurrents dans votre ville.",
+    premiumSubtitle: "Pour aller chercher activement les clients de votre ville.",
     premiumFeatures: [
       "Tout ce qui est inclus dans « Site complet »",
-      "Un travail poussé pour ressortir sur les recherches de votre ville",
+      "Référencement local actif : mots-clés de votre métier, annuaires, avis clients",
       "Prise de rendez-vous en ligne",
-      "Séance photo de votre établissement",
-      "Une heure de formation pour modifier votre site vous-même",
-      "Suivi pendant 3 mois après la mise en ligne",
+      "Séance photo sur place : 10 à 15 photos retouchées",
+      "Une heure de formation à votre fiche Google et à vos outils",
+      "3 mois de suivi : un bilan par mois et des ajustements",
+      "3 mois de maintenance offerts",
     ],
     premiumDelivery: "Livré en 3 à 4 semaines",
 
@@ -132,42 +172,47 @@ const translations = {
       {
         question: "Combien coûte la création d'un site internet ?",
         answer:
-          "Un site d'une page coûte 890 €, un site complet de 4 à 6 pages 1 690 €, et l'offre Site complet + visibilité 2 490 €. Les prix sont fixes (TVA non applicable) et payables en 3 fois sans frais. L'hébergement et la maintenance coûtent 49 € par mois, sans engagement."
+          "Un site d'une page coûte 890 €, un site complet de 4 à 6 pages 1 690 €, et l'offre Site complet + visibilité 2 490 €. Les prix sont fixes (TVA non applicable), payables en 3 fois sans frais, et comprennent la mise en ligne et l'hébergement, gratuit et à votre nom. Seul le nom de domaine reste à votre charge, environ 10 à 15 € par an. La maintenance à 49 € par mois est facultative et sans engagement."
       },
       {
         question: "Combien de temps avant que mon site soit en ligne ?",
         answer:
-          "Une semaine pour une page unique, deux à trois semaines pour un site complet. Le délai démarre quand vous m'avez transmis vos informations : horaires, coordonnées, photos et tout ce qui doit figurer sur le site."
+          "Une semaine pour une page unique, deux à trois semaines pour un site complet, trois à quatre semaines avec l'offre visibilité. Le délai démarre quand vous m'avez transmis vos informations : horaires, coordonnées, photos et tout ce qui doit figurer sur le site."
       },
       {
         question: "Je n'ai ni photos ni textes prêts. C'est un problème ?",
         answer:
-          "Non. À partir de l'offre Site complet, je rédige les textes à partir de vos informations, et l'offre Site complet + visibilité comprend une séance photo dans votre établissement. Si vous avez déjà des visuels, je les utilise."
+          "Non. Dans toutes les offres, je rédige les textes à partir de ce que vous me dites. L'offre Site complet + visibilité comprend en plus une séance photo dans votre établissement, avec 10 à 15 photos retouchées. Si vous avez déjà des photos, je les utilise."
       },
       {
         question: "Est-ce que mes clients me trouveront sur Google ?",
         answer:
-          "C'est tout l'objectif. Chaque offre comprend la création de votre fiche Google, celle qui affiche vos horaires, votre adresse et vos avis. Les offres supérieures vont plus loin pour vous positionner sur les recherches faites dans votre ville."
+          "C'est tout l'objectif. Chaque offre comprend le référencement de base et la création ou l'optimisation de votre fiche Google, celle qui affiche vos horaires, votre adresse et vos avis. Le site complet multiplie les pages, donc les recherches où vous apparaissez, et l'offre visibilité va chercher activement les clients de votre ville : mots-clés de votre métier, annuaires, avis clients et trois mois de suivi."
       },
       {
         question: "Pourrai-je modifier mon site moi-même ?",
         answer:
-          "Oui. L'offre Site complet + visibilité comprend une heure de formation pour que vous puissiez changer vos horaires, vos prix ou vos photos sans dépendre de moi. Sur les autres offres, je m'occupe des modifications dans le cadre de la maintenance."
+          "Vos horaires exceptionnels et vos actualités se gèrent depuis votre fiche Google, qui reste entre vos mains : l'offre visibilité comprend une heure de formation pour le faire vous-même. Pour le site, je m'en charge : trois modifications courtes par mois sont comprises dans la maintenance, sinon c'est 40 € de l'heure, facturés par demi-heure."
       },
       {
         question: "Que comprend la maintenance à 49 € par mois ?",
         answer:
-          "L'hébergement, les mises à jour, les sauvegardes et vos modifications courantes : horaires, tarifs, nouvelles photos. C'est sans engagement, vous pouvez arrêter quand vous le souhaitez."
+          "La gestion de l'hébergement, le suivi du renouvellement de votre nom de domaine, les sauvegardes, la surveillance du site, la mise à jour de votre fiche Google et trois modifications courtes par mois (horaires, tarifs, photos, textes courts), faites sous 48 h ouvrées. Elle est facultative, sans engagement, et offerte les trois premiers mois avec l'offre visibilité."
+      },
+      {
+        question: "Mon site m'appartient-il ?",
+        answer:
+          "Oui. Le nom de domaine, l'hébergement et les comptes liés au site (statistiques, formulaire, fiche Google) sont à votre nom dès le départ, et les droits sur le site vous sont cédés une fois celui-ci réglé. Sans maintenance, il reste en ligne, et je vous remets ses fichiers sur simple demande."
       },
       {
         question: "Comment ça se passe une fois le devis accepté ?",
         answer:
-          "On fait le point sur ce que vous voulez, vous me transmettez vos informations, je vous montre une première version que l'on ajuste ensemble, puis je mets le site en ligne. Le devis est gratuit et vous ne payez rien tant que vous ne l'avez pas validé."
+          "On fait le point sur ce que vous voulez, vous me transmettez vos informations, je vous montre une première version que l'on ajuste ensemble, puis je mets le site en ligne. Le devis est gratuit. Vous réglez ensuite 30 % à la commande et le solde à la livraison, ou en trois fois sans frais."
       },
       {
         question: "Vous travaillez seulement avec des commerces de Tours ?",
         answer:
-          "Je suis basé à Tours et je travaille avec les commerçants, artisans et indépendants de toute l'agglomération : Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes et ailleurs en Indre-et-Loire. On peut se rencontrer, et tout peut aussi se faire à distance."
+          "Je suis basé à Tours et je travaille avec les commerçants, artisans et indépendants de toute l'agglomération : Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes et ailleurs en Indre-et-Loire. On peut se rencontrer, et tout peut aussi se faire à distance, en visio. Au-delà de l'agglomération, pour la séance photo de l'offre visibilité, je me déplace pour 0,60 € du kilomètre (aller-retour depuis Tours), ou je retouche vos propres photos et l'offre baisse de 150 €."
       },
     ],
 
@@ -239,13 +284,54 @@ const translations = {
         // Pricing
     pricingTitle: "Pricing",
     pricingSubtitle:
-      "No hidden fees, no useless extras. You know exactly what you pay for.",
+      "No hidden fees: every plan includes core SEO, your Google profile and free hosting in your name.",
     pricingIncluded: "What's included",
     pricingCta: "Request a quote",
     pricingNotes: [
+      "Free hosting, in your name",
       "Pay in 3 instalments, no fees",
+      "Optional maintenance: €49/month, no commitment",
       "Net prices, VAT not applicable",
-      "Maintenance and hosting: €49/month, no commitment",
+    ],
+    pricingBaseTitle: "Included in every plan",
+    pricingStampLabel: "Hidden fees",
+    pricingStampValue: "€0",
+    pricingBase: [
+      { lead: "A custom website", rest: ", fast and perfect on mobile" },
+      { lead: "Core SEO", rest: ": copy, titles and settings designed to be found in your town" },
+      { lead: "Your Google Business Profile", rest: " created or optimised" },
+      { lead: "Free hosting", rest: ", in your name" },
+      { lead: "Launch", rest: " and connection of your domain name" },
+      { lead: "Legal pages", rest: " and cookie-free visitor statistics" },
+      { lead: "A 3-month guarantee", rest: " that the site works properly" },
+    ],
+    pricingGoodKicker: "Keep this handy",
+    pricingGoodTitle: "Good to know",
+    pricingGood: [
+      {
+        figure: "€10–15",
+        unit: "a year",
+        label: "Domain name",
+        text: " in your name, paid directly by you. I'll help you buy it at no charge.",
+      },
+      {
+        figure: "€49",
+        unit: "a month",
+        label: "Maintenance",
+        text: ", optional and with no commitment: hosting management, backups, monitoring, an up-to-date Google profile and 3 short changes a month.",
+      },
+      {
+        figure: "€40",
+        unit: "an hour",
+        label: "Outside maintenance",
+        text: ", billed by the half hour. Quote first for anything over 2 hours.",
+      },
+      {
+        figure: "3×",
+        unit: "no fees",
+        label: "Payment",
+        text: " in instalments if you wish. Net prices, VAT not applicable.",
+      },
     ],
 
     // Basic
@@ -256,9 +342,7 @@ const translations = {
       "A single page, everything on it",
       "Your hours, contact details and photos",
       "One button to call you, one to find you",
-      "Looks perfect on a phone",
-      "Put online and hosted, I handle all of it",
-      "Your Google listing created: hours, address, reviews",
+      "Short copy written from your information",
     ],
     basicDelivery: "Delivered in 1 week",
 
@@ -269,25 +353,26 @@ const translations = {
     standardSubtitle: "A real website to present your business in full.",
     standardFeatures: [
       "Everything included in “One page”",
-      "4 to 6 pages",
+      "4 to 6 pages, including one per main service",
       "A form to receive your enquiries",
-      "Photo gallery, menu or catalogue",
+      "Photo gallery, menu or catalogue (no online sales)",
       "Your text written from what you tell me",
-      "Built to be found on Google in Tours",
+      "More pages, so more searches where you show up",
     ],
     standardDelivery: "Delivered in 2 to 3 weeks",
 
     // Premium
     premiumTitle: "Full website + visibility",
     premiumPrice: "€2,490",
-    premiumSubtitle: "To be found ahead of your competitors locally.",
+    premiumSubtitle: "To actively win over customers in your town.",
     premiumFeatures: [
       "Everything included in “Full website”",
-      "Deeper work to stand out in searches made in your town",
+      "Active local SEO: your trade's keywords, directories, customer reviews",
       "Online booking",
-      "Photo session at your premises",
-      "One hour of training to edit the site yourself",
-      "3 months of follow-up after launch",
+      "On-site photo session: 10 to 15 edited photos",
+      "One hour of training on your Google profile and tools",
+      "3 months of follow-up: a monthly report and adjustments",
+      "3 months of maintenance included",
     ],
     premiumDelivery: "Delivered in 3 to 4 weeks",
 
@@ -298,42 +383,47 @@ const translations = {
       {
         question: "How much does a website cost?",
         answer:
-          "A one-page site costs €890, a full 4 to 6 page website €1,690, and the Full website + visibility plan €2,490. Prices are fixed (no VAT applicable) and can be paid in 3 instalments at no extra cost. Hosting and maintenance cost €49 per month, with no commitment."
+          "A one-page site costs €890, a full 4 to 6 page website €1,690, and the Full website + visibility plan €2,490. Prices are fixed (no VAT applicable), can be paid in 3 instalments at no extra cost, and include going live and hosting, free and in your name. The only extra is your domain name, about €10 to €15 a year. Maintenance at €49 per month is optional, with no commitment."
       },
       {
         question: "How long before my website is live?",
         answer:
-          "One week for a single page, two to three weeks for a full website. The clock starts once you have sent me your information: opening hours, contact details, photos and anything else the site needs to show."
+          "One week for a single page, two to three weeks for a full website, three to four weeks with the visibility plan. The clock starts once you have sent me your information: opening hours, contact details, photos and anything else the site needs to show."
       },
       {
         question: "I don't have photos or written content ready. Is that a problem?",
         answer:
-          "No. From the Full website plan onwards I write the content from your notes, and the Full website + visibility plan includes a photo session at your premises. If you already have visuals, I will use them."
+          "No. On every plan, I write the content from what you tell me. The Full website + visibility plan also includes a photo session at your premises, with 10 to 15 edited photos. If you already have photos, I will use them."
       },
       {
         question: "Will my customers find me on Google?",
         answer:
-          "That is the whole point. Every plan includes setting up your Google listing, the one showing your hours, address and reviews. The higher plans go further to get you found on searches made in your town."
+          "That is the whole point. Every plan includes core SEO and setting up or optimising your Google Business Profile, the listing showing your hours, address and reviews. A full website adds pages, so more searches where you show up, and the visibility plan actively goes after customers in your town: your trade's keywords, directories, customer reviews and three months of follow-up."
       },
       {
         question: "Will I be able to update the site myself?",
         answer:
-          "Yes. The Full website + visibility plan includes an hour of training so you can change your hours, prices or photos without going through me. On the other plans, I handle updates as part of the maintenance."
+          "Special opening hours and news are managed from your Google profile, which stays in your hands: the visibility plan includes an hour of training so you can do it yourself. As for the site, I take care of it: three short changes a month are included in maintenance, otherwise it's €40 per hour, billed by the half hour."
       },
       {
         question: "What does the €49/month maintenance cover?",
         answer:
-          "Hosting, updates, backups and your everyday changes: hours, prices, new photos. There is no commitment, you can stop whenever you want."
+          "Hosting management, keeping track of your domain renewal, backups, monitoring, keeping your Google profile up to date and three short changes a month (hours, prices, photos, short text), done within 2 working days. It is optional, with no commitment, and included for the first three months with the visibility plan."
+      },
+      {
+        question: "Will I own my website?",
+        answer:
+          "Yes. The domain name, hosting and accounts linked to the site (statistics, form, Google profile) are in your name from day one, and the rights to the site are transferred to you once it is paid for. Without maintenance it stays online, and I will hand over its files whenever you ask."
       },
       {
         question: "What happens once the quote is accepted?",
         answer:
-          "We go over what you need, you send me your information, I show you a first version that we adjust together, then I put the site live. The quote is free and you pay nothing until you have approved it."
+          "We go over what you need, you send me your information, I show you a first version that we adjust together, then I put the site live. The quote is free. You then pay 30% when you order and the rest on delivery, or in three instalments at no extra cost."
       },
       {
         question: "Do you only work with businesses in Tours?",
         answer:
-          "I'm based in Tours and work with shop owners, craftspeople and freelancers across the whole area: Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes and elsewhere in Indre-et-Loire. We can meet in person, and everything can also be done remotely."
+          "I'm based in Tours and work with shop owners, craftspeople and freelancers across the whole area: Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes and elsewhere in Indre-et-Loire. We can meet in person, and everything can also be done remotely by video call. Beyond the Tours area, for the visibility plan's photo session, I can travel at €0.60 per kilometre (round trip from Tours), or edit your own photos and take €150 off the plan."
       },
     ],
 
