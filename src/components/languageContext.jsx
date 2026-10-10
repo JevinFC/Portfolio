@@ -50,20 +50,6 @@ const translations = {
       "Lola n'avait qu'un profil sur les réseaux pour montrer son travail. Elle dispose maintenant d'un site qui lui appartient, qu'elle envoie directement à ses prospects.",
     projectLolaTags: ["Présenter son travail", "Textes rédigés", "Mis en ligne"],
     projectLolaAlt: "Page d'accueil du portfolio de Lola Gauchy",
-    projectKasaStatus: "Projet d'apprentissage",
-    projectKasaName: "Kasa",
-    projectKasaRole: "Plateforme de location immobilière",
-    projectKasaText:
-      "Un site de location où l'on cherche un logement, ouvre une annonce et consulte les photos sans jamais se perdre.",
-    projectKasaTags: ["Navigation simple", "Lisible sur mobile", "Pages d'annonces"],
-    projectKasaAlt: "Page d'accueil de la plateforme de location Kasa",
-    projectNinaStatus: "Projet d'apprentissage",
-    projectNinaName: "Nina Carducci",
-    projectNinaRole: "Photographe",
-    projectNinaText:
-      "Le site d'une photographe remis d'aplomb : il s'affiche trois fois plus vite et ressort mieux dans les résultats Google.",
-    projectNinaTags: ["Chargement rapide", "Trouvé sur Google", "Lisible par tous"],
-    projectNinaAlt: "Page d'accueil du site de la photographe Nina Carducci",
     projectsCtaPlaceholder: "Votre commerce ici",
     projectsCtaTitle: "La prochaine, c'est peut-être la vôtre",
     projectsCtaText:
@@ -244,20 +230,6 @@ const translations = {
       "Lola only had a social media profile to show her work. She now has a site of her own that she sends straight to prospects.",
     projectLolaTags: ["Showing her work", "Written content", "Put online"],
     projectLolaAlt: "Home page of Lola Gauchy's portfolio",
-    projectKasaStatus: "Training project",
-    projectKasaName: "Kasa",
-    projectKasaRole: "Property rental platform",
-    projectKasaText:
-      "A rental site where you look for a place, open a listing and browse the photos without ever getting lost.",
-    projectKasaTags: ["Simple navigation", "Readable on mobile", "Listing pages"],
-    projectKasaAlt: "Home page of the Kasa rental platform",
-    projectNinaStatus: "Training project",
-    projectNinaName: "Nina Carducci",
-    projectNinaRole: "Photographer",
-    projectNinaText:
-      "A photographer's website put back in shape: it loads three times faster and shows up better in Google results.",
-    projectNinaTags: ["Fast loading", "Found on Google", "Readable by everyone"],
-    projectNinaAlt: "Home page of photographer Nina Carducci's website",
     projectsCtaPlaceholder: "Your business here",
     projectsCtaTitle: "The next one could be yours",
     projectsCtaText:

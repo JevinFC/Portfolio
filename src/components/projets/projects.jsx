@@ -2,8 +2,6 @@ import { useState, useRef, useLayoutEffect } from "react";
 import "./projects.scss";
 import BrowserFrame from "../ui/browserFrame.jsx";
 import { useLanguage } from "../languageContext.jsx";
-import imgNinaCarducci from "/src/assets/imgprojects/ninaCarducci.webp";
-import imgKasa from "/src/assets/imgprojects/kasa.webp";
 import imgPortfolioLola from "/src/assets/imgprojects/screenshotLola.webp";
 
 function Projects() {
@@ -43,20 +41,6 @@ function Projects() {
       height: 3744,
       link: "https://lolagauchy.fr",
       featured: true,
-    },
-    {
-      key: "kasa",
-      img: imgKasa,
-      width: 1704,
-      height: 2941,
-      link: "https://kasa.kevinmachado.dev",
-    },
-    {
-      key: "nina",
-      img: imgNinaCarducci,
-      width: 1704,
-      height: 4537,
-      link: "https://jevinfc.github.io/Projet-4-KM-master/",
     },
   ];
 

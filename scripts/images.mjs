@@ -2,8 +2,6 @@ import sharp from "sharp";
 import { stat, rename, unlink } from "node:fs/promises";
 
 const TARGETS = [
-  { file: "src/assets/imgprojects/ninaCarducci.webp", width: 1704, quality: 85 },
-  { file: "src/assets/imgprojects/kasa.webp", width: 1704, quality: 85 },
   { file: "src/assets/imgprojects/screenshotLola.webp", width: 1704, quality: 85 },
   {
     file: "public/photoProfil.png",
