@@ -62,7 +62,7 @@ function APropos() {
             <li>{t("aboutFact1")}</li>
             <li>
               <a
-                href="/mentions-legales.html"
+                href="/mentions-legales"
                 target="_blank"
                 rel="noopener noreferrer"
               >

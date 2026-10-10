@@ -53,7 +53,7 @@ function Header() {
             type="button"
             onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
             className="languageButton"
-            aria-label={t("langSwitch")}
+            aria-label={`${language.toUpperCase()}, ${t("langSwitch")}`}
           >
             {language.toUpperCase()}
           </button>

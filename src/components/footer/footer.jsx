@@ -37,21 +37,21 @@ function Footer() {
         <p className="footerLinks">
           <a
             className="footerLegal"
-            href="/mentions-legales.html"
+            href="/mentions-legales"
             rel="noopener noreferrer"
           >
             {t("footerLegal")}
           </a>
           <a
             className="footerLegal"
-            href="/cgv.html"
+            href="/cgv"
             rel="noopener noreferrer"
           >
             {t("footerCgv")}
           </a>
           <a
             className="footerLegal"
-            href="/politique-confidentialite.html"
+            href="/politique-confidentialite"
             rel="noopener noreferrer"
           >
             {t("footerPrivacy")}
