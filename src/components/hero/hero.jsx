@@ -12,9 +12,8 @@ function Hero() {
     <section className="hero" id="accueil" aria-labelledby="heroTitle">
       <div className="heroInner">
         <div className="heroText">
-          <p className="heroEyebrow">{t("heroEyebrow")}</p>
-
           <h1 className="heroTitle" id="heroTitle">
+            <span className="heroEyebrow">{t("heroEyebrow")}</span>
             {t("heroTitle")}
           </h1>
 

@@ -1,4 +1,4 @@
-# robots.txt — Portfolio de Kévin Machado
+# robots.txt — Hachado
 
 User-agent: *
 Allow: /

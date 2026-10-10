@@ -11,7 +11,7 @@ const translations = {
     langSwitch: "Passer en anglais",
 
     // Hero
-    heroEyebrow: "Développeur web · Tours",
+    heroEyebrow: "Création de site internet à Tours",
     heroTitle: "Des sites taillés sur mesure pour les commerçants de Tours.",
     heroText:
       "On coupe le superflu, on garde ce qui fait venir des clients. Livré rapidement, à partir de 890 €.",
@@ -30,7 +30,7 @@ const translations = {
     aboutP4:
       "Pas de jargon ni de réunions inutiles : vous me racontez votre métier, je vous montre une maquette, on ajuste ensemble, je livre. Et comme je suis à Tours, on peut se rencontrer.",
     aboutP5:
-      "J'en ai fait ma façon de travailler : couper tout ce qui ne vous sert pas, et tailler un site sur mesure pour votre commerce. Une hache à double tranchant, ce sont deux promesses : un site simple pour vous, et efficace pour Google.",
+      "J'en ai fait ma façon de travailler : couper tout ce qui ne vous sert pas, et tailler un site sur mesure pour votre commerce. Une hache à double tranchant, ce sont deux promesses : un site simple pour vous, et efficace pour Google. C'est de là que vient Hachado, le nom de mon activité.",
     aboutFact1: "Basé à Tours (37)",
     aboutFact2: "Micro-entreprise, SIRET affiché",
     aboutFact3: "Réponse sous 48 h",
@@ -144,6 +144,11 @@ const translations = {
     faqTitle: "FAQ",
     faq: [
       {
+        question: "Combien coûte la création d'un site internet ?",
+        answer:
+          "Un site d'une page coûte 890 €, un site complet de 4 à 6 pages 1 690 €, et l'offre Site complet + visibilité 2 490 €. Les prix sont fixes (TVA non applicable) et payables en 3 fois sans frais. L'hébergement et la maintenance coûtent 49 € par mois, sans engagement."
+      },
+      {
         question: "Combien de temps avant que mon site soit en ligne ?",
         answer:
           "Une semaine pour une page unique, deux à trois semaines pour un site complet. Le délai démarre quand vous m'avez transmis vos informations : horaires, coordonnées, photos et tout ce qui doit figurer sur le site."
@@ -173,6 +178,11 @@ const translations = {
         answer:
           "On fait le point sur ce que vous voulez, vous me transmettez vos informations, je vous montre une première version que l'on ajuste ensemble, puis je mets le site en ligne. Le devis est gratuit et vous ne payez rien tant que vous ne l'avez pas validé."
       },
+      {
+        question: "Vous travaillez seulement avec des commerces de Tours ?",
+        answer:
+          "Je suis basé à Tours et je travaille avec les commerçants, artisans et indépendants de toute l'agglomération : Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes et ailleurs en Indre-et-Loire. On peut se rencontrer, et tout peut aussi se faire à distance."
+      },
     ],
 
     // Footer
@@ -183,7 +193,7 @@ const translations = {
     footerCgv: "CGV",
     footerPrivacy: "Confidentialité",
     footerMade: "Taillé à Tours.",
-    footerCopyright: "© {year} · Kévin Machado"
+    footerCopyright: "© {year} · Hachado · Kévin Machado"
   },
   en: {
     // Header
@@ -195,7 +205,7 @@ const translations = {
     langSwitch: "Switch to French",
 
     // Hero
-    heroEyebrow: "Web developer · Tours",
+    heroEyebrow: "Website design in Tours",
     heroTitle: "Websites cut to measure for local shops in Tours.",
     heroText:
       "We cut the fluff and keep what brings customers in. Delivered fast, from €890.",
@@ -214,7 +224,7 @@ const translations = {
     aboutP4:
       "No jargon, no pointless meetings: you tell me about your trade, I show you a mockup, we adjust it together, I deliver. And since I'm in Tours, we can meet in person.",
     aboutP5:
-      "I made it my way of working: cutting everything you don't need, and shaping a website that fits your business. A double-bit axe carries two promises: a site that's simple for you, and effective on Google.",
+      "I made it my way of working: cutting everything you don't need, and shaping a website that fits your business. A double-bit axe carries two promises: a site that's simple for you, and effective on Google. That's where the name Hachado comes from.",
     aboutFact1: "Based in Tours, France",
     aboutFact2: "Registered sole trader",
     aboutFact3: "Reply within 48 hours",
@@ -313,7 +323,11 @@ const translations = {
 
     faqTitle: "FAQ",
     faq: [
-
+      {
+        question: "How much does a website cost?",
+        answer:
+          "A one-page site costs €890, a full 4 to 6 page website €1,690, and the Full website + visibility plan €2,490. Prices are fixed (no VAT applicable) and can be paid in 3 instalments at no extra cost. Hosting and maintenance cost €49 per month, with no commitment."
+      },
       {
         question: "How long before my website is live?",
         answer:
@@ -344,6 +358,11 @@ const translations = {
         answer:
           "We go over what you need, you send me your information, I show you a first version that we adjust together, then I put the site live. The quote is free and you pay nothing until you have approved it."
       },
+      {
+        question: "Do you only work with businesses in Tours?",
+        answer:
+          "I'm based in Tours and work with shop owners, craftspeople and freelancers across the whole area: Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes and elsewhere in Indre-et-Loire. We can meet in person, and everything can also be done remotely."
+      },
     ],
 
     // Contact
@@ -368,7 +387,7 @@ const translations = {
     footerCgv: "Terms of sale",
     footerPrivacy: "Privacy",
     footerMade: "Hand-cut in Tours.",
-    footerCopyright: "© {year} · Kévin Machado"
+    footerCopyright: "© {year} · Hachado · Kévin Machado"
   },
 };
 

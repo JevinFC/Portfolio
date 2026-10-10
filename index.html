@@ -32,10 +32,10 @@
     <style>html.intro-pending body { background: #E2396F; } html.intro-pending #root { visibility: hidden; }</style>
     <link rel="preload" href="/fonts/bricolage-grotesque-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/logo-hachado-h.webp" as="image" type="image/webp">
-    <title>Création de site internet à Tours · Kévin Machado</title>
+    <title>Création de site internet à Tours · Hachado</title>
     <meta
       name="description"
-      content="Création de site internet à Tours pour commerçants et artisans. Sur mesure, rapide, bien référencé. Devis gratuit sous 48 h, à partir de 890 €."
+      content="Hachado, création de site internet à Tours : sites sur mesure pour commerçants et artisans, rapides et bien référencés. Devis gratuit sous 48 h, dès 890 €."
     />
     <meta name="author" content="Kévin Machado" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -47,11 +47,11 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Kévin Machado" />
-    <meta property="og:title" content="Création de site internet à Tours · Kévin Machado" />
+    <meta property="og:site_name" content="Hachado" />
+    <meta property="og:title" content="Création de site internet à Tours · Hachado" />
     <meta
       property="og:description"
-      content="Création de site internet à Tours pour commerçants et artisans. Sur mesure, rapide, bien référencé. Devis gratuit sous 48 h, à partir de 890 €."
+      content="Hachado, création de site internet à Tours : sites sur mesure pour commerçants et artisans, rapides et bien référencés. Devis gratuit sous 48 h, dès 890 €."
     />
     <meta property="og:url" content="__SITE_URL__/" />
     <meta property="og:image" content="__SITE_URL__/og-image.png" />
@@ -59,14 +59,14 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Des sites taillés sur mesure pour les commerçants de Tours — Kévin Machado, développeur web à Tours"
+      content="Hachado : des sites internet taillés sur mesure pour les commerçants de Tours"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Création de site internet à Tours · Kévin Machado" />
+    <meta name="twitter:title" content="Création de site internet à Tours · Hachado" />
     <meta
       name="twitter:description"
-      content="Création de site internet à Tours pour commerçants et artisans. Sur mesure, rapide, bien référencé. Devis gratuit sous 48 h, à partir de 890 €."
+      content="Hachado, création de site internet à Tours : sites sur mesure pour commerçants et artisans, rapides et bien référencés. Devis gratuit sous 48 h, dès 890 €."
     />
     <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
 
@@ -74,32 +74,106 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Kévin Machado · Développeur web",
-  "description": "Création de sites internet sur mesure pour les commerçants et artisans de Tours et de ses environs.",
-  "url": "__SITE_URL__/",
-  "image": "__SITE_URL__/og-image.png",
-  "priceRange": "890 € - 2 490 €",
-  "areaServed": {
-    "@type": "City",
-    "name": "Tours",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tours",
-      "addressRegion": "Indre-et-Loire",
-      "addressCountry": "FR"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "__SITE_URL__/#website",
+      "url": "__SITE_URL__/",
+      "name": "Hachado",
+      "alternateName": ["Hachado, création de site internet à Tours", "hachado.fr"],
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "__SITE_URL__/#entreprise" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "__SITE_URL__/#entreprise",
+      "name": "Hachado",
+      "alternateName": "Kévin Machado, développeur web à Tours",
+      "description": "Hachado crée des sites internet sur mesure pour les commerçants, artisans et indépendants de Tours et de son agglomération : rapides, lisibles sur téléphone et bien référencés.",
+      "url": "__SITE_URL__/",
+      "logo": "__SITE_URL__/apple-touch-icon.png",
+      "image": "__SITE_URL__/og-image.png",
+      "telephone": "+33762537242",
+      "email": "contact@kevinmachado.dev",
+      "priceRange": "890 € - 2 490 €",
+      "currenciesAccepted": "EUR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "69 avenue de l'Europe",
+        "postalCode": "37100",
+        "addressLocality": "Tours",
+        "addressRegion": "Centre-Val de Loire",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Tours" },
+        { "@type": "City", "name": "Joué-lès-Tours" },
+        { "@type": "City", "name": "Saint-Cyr-sur-Loire" },
+        { "@type": "City", "name": "Saint-Pierre-des-Corps" },
+        { "@type": "City", "name": "Saint-Avertin" },
+        { "@type": "City", "name": "Chambray-lès-Tours" },
+        { "@type": "City", "name": "La Riche" },
+        { "@type": "City", "name": "Fondettes" },
+        { "@type": "AdministrativeArea", "name": "Indre-et-Loire" }
+      ],
+      "knowsLanguage": ["fr", "en"],
+      "founder": { "@id": "__SITE_URL__/#kevin-machado" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Création de site internet",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Une page",
+            "description": "Site d'une page avec horaires, coordonnées, photos et fiche Google, livré en 1 semaine.",
+            "price": "890",
+            "priceCurrency": "EUR",
+            "itemOffered": { "@type": "Service", "name": "Site internet d'une page" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Site complet",
+            "description": "Site de 4 à 6 pages avec formulaire de contact, galerie et textes rédigés, livré en 2 à 3 semaines.",
+            "price": "1690",
+            "priceCurrency": "EUR",
+            "itemOffered": { "@type": "Service", "name": "Site internet complet" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Site complet + visibilité",
+            "description": "Site complet avec référencement local poussé, prise de rendez-vous en ligne, séance photo, formation et 3 mois de suivi, livré en 3 à 4 semaines.",
+            "price": "2490",
+            "priceCurrency": "EUR",
+            "itemOffered": { "@type": "Service", "name": "Site internet complet et référencement local" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Maintenance et hébergement",
+            "description": "Hébergement, mises à jour, sauvegardes et modifications courantes, sans engagement.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "49",
+              "priceCurrency": "EUR",
+              "unitText": "mois"
+            },
+            "itemOffered": { "@type": "Service", "name": "Maintenance et hébergement de site internet" }
+          }
+        ]
+      },
+      "sameAs": ["https://www.instagram.com/hachado_/"]
+    },
+    {
+      "@type": "Person",
+      "@id": "__SITE_URL__/#kevin-machado",
+      "name": "Kévin Machado",
+      "jobTitle": "Développeur web",
+      "image": "__SITE_URL__/photoProfil.webp",
+      "worksFor": { "@id": "__SITE_URL__/#entreprise" },
+      "sameAs": [
+        "https://www.linkedin.com/in/kevin-machado-devfront",
+        "https://github.com/JevinFC"
+      ]
     }
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Kévin Machado",
-    "jobTitle": "Développeur web",
-    "image": "__SITE_URL__/photoProfil.webp"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/kevin-machado-devfront",
-    "https://www.instagram.com/hachado_/",
-    "https://github.com/JevinFC"
   ]
 }
 </script>
