@@ -163,7 +163,7 @@ const translations = {
     sendMessage: "Envoyer le message",
     messageSent: "C'est envoyé. Je vous réponds sous 48 h.",
     messageError:
-      "L'envoi n'a pas fonctionné. Écrivez-moi directement à contact@kevinmachado.dev.",
+      "L'envoi n'a pas fonctionné. Écrivez-moi directement à contact@hachado.fr.",
 
     //FAQ
 
@@ -440,7 +440,7 @@ const translations = {
     sendMessage: "Send message",
     messageSent: "Sent! I'll get back to you within 48 hours.",
     messageError:
-      "The message didn't go through. Write to me directly at contact@kevinmachado.dev.",
+      "The message didn't go through. Write to me directly at contact@hachado.fr.",
 
     footerLinkedin: "My LinkedIn profile",
     footerInstagram: "My Instagram account",
