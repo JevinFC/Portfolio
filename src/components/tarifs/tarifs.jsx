@@ -71,8 +71,13 @@ function Tarifs() {
     };
 
     
-    const fits = () =>
-      pinContent.offsetHeight + PIN_HEADROOM <= window.innerHeight;
+    const fits = () => {
+      const measuring = !pin.classList.contains("pinned");
+      if (measuring) pin.classList.add("pinned");
+      const height = pinContent.offsetHeight;
+      if (measuring) pin.classList.remove("pinned");
+      return height + PIN_HEADROOM <= window.innerHeight;
+    };
 
    
     const sync = () => {
