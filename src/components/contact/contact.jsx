@@ -1,12 +1,11 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
 import emailjs from "@emailjs/browser";
-import { useLanguage } from "../languageContext.jsx";
+import { t } from "../../texts.js";
 
 function Contact() {
   const form = useRef();
   const [status, setStatus] = useState(null);
-  const { t } = useLanguage();
 
   const sendEmail = (e) => {
     e.preventDefault();

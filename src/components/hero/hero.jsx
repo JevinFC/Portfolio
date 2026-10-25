@@ -2,10 +2,9 @@ import { useState } from "react";
 import "./hero.scss";
 import BrowserFrame from "../ui/browserFrame.jsx";
 import HeroCut from "../HeroCut/HeroCut.jsx";
-import { useLanguage } from "../languageContext";
+import { t } from "../../texts.js";
 
 function Hero() {
-  const { t } = useLanguage();
   const [shopUrl, setShopUrl] = useState("");
 
   return (

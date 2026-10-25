@@ -85,35 +85,10 @@ header.scrolled {
 }
 
 .headerActions {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 0.75rem;
   margin-left: auto;
-}
-
-.languageButton {
-  border: 2px solid var(--color-surface);
-  background-color: transparent;
-  color: var(--color-surface);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 60px;
-  text-align: center;
-
-  &:hover {
-    background-color: var(--color-surface);
-    color: var(--color-accent);
-    border-color: var(--color-surface);
-  }
-
-  &:focus-visible {
-    outline: 3px solid var(--color-surface);
-    outline-offset: 3px;
-  }
 }
 
 .burgerButton {
@@ -208,10 +183,8 @@ header.scrolled {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  .languageButton {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-    min-width: unset;
+  .headerActions {
+    display: flex;
   }
 }
 

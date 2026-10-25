@@ -1,11 +1,10 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import "./projects.scss";
 import BrowserFrame from "../ui/browserFrame.jsx";
-import { useLanguage } from "../languageContext.jsx";
+import { t } from "../../texts.js";
 import imgPortfolioLola from "/src/assets/imgprojects/screenshotLola.webp";
 
 function Projects() {
-  const { t } = useLanguage();
   const [animate, setAnimate] = useState(false);
   const rootRef = useRef(null);
 
@@ -36,7 +35,7 @@ function Projects() {
   const projects = [
     {
       key: "lola",
-      img: imgPortfolioLola,
+      img: imgPortfolioLola.src,
       width: 1704,
       height: 3744,
       link: "https://lolagauchy.fr",

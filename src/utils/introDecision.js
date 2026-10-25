@@ -1,8 +1,3 @@
-// Ces regles doivent rester synchronisees avec le script inline du <head> de index.html,
-// qui applique exactement la meme logique avant le premier rendu pour decider s'il pose la
-// classe intro-pending. Toute modification ici doit etre reportee la-bas, et inversement :
-// si les deux divergent, le calque rose est peint pour une intro qui ne se joue jamais.
-
 const MOBILE_QUERY = "(max-width: 768px), (pointer: coarse)";
 const SLOW_TYPES = ["slow-2g", "2g", "3g"];
 

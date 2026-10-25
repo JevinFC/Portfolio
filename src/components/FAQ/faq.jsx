@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { useLanguage } from "../languageContext";
+import { t } from "../../texts.js";
 import "./faq.scss";
 
 function Faq() {
-  const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState(null);
   const answerRefs = useRef([]);
 

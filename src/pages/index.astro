@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Footer from "../components/footer/footer.jsx";
+import Header from "../components/header/header.jsx";
+import Hero from "../components/hero/hero.jsx";
+import Projects from "../components/projets/projects.jsx";
+import Contact from "../components/contact/contact.jsx";
+import Apropos from "../components/aPropos/apropos.jsx";
+import Tarifs from "../components/tarifs/tarifs.jsx";
+import Faq from "../components/FAQ/faq.jsx";
+import IntroAxe from "../components/IntroAxe/IntroAxe.jsx";
+import { homeSchema } from "../config/schema.js";
+---
+
+<BaseLayout
+  title="Création de site internet à Tours · Hachado"
+  description="Hachado, création de site internet à Tours : sites sur mesure pour commerçants et artisans, rapides et bien référencés. Devis gratuit sous 48 h, dès 890 €."
+  schema={homeSchema}
+>
+  <div>
+    <IntroAxe client:load />
+    <Header client:load />
+    <main>
+      <Hero client:load />
+      <Projects client:load />
+      <Tarifs client:load />
+      <Apropos client:load />
+      <Faq client:load />
+      <Contact client:load />
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

@@ -1,11 +1,11 @@
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./footer.scss";
-import { useLanguage } from "../languageContext";
+import { t } from "../../texts.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
-  const { t } = useLanguage();
   return (
     <footer>
       <div className="footerPortfolio">

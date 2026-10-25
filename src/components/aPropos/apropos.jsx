@@ -1,9 +1,8 @@
 import "./apropos.scss";
 import { useState, useRef, useLayoutEffect } from "react";
-import { useLanguage } from "../languageContext";
+import { t } from "../../texts.js";
 
 function APropos() {
-  const { t } = useLanguage();
   const [animate, setAnimate] = useState(false);
   const rootRef = useRef(null);
 

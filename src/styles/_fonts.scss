@@ -1,9 +1,3 @@
-// Les fichiers de /fonts/ sont servis sans empreinte dans leur nom et mis en cache un an
-// en immutable (voir public/_headers). Si le contenu d'un fichier change, il faut donc
-// changer son nom (suffixe -v2) et mettre a jour les url() ci-dessous ainsi que le
-// rel="preload" de index.html : sinon les visiteurs deja venus garderont l'ancien fichier
-// pendant un an.
-
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("/fonts/bricolage-grotesque-latin-variable.woff2") format("woff2");

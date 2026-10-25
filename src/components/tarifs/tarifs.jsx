@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { useLanguage } from "../languageContext";
+import { t } from "../../texts.js";
 import "./tarifs.scss";
 
 const PIN_DISTANCE = 800;
@@ -10,7 +10,6 @@ const easeInOutCubic = (x) =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 function Tarifs() {
-  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
   const [spread, setSpread] = useState(false);
   const gridRef = useRef(null);

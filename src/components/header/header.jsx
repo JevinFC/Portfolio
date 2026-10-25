@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
-import { useLanguage } from "../languageContext";
+import { t } from "../../texts.js";
 
 function Header() {
-  const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -49,15 +48,6 @@ function Header() {
         </nav>
 
         <div className="headerActions">
-          <button
-            type="button"
-            onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
-            className="languageButton"
-            aria-label={`${language.toUpperCase()}, ${t("langSwitch")}`}
-          >
-            {language.toUpperCase()}
-          </button>
-
           <button
             type="button"
             className="burgerButton"
