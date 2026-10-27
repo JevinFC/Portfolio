@@ -127,26 +127,6 @@
         background-color: var(--color-accent-hover);
       }
 
-      .langButton {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        border: 2px solid var(--color-ink);
-        background: transparent;
-        color: var(--color-ink);
-        padding: 0.5rem 1rem;
-        border-radius: 12px;
-        font-family: var(--font-body);
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .langButton:hover {
-        background-color: var(--color-accent-hover);
-        border-color: var(--color-accent-hover);
-        color: var(--color-surface);
-      }
-
       @media (prefers-reduced-motion: reduce) {
         .cta {
           transition: none;
@@ -155,67 +135,15 @@
     </style>
   </head>
   <body>
-    <button type="button" class="langButton" id="langButton">EN</button>
-
     <div class="wrap">
       <img class="axe" src="/logo-hachado-h.webp" alt="" width="303" height="380" />
 
-      <p class="label" id="label">Erreur 404</p>
-      <h1 id="title">Cette page est tombée sous la hache.</h1>
-      <p class="text" id="text">
+      <p class="label">Erreur 404</p>
+      <h1>Cette page est tombée sous la hache.</h1>
+      <p class="text">
         Elle n'existe pas ou plus. Pas de panique, l'essentiel est toujours là.
       </p>
-      <a class="cta" href="/" id="cta">Retour à l'accueil</a>
+      <a class="cta" href="/">Retour à l'accueil</a>
     </div>
-
-    <script>
-      var content = {
-        fr: {
-          htmlLang: "fr",
-          docTitle: "Page introuvable · Hachado",
-          label: "Erreur 404",
-          title: "Cette page est tombée sous la hache.",
-          text: "Elle n'existe pas ou plus. Pas de panique, l'essentiel est toujours là.",
-          cta: "Retour à l'accueil",
-          button: "EN",
-          buttonLabel: "Switch to English"
-        },
-        en: {
-          htmlLang: "en",
-          docTitle: "Page not found · Hachado",
-          label: "Error 404",
-          title: "This page got chopped.",
-          text: "It doesn't exist, or not anymore. Don't worry, everything that matters is still here.",
-          cta: "Back to home",
-          button: "FR",
-          buttonLabel: "Passer en français"
-        }
-      };
-
-      var button = document.getElementById("langButton");
-
-      function render(lang) {
-        var c = content[lang];
-        document.documentElement.lang = c.htmlLang;
-        document.title = c.docTitle;
-        document.getElementById("label").textContent = c.label;
-        document.getElementById("title").textContent = c.title;
-        document.getElementById("text").textContent = c.text;
-        document.getElementById("cta").textContent = c.cta;
-        button.textContent = c.button;
-        button.setAttribute("aria-label", c.buttonLabel);
-        button.dataset.lang = lang;
-      }
-
-      render(
-        (navigator.language || "fr").toLowerCase().indexOf("fr") === 0
-          ? "fr"
-          : "en"
-      );
-
-      button.addEventListener("click", function () {
-        render(button.dataset.lang === "fr" ? "en" : "fr");
-      });
-    </script>
   </body>
 </html>
