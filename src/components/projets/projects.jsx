@@ -1,8 +1,9 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import "./projects.scss";
 import BrowserFrame from "../ui/browserFrame.jsx";
+import ProjectRow, { ProjectLinks } from "./ProjectRow.jsx";
+import { client, examples } from "../../data/projects.js";
 import { t } from "../../texts.js";
-import imgPortfolioLola from "/src/assets/imgprojects/screenshotLola.webp";
 
 function Projects() {
   const [animate, setAnimate] = useState(false);
@@ -28,22 +29,11 @@ function Projects() {
       { threshold: 0.2 }
     );
 
-    root.querySelectorAll(".projectRow").forEach((node) => observer.observe(node));
+    root
+      .querySelectorAll(".projectRow, .exampleCard")
+      .forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
-
-  const projects = [
-    {
-      key: "lola",
-      img: imgPortfolioLola.src,
-      width: 1704,
-      height: 3744,
-      link: "https://lolagauchy.fr",
-      featured: true,
-    },
-  ];
-
-  const cap = (key) => key.charAt(0).toUpperCase() + key.slice(1);
 
   return (
     <section className="projects" id="projects" aria-labelledby="projectsTitle">
@@ -54,60 +44,40 @@ function Projects() {
         <h2 className="projectsTitle" id="projectsTitle">{t("projectsTitle")}</h2>
         <p className="projectsSubtitle">{t("projectsSubtitle")}</p>
 
-        {projects.map((project, index) => {
-          const name = t(`project${cap(project.key)}Name`);
-          return (
-            <article
-              key={project.key}
-              className={index % 2 === 1 ? "projectRow reversed" : "projectRow"}
-            >
-              <div className="projectVisual">
+        <ProjectRow project={client} />
+
+        <div className="projectExamples">
+          <h3 className="projectExamplesTitle">{t("projectsExamplesTitle")}</h3>
+          <p className="projectExamplesText">{t("projectsExamplesText")}</p>
+
+          <div className="projectExamplesGrid">
+            {examples.map((example) => (
+              <article className="exampleCard" key={example.key}>
                 <BrowserFrame
-                  src={project.img}
-                  alt={t(`project${cap(project.key)}Alt`)}
-                  width={project.width}
-                  height={project.height}
-                  className="projectFrame"
+                  src={example.image.src}
+                  alt={example.image.alt}
+                  width={example.image.width}
+                  height={example.image.height}
+                  className="exampleFrame"
                 />
-              </div>
+                <span className="projectStatus">{example.status}</span>
+                <h4 className="exampleName">{example.name}</h4>
+                <p className="exampleRole">
+                  {example.role} · formule « {example.offer} »
+                </p>
+                <p className="exampleText">{example.summary}</p>
+                <ProjectLinks links={example.links} name={example.name} />
+              </article>
+            ))}
+          </div>
 
-              <div className="projectBody">
-                <span
-                  className={
-                    project.featured
-                      ? "projectStatus projectStatus--client"
-                      : "projectStatus"
-                  }
-                >
-                  {t(`project${cap(project.key)}Status`)}
-                </span>
-
-                <h3 className="projectName">{name}</h3>
-                <p className="projectRole">{t(`project${cap(project.key)}Role`)}</p>
-                <p className="projectText">{t(`project${cap(project.key)}Text`)}</p>
-
-                <ul className="projectTags">
-                  {t(`project${cap(project.key)}Tags`).map((tag, i) => (
-                    <li key={i}>{tag}</li>
-                  ))}
-                </ul>
-
-                <a
-                  className="projectLink"
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${t("projectLink")} — ${name}`}
-                >
-                  {t("projectLink")}
-                  <span className="projectArrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-              </div>
-            </article>
-          );
-        })}
+          <a className="projectsAll" href="/realisations">
+            {t("projectsAll")}
+            <span className="projectArrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </div>
 
         <article className="projectRow reversed projectRow--cta">
           <div className="projectVisual">

@@ -1,0 +1,32 @@
+---
+import "./page.scss";
+
+const { crumb, title, lead, actions = [] } = Astro.props;
+---
+
+<div class="pageHeroWrap">
+  <section class="pageHero" aria-labelledby="pageTitle">
+    <div class="pageHeroInner">
+      <nav class="pageCrumbs" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">{crumb}</span>
+      </nav>
+      <h1 class="pageTitle" id="pageTitle">{title}</h1>
+      {lead && <p class="pageLead">{lead}</p>}
+      {
+        actions.length > 0 && (
+          <div class="pageActions">
+            {actions.map((action, index) => (
+              <a class={index === 0 ? "pageCta" : "pageLink"} href={action.href}>
+                {action.label}
+                {index > 0 && <span aria-hidden="true">→</span>}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+  <img class="pageHeroAxe" src="/logo-hachado-h.webp" alt="" width="303" height="380" aria-hidden="true" />
+</div>

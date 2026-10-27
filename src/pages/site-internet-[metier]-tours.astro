@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/page/PageHero.astro";
+import PageCta from "../components/page/PageCta.astro";
+import PageFaq from "../components/page/PageFaq.astro";
+import DemoShowcase from "../components/page/DemoShowcase.astro";
+import { metiers } from "../data/metiers.js";
+import { breadcrumb, graph, tradeService } from "../config/schema.js";
+
+export function getStaticPaths() {
+  return metiers.map((metier) => ({ params: { metier: metier.slug }, props: { metier } }));
+}
+
+const { metier } = Astro.props;
+const path = `/site-internet-${metier.slug}-tours`;
+---
+
+<BaseLayout
+  title={metier.title}
+  description={metier.description}
+  path={path}
+  schema={graph(tradeService(metier, path), breadcrumb([{ name: metier.crumb, path }]))}
+>
+  <PageHero
+    crumb={metier.crumb}
+    title={metier.heading}
+    lead={metier.lead}
+    actions={[
+      { href: "/#contact", label: "Demander un devis gratuit" },
+      { href: "#exemple", label: "Voir l'exemple" },
+    ]}
+  />
+
+  <section class="pageSection" aria-labelledby="needsTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="needsTitle" data-reveal>{metier.needsTitle}</h2>
+      <p class="pageText" data-reveal style="--i: 1">
+        Ce que vos clients tapent sur Google, et ce que votre site doit leur montrer.
+      </p>
+      <ul class="needCards">
+        {
+          metier.needs.map((need, index) => (
+            <li class="needCard" data-reveal style={`--i: ${index % 3}`}>
+              <p class="needQuery">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2" />
+                  <path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+                <span class="srOnly">Recherche Google : </span>
+                <span class="needQueryText" data-type>
+                  {need.query}
+                </span>
+              </p>
+              <h3>{need.title}</h3>
+              <p>{need.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="pageSection" id="exemple" aria-labelledby="exampleTitle">
+    <div class="pageInner pageSplit">
+      <div>
+        <h2 class="pageSectionTitle" id="exampleTitle" data-reveal>{metier.exampleTitle}</h2>
+        <p class="pageText" data-reveal style="--i: 1">{metier.exampleText}</p>
+        <ul class="pageChecks">
+          {
+            metier.exampleFeatures.map((feature, index) => (
+              <li data-reveal style={`--i: ${index + 1}`}>
+                {feature}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="pageLinks" data-reveal>
+          <a class="pageTextLink" href={metier.example.demo} target="_blank" rel="noopener noreferrer">
+            Voir le site de {metier.example.name}
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="pageTextLink" href="/realisations">
+            Toutes les réalisations
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <DemoShowcase example={metier.example} />
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="offerTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="offerTitle" data-reveal>La formule conseillée</h2>
+      <div class="pageOffer" data-reveal>
+        <div>
+          <p class="pageOfferName">{metier.offer.name}</p>
+          <span class="pageOfferPrice">{metier.offer.price}</span>
+          <span class="pageOfferDelivery">{metier.offer.delivery}</span>
+        </div>
+        <div>
+          <p class="pageOfferText">{metier.offer.text}</p>
+          <p class="pageOfferAlt">{metier.offer.alternative}</p>
+          <a class="pageTextLink" href="/#tarifs">
+            Comparer les trois formules
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PageFaq items={metier.faq} />
+
+  <PageCta title={metier.ctaTitle} text={metier.ctaText} link={{ href: "/realisations", label: "Voir mes réalisations" }} />
+</BaseLayout>

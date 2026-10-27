@@ -118,6 +118,7 @@ function Tarifs() {
       subtitle: t("basicSubtitle"),
       features: t("basicFeatures"),
       delivery: t("basicDelivery"),
+      example: t("basicExample"),
     },
     {
       key: "standard",
@@ -128,6 +129,7 @@ function Tarifs() {
       subtitle: t("standardSubtitle"),
       features: t("standardFeatures"),
       delivery: t("standardDelivery"),
+      example: t("standardExample"),
     },
     {
       key: "premium",
@@ -182,6 +184,13 @@ function Tarifs() {
                       <li key={idx}>{feat}</li>
                     ))}
                   </ul>
+
+                  {pack.example && (
+                    <a className="tarifExample" href={pack.example.href}>
+                      {pack.example.label}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
 
                   <a
                     href="#contact"

@@ -1,0 +1,79 @@
+---
+import "./consent.scss";
+---
+
+<section class="consent" data-consent hidden aria-labelledby="consentTitle">
+  <p class="consentTitle" id="consentTitle">Je peux mesurer votre visite ?</p>
+  <p class="consentText">
+    Si vous l'acceptez, Google Analytics me dit quelles pages vous sont utiles. Rien n'est déposé sur votre appareil si
+    vous refusez, et vous pouvez changer d'avis à tout moment en bas de page. <a
+      href="/politique-confidentialite#cookies">En savoir plus</a
+    >
+  </p>
+  <div class="consentActions">
+    <button type="button" class="consentButton" data-consent-choice="refuse">Refuser</button>
+    <button type="button" class="consentButton" data-consent-choice="accept">Accepter</button>
+  </div>
+</section>
+
+<script>
+  const KEY = "hachado-consent";
+  const MAX_AGE = 15552000000;
+  const banner = document.querySelector("[data-consent]");
+
+  const read = () => {
+    try {
+      return JSON.parse(localStorage.getItem(KEY));
+    } catch {
+      return null;
+    }
+  };
+
+  const isValid = (consent) =>
+    consent && typeof consent.analytics === "boolean" && Date.now() - consent.date < MAX_AGE;
+
+  const clearAnalyticsCookies = () => {
+    const domain = location.hostname.replace(/^www\./, "");
+    document.cookie
+      .split(";")
+      .map((cookie) => cookie.split("=")[0].trim())
+      .filter((name) => name === "_ga" || name.startsWith("_ga_"))
+      .forEach((name) => {
+        document.cookie = `${name}=; Max-Age=0; path=/; domain=.${domain}`;
+        document.cookie = `${name}=; Max-Age=0; path=/`;
+      });
+  };
+
+  const save = (analytics) => {
+    try {
+      localStorage.setItem(KEY, JSON.stringify({ analytics, date: Date.now() }));
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const choose = (analytics) => {
+    save(analytics);
+    banner.hidden = true;
+    if (analytics) {
+      window.loadAnalytics?.();
+      return;
+    }
+    clearAnalyticsCookies();
+    if (window.analyticsLoaded) location.reload();
+  };
+
+  if (banner) {
+    banner.querySelectorAll("[data-consent-choice]").forEach((button) =>
+      button.addEventListener("click", () => choose(button.dataset.consentChoice === "accept"))
+    );
+    document.querySelectorAll("[data-consent-open]").forEach((button) =>
+      button.addEventListener("click", () => {
+        banner.hidden = false;
+        banner.querySelector("[data-consent-choice]")?.focus();
+      })
+    );
+    if (!isValid(read())) banner.hidden = false;
+  }
+</script>

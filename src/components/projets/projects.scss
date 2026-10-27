@@ -200,6 +200,128 @@
   }
 }
 
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+}
+
+.projectExamples {
+  margin: 0 0 7rem;
+}
+
+.projectExamplesTitle {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.projectExamplesText {
+  margin: 0 0 2.75rem;
+  max-width: 60ch;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+
+.projectExamplesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.exampleCard {
+  --example-h: 260px;
+
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.exampleFrame {
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  &.browserFrame {
+    border: 2px solid var(--color-ink);
+  }
+
+  .browserFrameBar {
+    border-bottom: 2px solid var(--color-ink);
+  }
+
+  .browserFrameBody {
+    aspect-ratio: auto;
+    height: var(--example-h);
+    overflow: hidden;
+
+    img {
+      height: auto;
+      transition: transform 2.5s ease-in-out;
+    }
+  }
+}
+
+.exampleCard:hover,
+.exampleCard:focus-within {
+  .exampleFrame .browserFrameBody img {
+    transform: translateY(min(0px, calc(var(--example-h) - 100%)));
+  }
+}
+
+.exampleName {
+  margin: 1rem 0 0.25rem;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.exampleRole {
+  margin: 0 0 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+}
+
+.exampleText {
+  margin: 0 0 1.25rem;
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+
+.projectsAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 3rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  .projectArrow {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover .projectArrow {
+    transform: translateX(3px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+}
+
 .projectSlot {
   display: flex;
   align-items: center;
@@ -261,6 +383,21 @@
   }
 }
 
+.projectsInner.js-reveal .exampleCard {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  &:nth-child(2) {
+    transition-delay: 0.12s;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (max-width: 900px) {
   .projectRow {
     --enter-x: 0px;
@@ -282,6 +419,15 @@
   .projectsSubtitle {
     margin-bottom: 3.5rem;
   }
+
+  .projectExamples {
+    margin-bottom: 4rem;
+  }
+
+  .projectExamplesGrid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -299,11 +445,16 @@
   .projectRow {
     --frame-h: 200px;
   }
+
+  .exampleCard {
+    --example-h: 200px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .projectsInner.js-reveal .projectRow .projectVisual,
-  .projectsInner.js-reveal .projectRow .projectBody {
+  .projectsInner.js-reveal .projectRow .projectBody,
+  .projectsInner.js-reveal .exampleCard {
     opacity: 1;
     transform: none;
     transition: none;
@@ -312,10 +463,19 @@
   .projectFrame,
   .projectVisual::before,
   .projectFrame .browserFrameBody img,
+  .exampleFrame .browserFrameBody img,
   .projectLink .projectArrow,
+  .projectsAll .projectArrow,
   .projectSlot,
   .projectCta {
     transition: none;
+  }
+
+  .exampleCard:hover,
+  .exampleCard:focus-within {
+    .exampleFrame .browserFrameBody img {
+      transform: none;
+    }
   }
 
   .projectRow:hover,

@@ -85,6 +85,34 @@
   max-width: 52ch;
 }
 
+.aproposMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0;
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  span {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: var(--color-accent);
+
+    span {
+      transform: translateX(3px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+}
+
 .aproposFacts {
   list-style: none;
   padding: 0;
@@ -182,7 +210,8 @@
     transition: none;
   }
 
-  .aproposFacts a {
+  .aproposFacts a,
+  .aproposMore span {
     transition: none;
   }
 }

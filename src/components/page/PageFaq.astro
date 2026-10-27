@@ -1,0 +1,26 @@
+---
+import "./page.scss";
+
+const { items, title = "Questions fréquentes" } = Astro.props;
+---
+
+<section class="pageSection" aria-labelledby="pageFaqTitle">
+  <div class="pageInner">
+    <h2 class="pageSectionTitle" id="pageFaqTitle" data-reveal>{title}</h2>
+    <div class="pageFaq">
+      {
+        items.map((item, index) => (
+          <details class="pageFaqItem" data-reveal style={`--i: ${index}`}>
+            <summary>
+              <span>{item.question}</span>
+              <span class="pageFaqArrow" aria-hidden="true">
+                ▼
+              </span>
+            </summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

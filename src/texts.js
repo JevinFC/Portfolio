@@ -18,12 +18,7 @@ const texts = {
   aboutP1: "Je m'appelle Kévin Machado, développeur web à Tours.",
   aboutP2:
     "Je travaille seul, en micro-entreprise. La personne que vous avez au téléphone est celle qui code votre site, et celle que vous rappellerez dans six mois si quelque chose ne va pas.",
-  aboutP3:
-    "Votre site est écrit sur mesure, ligne par ligne. Ce n'est pas un modèle repeint aux couleurs de votre enseigne : il est plus rapide, mieux référencé, et il vous appartient vraiment.",
-  aboutP4:
-    "Pas de jargon ni de réunions inutiles : vous me racontez votre métier, je vous montre une maquette, on ajuste ensemble, je livre. Et comme je suis à Tours, on peut se rencontrer.",
-  aboutP5:
-    "J'en ai fait ma façon de travailler : couper tout ce qui ne vous sert pas, et tailler un site sur mesure pour votre commerce. Une hache à double tranchant, ce sont deux promesses : un site simple pour vous, et efficace pour Google. C'est de là que vient Hachado, le nom de mon activité.",
+  aboutMore: "Ma façon de travailler et mes engagements",
   aboutFact1: "Basé à Tours (37)",
   aboutFact2: "Micro-entreprise, SIRET affiché",
   aboutFact3: "Réponse sous 48 h",
@@ -33,14 +28,10 @@ const texts = {
 
   projectsTitle: "Ils ont désormais un site",
   projectsSubtitle: "Des sites taillés pour des commerces bien réels.",
-  projectLink: "Voir le site en ligne",
-  projectLolaStatus: "Client",
-  projectLolaName: "Lola Gauchy",
-  projectLolaRole: "Communication digitale, freelance",
-  projectLolaText:
-    "Lola n'avait qu'un profil sur les réseaux pour montrer son travail. Elle dispose maintenant d'un site qui lui appartient, qu'elle envoie directement à ses prospects.",
-  projectLolaTags: ["Présenter son travail", "Textes rédigés", "Mis en ligne"],
-  projectLolaAlt: "Page d'accueil du portfolio de Lola Gauchy",
+  projectsExamplesTitle: "Et deux exemples pour les artisans",
+  projectsExamplesText:
+    "Des entreprises fictives, mais de vrais sites, en ligne : ouvrez-les sur votre téléphone pour voir ce que je ferais pour votre métier.",
+  projectsAll: "Toutes les réalisations",
   projectsCtaPlaceholder: "Votre commerce ici",
   projectsCtaTitle: "La prochaine, c'est peut-être la vôtre",
   projectsCtaText:
@@ -109,6 +100,7 @@ const texts = {
     "Des textes courts rédigés à partir de vos informations",
   ],
   basicDelivery: "Livré en 1 semaine",
+  basicExample: { href: "/site-internet-plombier-tours", label: "Voir un exemple : un site de plombier" },
 
   standardTitle: "Site complet",
   standardBadge: "Le plus adapté aux commerces",
@@ -123,6 +115,7 @@ const texts = {
     "Plus de pages, donc plus de recherches où vous apparaissez",
   ],
   standardDelivery: "Livré en 2 à 3 semaines",
+  standardExample: { href: "/site-internet-paysagiste-tours", label: "Voir un exemple : un site de paysagiste" },
 
   premiumTitle: "Site complet + visibilité",
   premiumPrice: "2 490 €",
@@ -193,6 +186,11 @@ const texts = {
         "On fait le point sur ce que vous voulez, vous me transmettez vos informations, je vous montre une première version que l'on ajuste ensemble, puis je mets le site en ligne. Le devis est gratuit. Vous réglez ensuite 30 % à la commande et le solde à la livraison, ou en trois fois sans frais.",
     },
     {
+      question: "Pourquoi passer par un freelance plutôt que par une agence ?",
+      answer:
+        "Avec moi, vous parlez directement à la personne qui fait votre site, du premier appel à la mise en ligne. Pas d'intermédiaire, des prix plus bas qu'en agence et des échanges simples. Pour le site d'un commerce ou d'un artisan, une agence n'apporte souvent rien de plus. Et comme tout est à votre nom, n'importe quel développeur pourrait reprendre votre site web si besoin.",
+    },
+    {
       question: "Vous travaillez seulement avec des commerces de Tours ?",
       answer:
         "Je suis basé à Tours et je travaille avec les commerçants, artisans et indépendants de toute l'agglomération : Joué-lès-Tours, Saint-Cyr-sur-Loire, Saint-Pierre-des-Corps, Saint-Avertin, Chambray-lès-Tours, La Riche, Fondettes et ailleurs en Indre-et-Loire. On peut se rencontrer, et tout peut aussi se faire à distance, en visio. Au-delà de l'agglomération, pour la séance photo de l'offre visibilité, je me déplace pour 0,60 € du kilomètre (aller-retour depuis Tours), ou je retouche vos propres photos et l'offre baisse de 150 €.",
@@ -201,10 +199,18 @@ const texts = {
 
   footerLinkedin: "Mon profil LinkedIn",
   footerInstagram: "Mon compte Instagram",
+  footerFacebook: "Ma page Facebook",
+  footerCookies: "Gérer les cookies",
   footerEmail: "Aller au formulaire de contact",
   footerLegal: "Mentions légales",
   footerCgv: "CGV",
   footerPrivacy: "Confidentialité",
+  footerPages: [
+    { href: "/realisations", label: "Réalisations" },
+    { href: "/qui-suis-je", label: "Qui suis-je" },
+    { href: "/site-internet-plombier-tours", label: "Site internet pour plombier" },
+    { href: "/site-internet-paysagiste-tours", label: "Site internet pour paysagiste" },
+  ],
   footerMade: "Taillé à Tours.",
   footerCopyright: "© {year} · Hachado · Kévin Machado",
 };

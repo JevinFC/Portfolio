@@ -1,9 +1,14 @@
 ---
 import "../styles/_fonts.scss";
 import "../App.css";
+import Footer from "../components/footer/footer.jsx";
+import Header from "../components/header/header.jsx";
+import IntroAxe from "../components/IntroAxe/IntroAxe.jsx";
+import ConsentBanner from "../components/consent/ConsentBanner.astro";
+import Motion from "../components/page/Motion.astro";
 import { SITE_URL } from "../config/site.js";
 
-const { title, description, path = "/", schema } = Astro.props;
+const { title, description, path = "/", schema, intro = false } = Astro.props;
 const url = `${SITE_URL}${path}`;
 const image = `${SITE_URL}/og-image.png`;
 ---
@@ -15,22 +20,56 @@ const image = `${SITE_URL}/og-image.png`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script is:inline>
       (function () {
-        var p = new URLSearchParams(location.search).get("intro");
-        var skip;
-        if (p === "force") skip = false;
-        else if (p === "skip") skip = true;
-        else if (matchMedia("(prefers-reduced-motion: reduce)").matches) skip = false;
-        else {
-          var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-          var mobile = matchMedia("(max-width: 768px), (pointer: coarse)").matches;
-          if (c && c.saveData === true) skip = true;
-          else if (c && mobile && ["slow-2g", "2g", "3g"].indexOf(c.effectiveType) > -1) skip = true;
-          else skip = false;
+        window.loadAnalytics = function () {
+          if (window.analyticsLoaded) return;
+          window.analyticsLoaded = true;
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-NL8QKH9B");
+        };
+        try {
+          var consent = JSON.parse(localStorage.getItem("hachado-consent"));
+          if (consent && consent.analytics === true && Date.now() - consent.date < 15552000000) window.loadAnalytics();
+        } catch (error) {
+          window.analyticsLoaded = false;
         }
-        if (!skip) document.documentElement.classList.add("intro-pending");
       })();
     </script>
-    <style is:inline>html.intro-pending body { background: #E2396F; } html.intro-pending #root { visibility: hidden; }</style>
+    {
+      intro && (
+        <script is:inline>
+          (function () {
+            var p = new URLSearchParams(location.search).get("intro");
+            var skip;
+            if (p === "force") skip = false;
+            else if (p === "skip") skip = true;
+            else if (matchMedia("(prefers-reduced-motion: reduce)").matches) skip = false;
+            else {
+              var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+              var mobile = matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+              if (c && c.saveData === true) skip = true;
+              else if (c && mobile && ["slow-2g", "2g", "3g"].indexOf(c.effectiveType) > -1) skip = true;
+              else skip = false;
+            }
+            if (!skip) document.documentElement.classList.add("intro-pending");
+          })();
+        </script>
+      )
+    }
+    {
+      intro && (
+        <style is:inline>
+          html.intro-pending body { background: #E2396F; } html.intro-pending #root { visibility: hidden; }
+        </style>
+      )
+    }
     <link rel="preload" href="/fonts/bricolage-grotesque-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/logo-hachado-h.webp" as="image" type="image/webp" />
     <title>{title}</title>
@@ -60,7 +99,16 @@ const image = `${SITE_URL}/og-image.png`;
   </head>
   <body>
     <div id="root">
-      <slot />
+      <div>
+        {intro && <IntroAxe client:load />}
+        <Header client:load current={path} />
+        <main>
+          <slot />
+        </main>
+        <Footer />
+        <ConsentBanner />
+      </div>
     </div>
+    <Motion />
   </body>
 </html>

@@ -2,9 +2,16 @@ import { useEffect, useState } from "react";
 import "./header.scss";
 import { t } from "../../texts.js";
 
-function Header() {
+const LINKS = [
+  { path: "/", key: "home" },
+  { path: "/realisations", key: "projects" },
+  { path: "/qui-suis-je", key: "about" },
+];
+
+function Header({ current = "/" }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const onHome = current === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +26,7 @@ function Header() {
       <div className={menuOpen ? "headerPortfolio open" : "headerPortfolio"}>
         <a
           className="headerBrand"
-          href="#accueil"
+          href={onHome ? "#accueil" : "/"}
           aria-label="Hachado"
           onClick={() => setMenuOpen(false)}
         >
@@ -35,15 +42,16 @@ function Header() {
 
         <nav className="navHeader" id="mainNav">
           <div className="navHeaderInner">
-            <a href="#accueil" onClick={() => setMenuOpen(false)}>
-              {t("home")}
-            </a>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>
-              {t("projects")}
-            </a>
-            <a href="#apropos" onClick={() => setMenuOpen(false)}>
-              {t("about")}
-            </a>
+            {LINKS.map((link) => (
+              <a
+                key={link.path}
+                href={onHome && link.path === "/" ? "#accueil" : link.path}
+                aria-current={current === link.path ? "page" : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {t(link.key)}
+              </a>
+            ))}
           </div>
         </nav>
 

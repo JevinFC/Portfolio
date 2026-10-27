@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/page/PageHero.astro";
+import PageCta from "../components/page/PageCta.astro";
+import ProjectRow from "../components/projets/ProjectRow.jsx";
+import { client, examples } from "../data/projects.js";
+import { breadcrumb, graph } from "../config/schema.js";
+
+const path = "/realisations";
+---
+
+<BaseLayout
+  title="Réalisations : sites internet créés à Tours · Hachado"
+  description="Le site de Lola Gauchy, ma cliente, et deux sites d'exemple pour un plombier et un paysagiste de Tours : les sites internet réalisés par Hachado."
+  path={path}
+  schema={graph(breadcrumb([{ name: "Réalisations", path }]))}
+>
+  <PageHero
+    crumb="Réalisations"
+    title="Des sites internet créés à Tours"
+    lead="Le site de Lola, ma cliente, et deux sites d'exemple construits pour montrer ce que je fais pour un artisan. Les entreprises des exemples sont fictives ; les sites, eux, sont en ligne et vous pouvez les parcourir."
+  />
+
+  <section class="pageSection" aria-labelledby="clientsTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="clientsTitle" data-reveal>Pour mes clients</h2>
+      <div class="pageRows">
+        <ProjectRow project={client} />
+      </div>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="examplesTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="examplesTitle" data-reveal>Sites d'exemple</h2>
+      <p class="pageText" data-reveal style="--i: 1">
+        Chaque exemple illustre une de mes formules, pour un métier différent. Ouvrez-les sur votre téléphone : c'est là
+        que vos clients vous chercheront.
+      </p>
+      <div class="pageRows">
+        {examples.map((example, index) => <ProjectRow project={example} reversed={index % 2 === 0} />)}
+      </div>
+    </div>
+  </section>
+
+  <PageCta
+    title="La prochaine, c'est peut-être la vôtre"
+    text="Dites-moi ce que vous faites, je vous montre à quoi ressemblerait votre site. Sans engagement."
+    link={{ href: "/#tarifs", label: "Voir les tarifs" }}
+  />
+</BaseLayout>

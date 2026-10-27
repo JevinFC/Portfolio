@@ -1,5 +1,51 @@
 import { SITE_URL } from "./site.js";
 
+const person = {
+  "@type": "Person",
+  "@id": `${SITE_URL}/#kevin-machado`,
+  name: "Kévin Machado",
+  jobTitle: "Développeur web",
+  image: `${SITE_URL}/photoProfil.webp`,
+  worksFor: { "@id": `${SITE_URL}/#entreprise` },
+  sameAs: ["https://www.linkedin.com/in/kevin-machado-devfront", "https://github.com/JevinFC"],
+};
+
+export const graph = (...nodes) => ({ "@context": "https://schema.org", "@graph": nodes });
+
+export const breadcrumb = (items) => ({
+  "@type": "BreadcrumbList",
+  itemListElement: [{ name: "Accueil", path: "/" }, ...items].map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: `${SITE_URL}${item.path}`,
+  })),
+});
+
+export const tradeService = (metier, path) => ({
+  "@type": "Service",
+  "@id": `${SITE_URL}${path}#service`,
+  name: `Création de site internet pour ${metier.label}`,
+  serviceType: "Création de site internet",
+  url: `${SITE_URL}${path}`,
+  provider: { "@id": `${SITE_URL}/#entreprise` },
+  areaServed: { "@type": "City", name: "Tours" },
+  audience: { "@type": "BusinessAudience", name: metier.audience },
+  offers: {
+    "@type": "Offer",
+    name: metier.offer.name,
+    price: metier.offer.amount,
+    priceCurrency: "EUR",
+  },
+});
+
+export const profilePage = (path) => ({
+  "@type": "ProfilePage",
+  "@id": `${SITE_URL}${path}#page`,
+  url: `${SITE_URL}${path}`,
+  mainEntity: person,
+});
+
 export const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -92,7 +138,7 @@ export const homeSchema = {
           },
         ],
       },
-      sameAs: ["https://www.instagram.com/hachado_/"],
+      sameAs: ["https://www.instagram.com/hachado_/", "https://www.facebook.com/profile.php?id=61595171716254"],
     },
     {
       "@type": "Person",

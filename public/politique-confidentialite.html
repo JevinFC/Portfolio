@@ -271,6 +271,22 @@
         d'autres traitements ni suivi entre sites, elle relève de l'exemption de
         consentement prévue par la CNIL pour les traceurs de mesure d'audience.
       </p>
+      <p>
+        Si vous l'acceptez, le site utilise aussi <strong>Google Analytics</strong>,
+        chargé par l'intermédiaire de <strong>Google Tag Manager</strong>, pour
+        mesurer plus finement la fréquentation : pages consultées, durée de la
+        visite, provenance (moteur de recherche, réseau social, lien direct), type
+        d'appareil et de navigateur, ville et pays approximatifs. Ces données
+        servent uniquement à améliorer le site ; elles ne sont pas utilisées à des
+        fins publicitaires.
+      </p>
+      <p>
+        <strong>Base légale</strong> : votre consentement, au sens de l'article
+        6.1.a du RGPD et de l'article 82 de la loi Informatique et Libertés. Aucun
+        outil de Google n'est chargé tant que vous n'avez pas accepté, et vous
+        pouvez retirer votre consentement à tout moment avec le lien « Gérer les
+        cookies » en bas des pages du site.
+      </p>
 
       <h3>Stockage dans votre navigateur</h3>
       <p>
@@ -282,20 +298,48 @@
         l'onglet.
       </p>
       <p>
-        Le choix de la langue n'est pas conservé : l'affichage revient au
-        français à chaque chargement de la page.
+        Votre choix concernant la mesure d'audience de Google Analytics est
+        enregistré dans le stockage local de votre navigateur, sous la clé
+        <strong>hachado-consent</strong>, avec sa date. Il évite de vous reposer
+        la question à chaque page, ne contient aucune donnée personnelle, n'est
+        jamais transmis et est oublié au bout de six mois.
       </p>
 
-      <h2>Cookies et traceurs</h2>
+      <h2 id="cookies">Cookies et traceurs</h2>
       <p>
-        <strong>Ce site ne dépose aucun cookie</strong> : ni cookie publicitaire,
-        ni cookie de réseau social, ni cookie de mesure d'audience. Aucune
-        bannière de consentement n'est donc nécessaire.
+        <strong>Sans votre accord, ce site ne dépose aucun cookie</strong> : ni
+        cookie publicitaire, ni cookie de réseau social, ni cookie de mesure
+        d'audience. À votre première visite, une bannière vous demande si vous
+        acceptez la mesure d'audience de Google Analytics. Refuser est aussi
+        simple qu'accepter, et votre choix est conservé six mois.
+      </p>
+      <p>Si vous acceptez, Google Analytics dépose les cookies suivants :</p>
+      <table>
+        <tr>
+          <th>Cookie</th>
+          <th>Rôle</th>
+          <th>Durée</th>
+        </tr>
+        <tr>
+          <td>_ga</td>
+          <td>Distinguer les visiteurs, sans les identifier</td>
+          <td>13 mois</td>
+        </tr>
+        <tr>
+          <td>_ga_&lt;identifiant&gt;</td>
+          <td>Conserver l'état de la visite en cours</td>
+          <td>13 mois</td>
+        </tr>
+      </table>
+      <p>
+        Vous pouvez changer d'avis à tout moment avec le lien « Gérer les
+        cookies » en bas des pages du site. Si vous refusez après avoir accepté,
+        les cookies de Google Analytics sont supprimés de votre navigateur.
       </p>
       <p>
-        Le seul élément stocké dans votre navigateur est celui décrit à la
-        section précédente. Strictement nécessaire au fonctionnement du site, il
-        est dispensé de consentement au titre de l'article 82 de la loi
+        Les éléments stockés dans votre navigateur et décrits à la section
+        précédente sont strictement nécessaires au fonctionnement du site : ils
+        sont dispensés de consentement au titre de l'article 82 de la loi
         Informatique et Libertés.
       </p>
       <p>
@@ -327,6 +371,13 @@
           <td>
             Hébergement du site, diffusion des contenus, protection contre les
             attaques et mesure d'audience.
+          </td>
+        </tr>
+        <tr>
+          <td>Google</td>
+          <td>
+            Mesure d'audience avec Google Analytics et Google Tag Manager,
+            uniquement si vous l'acceptez.
           </td>
         </tr>
       </table>
@@ -364,6 +415,20 @@
         L'historique des envois est désactivé : le contenu des messages n'est pas
         conservé dans l'historique d'EmailJS.
       </p>
+      <p>
+        Si vous l'acceptez, les données de Google Analytics sont traitées par
+        Google Ireland Limited et peuvent être transférées à Google LLC, aux
+        États-Unis. Google LLC adhère au cadre de protection des données
+        UE–États-Unis (Data Privacy Framework), reconnu par la décision
+        d'adéquation de la Commission européenne du 10 juillet 2023. Pour en
+        savoir plus, consultez les
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          >règles de confidentialité de Google</a
+        >.
+      </p>
 
       <h2>Durées de conservation</h2>
       <table>
@@ -387,8 +452,20 @@
           <td>Selon la politique de conservation de Cloudflare</td>
         </tr>
         <tr>
-          <td>Statistiques de fréquentation</td>
+          <td>Statistiques de Cloudflare Web Analytics</td>
           <td>Agrégées, sans donnée permettant de vous identifier</td>
+        </tr>
+        <tr>
+          <td>Cookies de Google Analytics</td>
+          <td>13 mois au plus</td>
+        </tr>
+        <tr>
+          <td>Données de mesure d'audience dans Google Analytics</td>
+          <td>14 mois</td>
+        </tr>
+        <tr>
+          <td>Clé hachado-consent dans le navigateur</td>
+          <td>6 mois</td>
         </tr>
         <tr>
           <td>Clé intro-axe-seen dans le navigateur</td>
@@ -493,7 +570,7 @@
       </p>
 
       <p class="updated">
-        Dernière mise à jour : <span class="todo">15 octobre 2026</span>
+        Dernière mise à jour : <span class="todo">27 octobre 2026</span>
       </p>
     </div>
   </body>

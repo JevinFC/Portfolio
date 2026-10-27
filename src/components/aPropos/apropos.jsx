@@ -53,9 +53,10 @@ function APropos() {
 
           <p className="aproposLead reveal">{t("aboutP1")}</p>
           <p className="aproposText reveal">{t("aboutP2")}</p>
-          <p className="aproposText reveal">{t("aboutP3")}</p>
-          <p className="aproposText reveal">{t("aboutP4")}</p>
-          <p className="aproposText reveal">{t("aboutP5")}</p>
+          <a className="aproposMore reveal" href="/qui-suis-je">
+            {t("aboutMore")}
+            <span aria-hidden="true">→</span>
+          </a>
 
           <ul className="aproposFacts reveal">
             <li>{t("aboutFact1")}</li>

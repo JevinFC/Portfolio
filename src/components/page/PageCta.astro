@@ -1,0 +1,26 @@
+---
+import "./page.scss";
+
+const { title, text, link } = Astro.props;
+---
+
+<section class="pageSection pageSection--cta" aria-labelledby="pageCtaTitle">
+  <div class="pageInner">
+    <div class="pageCtaBox" data-reveal>
+      <img class="pageCtaAxe" src="/logo-hachado-h.webp" alt="" width="303" height="380" aria-hidden="true" />
+      <h2 class="pageCtaTitle" id="pageCtaTitle">{title}</h2>
+      {text && <p class="pageCtaText">{text}</p>}
+      <div class="pageActions">
+        <a class="pageCta" href="/#contact">Demander un devis gratuit</a>
+        {
+          link && (
+            <a class="pageLink" href={link.href}>
+              {link.label}
+              <span aria-hidden="true">→</span>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

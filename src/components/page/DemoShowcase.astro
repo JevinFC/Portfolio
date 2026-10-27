@@ -1,0 +1,27 @@
+---
+import BrowserFrame from "../ui/browserFrame.jsx";
+import "./page.scss";
+
+const { example } = Astro.props;
+---
+
+<div class="demoShowcase" data-reveal>
+  <BrowserFrame
+    src={example.image.src}
+    alt={example.image.alt}
+    width={example.image.width}
+    height={example.image.height}
+    url={example.demo.replace("https://", "")}
+    className="demoDesktop"
+  />
+  <div class="demoPhone">
+    <img
+      src={example.mobile.src}
+      alt={example.mobile.alt}
+      width={example.mobile.width}
+      height={example.mobile.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</div>

@@ -1,0 +1,212 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/page/PageHero.astro";
+import PageCta from "../components/page/PageCta.astro";
+import { breadcrumb, graph, profilePage } from "../config/schema.js";
+
+const path = "/qui-suis-je";
+
+const steps = [
+  {
+    when: "Aujourd'hui",
+    title: "On en parle",
+    text: "Vous me racontez votre métier et ce que vous attendez, par téléphone, en visio ou autour d'un café à Tours. Je vous réponds sous 48 h.",
+  },
+  {
+    when: "Sous 48 h",
+    title: "Je vous envoie un devis",
+    text: "Un prix fixe, selon la formule qui vous correspond. Vous réglez 30 % à la commande et le solde à la livraison, ou en trois fois sans frais.",
+  },
+  {
+    when: "Quand vous êtes prêt",
+    title: "Vous me transmettez vos informations",
+    text: "Horaires, coordonnées, photos, ce qui fait votre différence. Pas besoin d'écrire les textes : je les rédige.",
+  },
+  {
+    when: "Quelques jours plus tard",
+    title: "Je vous montre une première version",
+    text: "En ligne, à ouvrir sur votre téléphone. On l'ajuste ensemble jusqu'à ce qu'elle vous ressemble.",
+  },
+  {
+    when: "Le jour J",
+    title: "Je mets le site en ligne",
+    text: "Le nom de domaine et l'hébergement sont à votre nom, et votre fiche Google est créée ou optimisée.",
+  },
+  {
+    when: "Les 3 mois suivants",
+    title: "Je reste joignable",
+    text: "Le bon fonctionnement du site est garanti 3 mois. Ensuite, la maintenance à 49 € par mois est facultative et sans engagement.",
+  },
+];
+
+const promises = [
+  "Une réponse sous 48 h, devis compris.",
+  "Des prix fixes et affichés, sans frais cachés.",
+  "Un site écrit à la main, rapide et parfait sur téléphone.",
+  "Votre nom de domaine, votre hébergement et vos comptes à votre nom.",
+  "Les fichiers de votre site remis sur simple demande.",
+  "Des explications claires, sans jargon.",
+];
+
+const comparison = [
+  {
+    label: "Qui vous répond",
+    agency: "Un chef de projet, qui transmet à l'équipe",
+    me: "Moi, la personne qui fait votre site",
+  },
+  {
+    label: "Le prix",
+    agency: "Il comprend toute l'organisation : équipe, locaux, réunions",
+    me: "Fixé à l'avance, sans intermédiaire à payer",
+  },
+  {
+    label: "Les échanges",
+    agency: "Rendez-vous, comptes rendus, allers-retours",
+    me: "Direct, par téléphone, en visio ou à Tours",
+  },
+  {
+    label: "Pour quel projet",
+    agency: "Un gros projet qui demande plusieurs métiers",
+    me: "Le site d'un commerce, d'un artisan, d'un indépendant",
+  },
+];
+---
+
+<BaseLayout
+  title="Kévin Machado, création de site web à Tours · Hachado"
+  description="Kévin Machado crée des sites internet sur mesure à Tours, seul et sans intermédiaire : sa méthode, ses engagements, et pourquoi un freelance plutôt qu'une agence."
+  path={path}
+  schema={graph(profilePage(path), breadcrumb([{ name: "Qui suis-je", path }]))}
+>
+  <PageHero
+    crumb="Qui suis-je"
+    title="Kévin Machado, créateur de sites internet à Tours"
+    lead="Je travaille seul, sous le nom de Hachado. La personne qui vous répond est celle qui écrit votre site, du premier appel à la mise en ligne."
+    actions={[
+      { href: "/#contact", label: "Me parler de votre projet" },
+      { href: "/realisations", label: "Voir mes réalisations" },
+    ]}
+  />
+
+  <section class="pageSection" aria-labelledby="storyTitle">
+    <div class="pageInner pageSplit pageSplit--portrait">
+      <div class="pagePortrait" data-reveal>
+        <img
+          src="/photoProfil.webp"
+          alt="Kévin Machado, développeur web à Tours"
+          width="760"
+          height="833"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div>
+        <h2 class="pageSectionTitle" id="storyTitle" data-reveal>D'où vient Hachado</h2>
+        <p class="pageText" data-reveal style="--i: 1">
+          Machado, mon nom de famille, veut dire « hache » en portugais. J'en ai fait ma façon de travailler : couper tout
+          ce qui ne vous sert pas, et tailler un site sur mesure pour votre commerce.
+        </p>
+        <p class="pageText" data-reveal style="--i: 2">
+          Une hache à double tranchant, ce sont deux promesses : un site simple pour vous, et efficace pour Google. C'est
+          de là que vient Hachado, le nom de mon activité.
+        </p>
+        <p class="pageText" data-reveal style="--i: 3">
+          Votre site est écrit sur mesure, ligne par ligne. Ce n'est pas un modèle repeint aux couleurs de votre enseigne :
+          il est plus rapide, mieux référencé, et il vous appartient vraiment.
+        </p>
+        <p class="pageText" data-reveal style="--i: 4">
+          Je suis installé à Tours, en micro-entreprise. On peut se rencontrer, et tout peut aussi se faire à distance, en
+          visio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="methodTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="methodTitle" data-reveal>Comment se passe un projet</h2>
+      <p class="pageText" data-reveal style="--i: 1">
+        De votre premier appel à la mise en ligne, voici ce qui se passe, et quand.
+      </p>
+      <div class="cutTrack" data-track>
+        <div class="cutLine" aria-hidden="true">
+          <span class="cutLineDone"></span>
+          <img class="cutAxe" src="/logo-hachado-h.webp" alt="" width="303" height="380" />
+        </div>
+        <ol class="cutSteps">
+          {
+            steps.map((step) => (
+              <li class="cutStep" data-stop>
+                <span class="cutWhen">{step.when}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="promiseTitle">
+    <div class="pageInner">
+      <div class="promiseCoupon" data-reveal>
+        <img class="promiseAxe" src="/logo-hachado-h.webp" alt="" width="303" height="380" aria-hidden="true" />
+        <p class="promiseStamp" aria-hidden="true"><span>Hachado</span><strong>Promis</strong></p>
+        <p class="promiseKicker">Bon de garantie</p>
+        <h2 class="promiseTitle" id="promiseTitle">Mes engagements</h2>
+        <ul class="promiseList">
+          {promises.map((promise) => <li>{promise}</li>)}
+          <li>
+            Une micro-entreprise déclarée : mon SIRET figure dans les <a href="/mentions-legales">mentions légales</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="agencyTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="agencyTitle" data-reveal>Freelance ou agence web ?</h2>
+      <div class="versus" data-reveal>
+        <div class="versusSide versusSide--agency">
+          <h3 class="versusLabel">Une agence</h3>
+          <dl class="versusList">
+            {
+              comparison.map((row) => (
+                <div class="versusRow">
+                  <dt>{row.label}</dt>
+                  <dd>{row.agency}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+        <div class="versusSide versusSide--me">
+          <h3 class="versusLabel">Moi, en freelance</h3>
+          <dl class="versusList">
+            {
+              comparison.map((row) => (
+                <div class="versusRow">
+                  <dt>{row.label}</dt>
+                  <dd>{row.me}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+        <img class="versusAxe" src="/logo-hachado-h.webp" alt="" width="303" height="380" aria-hidden="true" />
+      </div>
+      <p class="pageText" data-reveal>
+        Pour un commerce ou un artisan, un site vitrine bien fait n'a pas besoin d'une agence. Et comme tout est à votre
+        nom, n'importe quel développeur pourrait reprendre votre site web si un jour je ne pouvais plus m'en occuper.
+      </p>
+    </div>
+  </section>
+
+  <PageCta
+    title="Parlons de votre projet"
+    text="Réponse sous 48 h, devis gratuit et sans engagement."
+    link={{ href: "/#tarifs", label: "Voir les tarifs" }}
+  />
+</BaseLayout>

@@ -2,7 +2,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./footer.scss";
 import { t } from "../../texts.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
@@ -26,13 +26,28 @@ function Footer() {
           >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="#contact" aria-label={t("footerEmail")}>
+          <a
+            href="https://www.facebook.com/profile.php?id=61595171716254"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t("footerFacebook")}
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a href="/#contact" aria-label={t("footerEmail")}>
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </div>
         <p className="footerMade">{t("footerMade")}</p>
         <p className="footerCopyright" suppressHydrationWarning>
           {t("footerCopyright").replace("{year}", new Date().getFullYear())}
+        </p>
+        <p className="footerLinks footerPages">
+          {t("footerPages").map((page) => (
+            <a key={page.href} className="footerLegal" href={page.href}>
+              {page.label}
+            </a>
+          ))}
         </p>
         <p className="footerLinks">
           <a
@@ -56,6 +71,9 @@ function Footer() {
           >
             {t("footerPrivacy")}
           </a>
+          <button type="button" className="footerLegal footerCookies" data-consent-open>
+            {t("footerCookies")}
+          </button>
         </p>
       </div>
     </footer>
