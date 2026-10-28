@@ -1,11 +1,19 @@
 import { chromium } from "playwright";
 import { mkdir, rm } from "node:fs/promises";
 
-const baseUrl = process.argv[2] || "http://localhost:4173";
+const baseUrl = process.argv[2] || "http://localhost:5173";
 const outDir = process.argv[3] || "screenshots/ref";
 
 const WIDTHS = [375, 768, 1440];
-const LANGUAGES = ["fr", "en"];
+const PAGES = [
+  { name: "accueil", path: "/?intro=skip" },
+  { name: "realisations", path: "/realisations" },
+  { name: "lola-gauchy", path: "/realisations/lola-gauchy" },
+  { name: "qui-suis-je", path: "/qui-suis-je" },
+  { name: "plombier", path: "/site-internet-plombier-tours" },
+  { name: "paysagiste", path: "/site-internet-paysagiste-tours" },
+  { name: "404", path: "/404.html" },
+];
 
 const settle = async (page) => {
   await page.waitForLoadState("load");
@@ -25,6 +33,9 @@ const settle = async (page) => {
       .projectFrame .browserFrameBody img {
         transition: none !important;
         transform: none !important;
+      }
+      astro-dev-toolbar {
+        display: none !important;
       }
     `,
   });
@@ -54,15 +65,6 @@ const settle = async (page) => {
   await page.waitForTimeout(1200);
 };
 
-const switchToEnglish = async (page) => {
-  const button = page.locator(".languageButton");
-  if ((await button.count()) === 0) return false;
-  if ((await button.innerText()).trim().toUpperCase() === "EN") return false;
-  await button.click();
-  await page.locator(".languageButton", { hasText: "EN" }).waitFor({ timeout: 5000 });
-  return true;
-};
-
 const run = async () => {
   await rm(outDir, { recursive: true, force: true });
   await mkdir(outDir, { recursive: true });
@@ -77,28 +79,19 @@ const run = async () => {
       reducedMotion: "reduce",
       locale: "fr-FR",
     });
+    await context.addInitScript(() => {
+      localStorage.setItem("hachado-consent", JSON.stringify({ analytics: false, date: Date.now() }));
+    });
     const page = await context.newPage();
 
-    for (const language of LANGUAGES) {
-      await page.goto(`${baseUrl}/?intro=skip`, { waitUntil: "domcontentloaded" });
+    for (const target of PAGES) {
+      await page.goto(`${baseUrl}${target.path}`, { waitUntil: "domcontentloaded" });
       await settle(page);
 
-      if (language === "en") {
-        const switched = await switchToEnglish(page);
-        if (!switched) throw new Error("bascule en anglais impossible");
-        await settle(page);
-      }
-
-      const file = `${outDir}/accueil-${language}-${width}.png`;
+      const file = `${outDir}/${target.name}-${width}.png`;
       await page.screenshot({ path: file, fullPage: true, animations: "disabled" });
       written.push(file);
     }
-
-    await page.goto(`${baseUrl}/404.html`, { waitUntil: "domcontentloaded" });
-    await settle(page);
-    const file404 = `${outDir}/404-${width}.png`;
-    await page.screenshot({ path: file404, fullPage: true, animations: "disabled" });
-    written.push(file404);
 
     await context.close();
   }

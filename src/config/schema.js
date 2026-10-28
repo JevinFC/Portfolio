@@ -91,7 +91,7 @@ export const homeSchema = {
         { "@type": "City", name: "Fondettes" },
         { "@type": "AdministrativeArea", name: "Indre-et-Loire" },
       ],
-      knowsLanguage: ["fr", "en"],
+      knowsLanguage: ["fr"],
       founder: { "@id": `${SITE_URL}/#kevin-machado` },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
