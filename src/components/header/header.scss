@@ -78,7 +78,7 @@ header.scrolled {
     text-underline-offset: 4px;
   }
 
-  &[aria-current="page"] {
+  &[aria-current] {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;

@@ -1,4 +1,5 @@
 import lola from "../assets/imgprojects/screenshotLola.webp";
+import lolaMobile from "../assets/imgprojects/lola-mobile.webp";
 import raccord from "../assets/imgprojects/raccord.webp";
 import raccordMobile from "../assets/imgprojects/raccord-mobile.webp";
 import charmille from "../assets/imgprojects/charmille.webp";
@@ -9,11 +10,22 @@ export const client = {
   kind: "client",
   status: "Client",
   name: "Lola Gauchy",
-  role: "Communication digitale, freelance",
-  text: "Lola n'avait qu'un profil sur les réseaux pour montrer son travail. Elle dispose maintenant d'un site qui lui appartient, qu'elle envoie directement à ses prospects.",
-  tags: ["Présenter son travail", "Textes rédigés", "Mis en ligne"],
-  image: { src: lola.src, width: lola.width, height: lola.height, alt: "Page d'accueil du portfolio de Lola Gauchy" },
-  links: [{ href: "https://lolagauchy.fr", label: "Voir le site en ligne", external: true }],
+  role: "Communicante digitale freelance à Tours",
+  text: "Son premier site était un portfolio d'étudiante, monté sur Wix pour trouver des stages. Pour lancer son activité, je lui ai fait un site sur mesure, à son image, avec son nom de domaine et sa fiche Google.",
+  tags: ["Site d'entreprise", "Nom de domaine", "Fiche Google"],
+  image: { src: lola.src, width: lola.width, height: lola.height, alt: "Page d'accueil du site de Lola Gauchy" },
+  mobile: {
+    src: lolaMobile.src,
+    width: lolaMobile.width,
+    height: lolaMobile.height,
+    alt: "Le site de Lola Gauchy sur téléphone",
+  },
+  demo: "https://lolagauchy.fr",
+  page: "/realisations/lola-gauchy",
+  links: [
+    { href: "/realisations/lola-gauchy", label: "Lire l'histoire du projet" },
+    { href: "https://lolagauchy.fr", label: "Voir le site en ligne", external: true },
+  ],
 };
 
 export const examples = [

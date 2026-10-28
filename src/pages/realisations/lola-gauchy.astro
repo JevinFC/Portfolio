@@ -1,0 +1,239 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/page/PageHero.astro";
+import PageCta from "../../components/page/PageCta.astro";
+import DemoShowcase from "../../components/page/DemoShowcase.astro";
+import { client } from "../../data/projects.js";
+import { breadcrumb, graph } from "../../config/schema.js";
+
+const path = client.page;
+
+const facts = [
+  { label: "La cliente", value: "Lola Gauchy, communicante digitale freelance à Tours" },
+  { label: "Au départ", value: "Un portfolio d'étudiante, monté elle-même sur Wix" },
+  { label: "Le projet", value: "Un site d'entreprise sur mesure, avec son nom de domaine" },
+  { label: "Aujourd'hui", value: "Un site mieux référencé et une fiche Google optimisée" },
+];
+
+const wishes = [
+  {
+    query: "Lola Gauchy",
+    title: "Un site à son image",
+    text: "Quand on tape son nom, on doit tomber sur un site qui lui ressemble : ses couleurs, son ton, ses projets.",
+  },
+  {
+    query: "communicante digitale Tours",
+    title: "Être trouvée sur Google",
+    text: "Le référencement n'était pas son domaine. Elle voulait que les commerces et les lieux de Tours qui cherchent une communicante tombent sur elle.",
+  },
+];
+
+const built = [
+  "Son nom de domaine, lolagauchy.fr, choisi et réservé ensemble, à son nom.",
+  "Un design construit autour de son identité : ses couleurs, ses typographies et son ton.",
+  "Une page pour chacun de ses projets et chacune de ses vidéos, que Google peut trouver une à une.",
+  "Ses formules et ses tarifs présentés clairement, avec un rendez-vous découverte à réserver.",
+  "Des titres, des descriptions et des informations pour Google, pensés pour qu'on la trouve en cherchant une communicante à Tours.",
+  "Sa fiche Google, créée et optimisée.",
+];
+
+const steps = [
+  {
+    when: "Au départ",
+    title: "Lola me parle de son image",
+    text: "Son métier, ses clients, ce qu'elle veut montrer d'elle : c'est la base de tout le site.",
+  },
+  {
+    when: "Ensemble",
+    title: "On choisit son nom de domaine",
+    text: "lolagauchy.fr, réservé à son nom : son adresse sur internet lui appartient, quoi qu'il arrive.",
+  },
+  {
+    when: "À chaque rendez-vous",
+    title: "On regarde la nouvelle version",
+    text: "On se voit pour voir où en est le site et on ajuste ensemble. J'avance ensuite jusqu'au rendez-vous suivant.",
+  },
+  {
+    when: "La mise en ligne",
+    title: "Le site part en ligne",
+    text: "Son site est en ligne, et sa fiche Google est créée.",
+  },
+];
+---
+
+<BaseLayout
+  title="Le site de Lola Gauchy, communicante à Tours · Hachado"
+  description="Lola Gauchy avait un portfolio d'étudiante sur Wix. Pour lancer son activité à Tours, Hachado lui a créé un site sur mesure et son nom de domaine."
+  path={path}
+  schema={graph(
+    breadcrumb([
+      { name: "Réalisations", path: "/realisations" },
+      { name: "Lola Gauchy", path },
+    ])
+  )}
+>
+  <PageHero
+    crumb="Lola Gauchy"
+    parents={[{ href: "/realisations", label: "Réalisations" }]}
+    title="Le site de Lola, taillé pour son entreprise"
+    lead="Pendant ses études, Lola avait monté un portfolio sur Wix pour trouver ses stages et alternances. En se lançant comme communicante digitale freelance à Tours, il lui fallait un vrai site d'entreprise : à son image, et que Google mette en avant."
+    actions={[
+      { href: client.demo, label: "Voir le site de Lola", external: true },
+      { href: "/realisations", label: "Toutes les réalisations" },
+    ]}
+  />
+
+  <section class="pageSection" aria-labelledby="ticketTitle">
+    <div class="pageInner">
+      <div class="caseTicket" data-reveal>
+        <p class="promiseStamp" aria-hidden="true"><span>Hachado</span><strong>Lancement</strong></p>
+        <h2 class="promiseKicker" id="ticketTitle">Fiche projet</h2>
+        <dl class="caseFacts">
+          {
+            facts.map((fact) => (
+              <div>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="wishTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="wishTitle" data-reveal>Ce que Lola voulait</h2>
+      <p class="pageText" data-reveal style="--i: 1">
+        Deux recherches résument son projet : son nom, et son métier à Tours.
+      </p>
+      <ul class="needCards needCards--two">
+        {
+          wishes.map((wish, index) => (
+            <li class="needCard" data-reveal style={`--i: ${index}`}>
+              <p class="needQuery">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2" />
+                  <path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+                <span class="srOnly">Recherche Google : </span>
+                <span class="needQueryText" data-type>
+                  {wish.query}
+                </span>
+              </p>
+              <h3>{wish.title}</h3>
+              <p>{wish.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="builtTitle">
+    <div class="pageInner pageSplit">
+      <div>
+        <h2 class="pageSectionTitle" id="builtTitle" data-reveal>Ce que j'ai construit</h2>
+        <p class="pageText" data-reveal style="--i: 1">
+          Un site écrit sur mesure, pensé à la fois pour ses prospects et pour Google.
+        </p>
+        <ul class="pageChecks">
+          {
+            built.map((item, index) => (
+              <li data-reveal style={`--i: ${index + 1}`}>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="pageLinks" data-reveal>
+          <a class="pageTextLink" href={client.demo} target="_blank" rel="noopener noreferrer">
+            Voir le site de Lola
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <DemoShowcase example={client} />
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="stepsTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="stepsTitle" data-reveal>Comment ça s'est passé</h2>
+      <p class="pageText" data-reveal style="--i: 1">
+        Pas de longs comptes rendus : des rendez-vous, et à chaque fois une version à regarder ensemble.
+      </p>
+      <div class="cutTrack" data-track>
+        <div class="cutLine" aria-hidden="true">
+          <span class="cutLineDone"></span>
+          <img class="cutAxe" src="/logo-hachado-h.webp" alt="" width="303" height="380" />
+        </div>
+        <ol class="cutSteps">
+          {
+            steps.map((step) => (
+              <li class="cutStep" data-stop>
+                <span class="cutWhen">{step.when}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="quoteTitle">
+    <div class="pageInner">
+      <h2 class="pageSectionTitle" id="quoteTitle" data-reveal>Ce qu'elle en dit</h2>
+      <figure class="caseQuote" data-reveal>
+        <blockquote class="caseQuoteText">
+          <p>
+            Mon premier site, je l'avais monté moi-même sur Wix pendant le covid : c'était un portfolio pour trouver des
+            stages et des alternances. Quand je me suis lancée en freelance, je voulais un vrai site d'entreprise, à mon image, et qu'on me
+            trouve sur Google : ce n'était pas mon expertise. On a choisi mon nom de domaine ensemble, puis on s'est vus
+            plusieurs fois pour regarder les versions et faire le point. Aujourd'hui, mon site est mieux référencé et j'ai
+            une fiche Google optimisée.
+          </p>
+        </blockquote>
+        <figcaption class="caseQuoteBy">
+          <span><strong>Lola Gauchy</strong> Communicante digitale freelance à Tours</span>
+          <span class="caseQuoteStamp" aria-hidden="true">Lu et approuvé</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="pageSection" aria-labelledby="duoTitle">
+    <div class="pageInner pageSplit pageSplit--portrait">
+      <div class="caseLogo" data-reveal>
+        <p class="caseLogoMark" role="img" aria-label="Le logo d'Hachado">
+          <img src="/logo-hachado-h.webp" alt="" width="303" height="380" />
+          <span aria-hidden="true">achado</span>
+        </p>
+        <p class="promiseStamp" aria-hidden="true"><span>Logo</span><strong>Lola Gauchy</strong></p>
+      </div>
+      <div>
+        <h2 class="pageSectionTitle" id="duoTitle" data-reveal>Un travail dans les deux sens</h2>
+        <p class="pageText" data-reveal style="--i: 1">
+          Ce projet a une particularité : Lola a aussi travaillé pour moi. C'est elle qui a créé le logo et l'identité
+          visuelle d'Hachado, et elle m'accompagne dans ma communication.
+        </p>
+        <p class="pageText" data-reveal style="--i: 2">
+          La hache que vous voyez partout sur ce site, c'est elle qui l'a dessinée.
+        </p>
+        <p class="pageText" data-reveal style="--i: 3">
+          Pour son site, c'est elle qui m'a confié son image. Pour Hachado, c'est moi qui lui ai confié la mienne. On sait
+          donc tous les deux ce que ça fait, de confier son image à quelqu'un.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <PageCta
+    title={"Votre site ne vous ressemble plus ?"}
+    text="Comme Lola, votre activité a peut-être grandi depuis votre premier site. Je regarde d'abord gratuitement comment il est géré, puis je vous donne un prix fixe."
+    link={{ href: "/#tarifs", label: "Voir les tarifs" }}
+  />
+</BaseLayout>

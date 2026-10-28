@@ -1,7 +1,7 @@
 ---
 import "./page.scss";
 
-const { crumb, title, lead, actions = [] } = Astro.props;
+const { crumb, parents = [], title, lead, actions = [] } = Astro.props;
 ---
 
 <div class="pageHeroWrap">
@@ -10,6 +10,14 @@ const { crumb, title, lead, actions = [] } = Astro.props;
       <nav class="pageCrumbs" aria-label="Fil d'Ariane">
         <a href="/">Accueil</a>
         <span aria-hidden="true">›</span>
+        {
+          parents.map((parent) => (
+            <>
+              <a href={parent.href}>{parent.label}</a>
+              <span aria-hidden="true">›</span>
+            </>
+          ))
+        }
         <span aria-current="page">{crumb}</span>
       </nav>
       <h1 class="pageTitle" id="pageTitle">{title}</h1>
@@ -18,9 +26,14 @@ const { crumb, title, lead, actions = [] } = Astro.props;
         actions.length > 0 && (
           <div class="pageActions">
             {actions.map((action, index) => (
-              <a class={index === 0 ? "pageCta" : "pageLink"} href={action.href}>
+              <a
+                class={index === 0 ? "pageCta" : "pageLink"}
+                href={action.href}
+                target={action.external ? "_blank" : undefined}
+                rel={action.external ? "noopener noreferrer" : undefined}
+              >
                 {action.label}
-                {index > 0 && <span aria-hidden="true">→</span>}
+                {(index > 0 || action.external) && <span aria-hidden="true">{action.external ? "↗" : "→"}</span>}
               </a>
             ))}
           </div>

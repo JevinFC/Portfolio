@@ -46,7 +46,13 @@ function Header({ current = "/" }) {
               <a
                 key={link.path}
                 href={onHome && link.path === "/" ? "#accueil" : link.path}
-                aria-current={current === link.path ? "page" : undefined}
+                aria-current={
+                  current === link.path
+                    ? "page"
+                    : current.startsWith(`${link.path}/`)
+                      ? "true"
+                      : undefined
+                }
                 onClick={() => setMenuOpen(false)}
               >
                 {t(link.key)}

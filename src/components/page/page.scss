@@ -108,6 +108,10 @@
   text-decoration: none;
   transition: background-color 0.25s ease;
 
+  span {
+    margin-left: 0.35rem;
+  }
+
   &:hover {
     background-color: var(--color-accent-pale);
   }
@@ -143,6 +147,7 @@
 
 .pageSection {
   padding: 5rem 0;
+  overflow-x: clip;
 
   &--cta {
     padding-top: 3rem;
@@ -183,6 +188,11 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
+}
+
+.needCards--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 900px;
 }
 
 .needCard {
@@ -956,6 +966,172 @@
   margin-top: 3.5rem;
 }
 
+.caseTicket {
+  position: relative;
+  box-sizing: border-box;
+  padding: 2.25rem 17rem 2.25rem 2.5rem;
+  border: 2px dashed var(--color-accent);
+  border-radius: 18px;
+  background: var(--color-surface);
+
+  .promiseStamp {
+    top: 50%;
+    right: 2.5rem;
+    translate: 0 -50%;
+
+    strong {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.caseFacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 1.25rem 0 0;
+
+  dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+
+  dd {
+    margin: 0.35rem 0 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--color-ink);
+  }
+}
+
+.caseQuote {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 920px;
+  margin: 2.5rem 0 0;
+  padding: 5.5rem 3rem 2.5rem;
+  border-radius: 20px;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  clip-path: polygon(0 2.5rem, 100% 0, 100% 100%, 0 100%);
+
+  &::before {
+    content: "«";
+    position: absolute;
+    top: 0.9rem;
+    left: 2.6rem;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.35;
+  }
+}
+
+.caseQuoteText {
+  margin: 0;
+
+  p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+}
+
+.caseQuoteBy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.4;
+
+  strong {
+    display: block;
+    font-size: 1.1rem;
+  }
+}
+
+.caseQuoteStamp {
+  display: inline-block;
+  padding: 0.35rem 0.75rem 0.4rem;
+  border: 2px solid var(--color-surface);
+  border-radius: 8px;
+  outline: 1px solid var(--color-surface);
+  outline-offset: 2px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-5deg);
+}
+
+.caseLogo {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: clamp(240px, 30vw, 380px);
+  aspect-ratio: 1;
+  border-radius: 18px;
+  background: var(--color-accent);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border: 2px dashed var(--color-accent);
+    border-radius: 18px;
+    transform: translate(-14px, 14px);
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s;
+  }
+
+  .promiseStamp {
+    top: auto;
+    right: -1.25rem;
+    bottom: -1.25rem;
+    background: var(--color-bg);
+    transform: rotate(-7deg);
+
+    strong {
+      font-size: 1.35rem;
+    }
+  }
+}
+
+.caseLogoMark {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  margin: 0;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-surface);
+
+  img {
+    display: block;
+    width: auto;
+    height: 1.15em;
+    transform-origin: 50% 90%;
+  }
+}
+
 @keyframes caretBlink {
   50% {
     opacity: 0;
@@ -1246,6 +1422,58 @@
   .pageRows .projectRow.is-visible .projectFrame .browserFrameBody img {
     animation: rowScroll 7s ease-in-out 0.9s 1;
   }
+
+  .caseTicket .promiseStamp {
+    transition: opacity 0.15s ease 0.5s, transform 0.45s cubic-bezier(0.2, 1.5, 0.4, 1) 0.5s;
+  }
+
+  .caseTicket:not(.is-visible) .promiseStamp {
+    opacity: 0;
+    transform: rotate(-20deg) scale(1.9);
+  }
+
+  .caseTicket.is-visible {
+    animation: ctaThunk 0.35s ease 0.45s 1;
+  }
+
+  .caseQuote .caseQuoteStamp {
+    transition: opacity 0.15s ease 0.9s, transform 0.45s cubic-bezier(0.2, 1.5, 0.4, 1) 0.9s;
+  }
+
+  .caseQuote:not(.is-visible) .caseQuoteStamp {
+    opacity: 0;
+    transform: rotate(-24deg) scale(1.8);
+  }
+
+  .caseQuote.is-visible {
+    animation: ctaThunk 0.35s ease 1s 1;
+  }
+
+  .caseLogoMark img {
+    transition: opacity 0.2s ease 0.2s, transform 0.55s cubic-bezier(0.5, 0, 0.75, 0) 0.2s;
+  }
+
+  .caseLogo:not(.is-visible) .caseLogoMark img {
+    opacity: 0;
+    transform: translateY(-110px) rotate(-120deg);
+  }
+
+  .caseLogo:not(.is-visible)::before {
+    transform: translate(0, 0);
+  }
+
+  .caseLogo .promiseStamp {
+    transition: opacity 0.15s ease 0.95s, transform 0.45s cubic-bezier(0.2, 1.5, 0.4, 1) 0.95s;
+  }
+
+  .caseLogo:not(.is-visible) .promiseStamp {
+    opacity: 0;
+    transform: rotate(-30deg) scale(1.9);
+  }
+
+  .caseLogo.is-visible {
+    animation: ctaThunk 0.35s ease 0.75s 1;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1334,6 +1562,32 @@
 
   .versusAxe {
     display: none;
+  }
+
+  .caseTicket {
+    padding: 2rem 1.5rem 7.5rem;
+
+    .promiseStamp {
+      top: auto;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      translate: none;
+    }
+  }
+
+  .caseQuote {
+    padding: 4.75rem 1.5rem 2rem;
+    clip-path: polygon(0 1.75rem, 100% 0, 100% 100%, 0 100%);
+
+    &::before {
+      top: 0.6rem;
+      left: 1.4rem;
+      font-size: 4rem;
+    }
+  }
+
+  .caseLogo .promiseStamp {
+    right: -0.5rem;
   }
 }
 
@@ -1447,6 +1701,7 @@
   .demoDesktop .browserFrameBody img,
   .pageFaqItem .pageFaqArrow,
   .pagePortrait::before,
+  .caseLogo::before,
   .pageOfferPrice,
   .versusSide {
     transition: none;
