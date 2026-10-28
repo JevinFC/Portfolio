@@ -186,6 +186,11 @@ const texts = {
         "On fait le point sur ce que vous voulez, vous me transmettez vos informations, je vous montre une première version que l'on ajuste ensemble, puis je mets le site en ligne. Le devis est gratuit. Vous réglez ensuite 30 % à la commande et le solde à la livraison, ou en trois fois sans frais.",
     },
     {
+      question: "J'ai déjà un site. Vous pouvez le refaire ?",
+      answer:
+        "Oui. Je regarde d'abord gratuitement comment il est géré : nom de domaine, e-mails, contrat en cours. Je vous donne ensuite un prix fixe, celui de la formule choisie, plus 150 € pour reprendre l'existant : votre nom de domaine et vos e-mails sont conservés, et les anciennes pages redirigent vers les nouvelles pour que Google s'y retrouve. Si quelque chose sort de l'ordinaire, comme une boutique en ligne ou des boîtes mail à déménager, je vous le dis avant, avec son prix.",
+    },
+    {
       question: "Pourquoi passer par un freelance plutôt que par une agence ?",
       answer:
         "Avec moi, vous parlez directement à la personne qui fait votre site, du premier appel à la mise en ligne. Pas d'intermédiaire, des prix plus bas qu'en agence et des échanges simples. Pour le site d'un commerce ou d'un artisan, une agence n'apporte souvent rien de plus. Et comme tout est à votre nom, n'importe quel développeur pourrait reprendre votre site web si besoin.",

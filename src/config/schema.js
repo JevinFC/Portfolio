@@ -138,7 +138,11 @@ export const homeSchema = {
           },
         ],
       },
-      sameAs: ["https://www.instagram.com/hachado_/", "https://www.facebook.com/profile.php?id=61595171716254"],
+      sameAs: [
+        "https://www.instagram.com/hachado_/",
+        "https://www.facebook.com/profile.php?id=61595171716254",
+        "https://share.google/WAe5riPvwKBIJDLxw",
+      ],
     },
     {
       "@type": "Person",
