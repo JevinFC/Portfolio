@@ -45,7 +45,7 @@ const texts = {
   pricingCta: "Demander un devis",
   pricingNotes: [
     "Hébergement gratuit, à votre nom",
-    "Paiement en 3 fois sans frais",
+    "Paiement en 3 fois sans frais, un tiers par mois",
     "Maintenance facultative : 49 €/mois, sans engagement",
     "Prix nets, TVA non applicable (art. 293 B du CGI)",
   ],
